@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package edd_proyecto_fase1_201612174;
+import java.util.Scanner;
 
 /**
  *
@@ -15,7 +16,21 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner myObj = new Scanner(System.in);
+        int n, x=1;
+        Lista colaInicial = new Lista();
+        System.out.println("Ingresar Parametros Iniciales: ");
+        System.out.println("Numero de Ventanillas (n): ");
+        n = myObj.nextInt();
+        
+        System.out.println("Cantidad de ventanillas: " + n );
+        System.out.println("1 para seguir, 0 para detener");
+        
+        while(x!=0){
+            colaInicial.addRandom();
+            colaInicial.display();
+            x = myObj.nextInt();
+        }
+        
     }
-    
 }
