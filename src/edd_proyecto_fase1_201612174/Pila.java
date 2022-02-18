@@ -16,10 +16,11 @@ public class Pila {
     Pila() {
     }
 
-    public void push() {
-        Node newNode = new Node();
+    public void push(int data) {
+        Node newNode = new Node(data);
         if (inicio == null) { //Agrega al inicio
             inicio = newNode;
+            fin = inicio;
         } else if (inicio.next == null) { //Agregar despues del inicio
             fin = newNode;
             inicio.next = fin;
@@ -35,6 +36,7 @@ public class Pila {
         } else if(fin == null || inicio.next == null){
             System.out.println(inicio.data + " has been removed");
             inicio = null;
+            fin = null;
         } else {
             Node temp = inicio;
             while(temp.next != fin){
