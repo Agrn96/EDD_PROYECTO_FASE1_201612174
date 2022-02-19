@@ -34,7 +34,7 @@ public class Pila {
         if(inicio == null) {
             System.out.println("Lista esta vacio");
         } else if(fin == null || inicio.next == null){
-            System.out.println(inicio.data + " has been removed");
+            //System.out.println(inicio.data + " has been removed");
             inicio = null;
             fin = null;
         } else {
@@ -42,7 +42,7 @@ public class Pila {
             while(temp.next != fin){
                 temp = temp.next;
             }
-            System.out.println(fin.data + " has been removed");
+            //System.out.println(fin.data + " has been removed");
             fin = temp;
             fin.next = null;
         }

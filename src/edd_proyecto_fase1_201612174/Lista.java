@@ -79,11 +79,14 @@ public class Lista {
 
     public boolean place(Node temp) { // if place == true; pop from initial list;
         Node current = inicio;
+        int i = 1;
         while (current != null) {
             if (current.id == 0) {
                 current.Copy(temp);
+                System.out.println("\nCliente " + temp.id + " ha sido movido a la Ventanilla " + i);
                 return true;
             } else {
+                i++;
                 current = current.next;
             }
         }
@@ -94,8 +97,10 @@ public class Lista {
     public void upload(Lista espera, Lista ventanillaT, Lista colaC, Lista colaBW) {
         Node current = this.inicio; //VentanillaC           Lista de Pilas
         Node currentT = ventanillaT.inicio; //VentanillaT   Lista Normal
+        int i = 1;
         while (current != null) {
             if (current.id == 0) {
+                i++;
                 current = current.next;
                 currentT = currentT.next;
                 continue;
@@ -103,6 +108,7 @@ public class Lista {
                 if (current.tempBW == current.bw && current.tempC == current.c) {//pila vaciar
                     Node temp = new Node();
                     temp.Copy(current);
+                    System.out.println("\nCliente " + current.id + " ha sido movido a la Lista de Espera");
                     espera.add(temp, current.id);  //Moved to the waiting list;
                     current.Clear(); //Clearing client information as he has been passed to the waiting list;
                     while (currentT.info.inicio != null) {//1 for BW, 2 for Color
@@ -118,21 +124,26 @@ public class Lista {
                             throw e;
                         }
                     }
+                    i++;
                     current = current.next;
                     currentT = currentT.next;
                     continue;
                 }
 
                 if (current.tempBW != current.bw) {
+                    System.out.println("\nCliente " + current.id + " ha Entregado un IMG BW a la Ventanilla " + i);
                     current.tempBW++;
                     currentT.info.push(1);
+                    i++;
                     current = current.next;
                     currentT = currentT.next;
                     continue;
                 }
                 if (current.tempC != current.c) {
+                    System.out.println("\nCliente " + current.id + " ha Entregado un IMG C a la Ventanilla " + i);
                     current.tempC++;
                     currentT.info.push(2);
+                    i++;
                     current = current.next;
                     currentT = currentT.next;
                     continue;
@@ -144,19 +155,19 @@ public class Lista {
     public void addRandom(int turno) {//Adds random people to the waiting queue
         int x = ((int) (Math.random() * 10)) % 4;
         if (x == 0) {
-            System.out.println("Ningun cliente entro");
+            System.out.println("Clientes Nuevos: " + x);
         } else {
-            System.out.println(x + " Clientes llego.");
+            System.out.println("Clientes Nuevos: " + x);
             for (int i = 0; i < x; i++) {
                 int c = ((int) (Math.random() * 10)) % 6;
                 int bw = (c == 0) ? (((int) (Math.random() * 10)) % 5) + 1 : ((int) (Math.random() * 10)) % 6;
-                //int c = 1;
-                //int bw = 0;
                 String nombre = fName[((int) (Math.random() * 10))] + " " + lName[((int) (Math.random() * 10))];
                 add(nombre, c, bw, turno);
+                
+                System.out.println("\nCliente " + (id+1) + ": \nNombre: " + nombre
+                        + "\nIMG C: " + c + " \nIMG BW: " + bw);
             }
         }
-        System.out.println(x);
     }
 
     public void pop() { //Removes people from the initial/waiting queue
@@ -216,48 +227,164 @@ public class Lista {
         }
     }
 
-    public void update(Lista espera, Lista historia, int turno, int x) {
+    public void update(Lista espera, Lista historia, int turno, int x) { //Cola BW y C (Listas)
         Node current = espera.inicio;
         if (x == 0) {
             while (current != null) {
                 if (current.tempBW != current.bw) {
                     current.tempBW++;
+                    System.out.println("\nIMG BW ha sido entregado a Cliente " + current.id + ".");
                     pop();
                     if (current.tempBW == current.bw && current.tempC == current.c) {
-                        System.out.println("Placeholder: Will send to completed list and remove from waiting list");
+                        System.out.println("\nCliente " + current.id + " ha sido movido a la lista de atendidos.");
                         Node temp = new Node();
                         temp.Copy(current);
                         temp.turnoF = turno;
                         historia.add(temp, temp.id);
                         espera.delete(temp.id);
-                        
-                    }
-                    break;
-                }
-                current = current.next;
+                    } break;
+                } current = current.next;
             }
         } else if (x == 1) {
             ++turno;
             if (turno % 2 == 0) {
                 while (current != null) {
-                    //System.out.println("RAMP: " + current.tempC + " : " + current.c);
                     if (current.tempC != current.c) {
                         current.tempC++;
+                        System.out.println("\nIMG C ha sido entregado a Cliente " + current.id + ".");
                         pop();
-                        //System.out.println("RAMPS: " + current.tempC + " : " + current.c);
                         if (current.tempBW == current.bw && current.tempC == current.c) {
-                            System.out.println("Placeholder: Will send to completed list and remove from waiting list");
+                            System.out.println("\nCliente " + current.id + " ha sido movido a la lista de atendidos.");
                             Node temp = new Node();
                             temp.Copy(current);
                             temp.turnoF = turno;
                             historia.add(temp, temp.id);
                             espera.delete(temp.id);
-                        }
+                        } break;
+                    } current = current.next;
+                }
+            } else if (turno % 2 == 1){
+                System.out.println("\nUn Turno mas para imprimir imagen de color");
+            }
+        }
+    }
+    
+    public Lista bubbleSort1() { // Colores
+        Lista temp = this;
+        Node current = temp.inicio;
+        Node trail = current;
+        Boolean sorted = false;
+
+        if (temp.inicio == null) {
+            System.out.println("Lista esta vacio");
+        } else if (current.next == null) {
+            return temp;
+        } else if (current.next.next == null) {
+            if (current.c < current.next.c) {
+                Node rand = current.next;
+                rand.next = current;
+                current.next = null;
+                temp.inicio = rand;
+                return temp;
+            }
+        } else {
+            while (sorted == false) {
+                sorted = true;
+                current = temp.inicio;
+                while (current.next != null) {
+                    if (temp.inicio.c < temp.inicio.next.c) {
+                        Node rand = temp.inicio.next.next;
+                        temp.inicio.next.next = temp.inicio;
+                        temp.inicio = temp.inicio.next;
+                        temp.inicio.next.next = rand;
+                        sorted = false;
                         break;
                     }
+                    if (current.c < current.next.c) {
+                        Node rand = current.next.next;
+                        trail.next = current.next;
+                        trail.next.next = current;
+                        current.next = rand;
+                        sorted = false;
+                        break;
+                    }
+                    trail = current;
                     current = current.next;
                 }
             }
         }
+        return temp;
+    }
+    
+    public Lista bubbleSort2() { // BW
+        Lista temp = this;
+        Node current = temp.inicio;
+        Node trail = current;
+        Boolean sorted = false;
+
+        if (temp.inicio == null) {
+            System.out.println("Lista esta vacio");
+        } else if (current.next == null) {
+            return temp;
+        } else if (current.next.next == null) {
+            if (current.bw > current.next.bw) {
+                Node rand = current.next;
+                rand.next = current;
+                current.next = null;
+                temp.inicio = rand;
+                return temp;
+            }
+        } else {
+            while (sorted == false) {
+                sorted = true;
+                current = temp.inicio;
+                while (current.next != null) {
+                    if (temp.inicio.bw > temp.inicio.next.bw) {
+                        Node rand = temp.inicio.next.next;
+                        temp.inicio.next.next = temp.inicio;
+                        temp.inicio = temp.inicio.next;
+                        temp.inicio.next.next = rand;
+                        sorted = false;
+                        break;
+                    }
+                    if (current.bw > current.next.bw) {
+                        Node rand = current.next.next;
+                        trail.next = current.next;
+                        trail.next.next = current;
+                        current.next = rand;
+                        sorted = false;
+                        break;
+                    }
+                    trail = current;
+                    current = current.next;
+                }
+            }
+        }
+        return temp;
+    }
+    
+    public Node maxTime() {
+        int max = 0;
+        Node high = new Node();
+        Node current = this.inicio;
+        while (current != null) {
+            if ((current.turnoF - current.turnoI) > max) {
+                max = current.turnoF - current.turnoI;
+                high = current;
+            }
+            current = current.next;
+        }
+        return high;
+    }
+    
+    public Node search(int id) {
+        Node current = this.inicio;
+        while (current != null) {
+            if (current.id == id) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
     }
 }

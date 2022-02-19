@@ -28,19 +28,25 @@ public class Main {
         Lista colaBW = new Lista();
         Lista colaC = new Lista();
         Lista historia = new Lista();
+        
+        Graphing graph = new Graphing();
 
         opcion = menu();
         while (opcion != 6) {
             if (opcion == 1) {
+                System.out.println("--------------------------");
                 System.out.println("1. Carga masiva de clientes\n"
                         + "2. Cantidad de ventanillas");
+                System.out.println("--------------------------");
                 opcion = myObj.nextInt();
                 if (opcion == 1) {
                     System.out.println("Placeholder");
                     opcion = menu();
                 } else if (opcion == 2) {
+                    System.out.println("--------------------------");
                     System.out.println("Ingresar Parametros Iniciales: \n"
                             + "Numero de Ventanillas (n): ");
+                    System.out.println("--------------------------");
                     n = myObj.nextInt();
                     System.out.println("Numero de Ventanillas: " + n);
                     ventanillaC = new Lista(n);
@@ -51,7 +57,9 @@ public class Main {
                     opcion = menu();
                 }
             } else if (opcion == 2) {
+                System.out.println("--------------------------");
                 System.out.println("2. Ejecutar paso");
+                System.out.println("--------------------------");
                 colaInicial.addRandom(turno);
 
                 if (colaBW.inicio != null) {
@@ -68,13 +76,16 @@ public class Main {
                         colaInicial.pop();
                     }
                 }
-
                 turno++;
                 opcion = menu();
                 continue;
             } else if (opcion == 3) {
                 System.out.println("3. Estado en memoria de las estructuras");// Graphviz tomorrow
+                graph.document_(colaInicial, espera, ventanillaC, ventanillaT, colaBW, colaC, "graph1");
+                graph.graph("graph1");
+                opcion = menu();
             } else if (opcion == 4) {
+                System.out.println("--------------------------");
                 System.out.println("4. Reportes");
                 System.out.println("--------------------------");
                 historia.display();
@@ -83,38 +94,39 @@ public class Main {
                         + "2. Top 5 Clientes con menor cantidad de imagenes en blanco y negro.\n"
                         + "3. Informacion del Cliente que mas pasos estuvo en el sistema.\n"
                         + "4. Datos de un cliente en especifico.\n");
+                System.out.println("--------------------------");
                 opcion = myObj.nextInt();
                 if (opcion == 1) {
-                    Lista rand = bubbleSort1(historia);
+                    Lista rand = historia.bubbleSort1();
                     Node temp = rand.inicio;
                     int i = 0;
                     while (i < 5 && temp != null) {
                         System.err.println((i + 1) + ") " + temp.nombre + ": ID:" + temp.id + " ---Colores: " + temp.c);
                         temp = temp.next;
                         i++;
-                    }
-                    rand.display();
+                    } pressAnyKeyToContinue(); //rand.display();
                     opcion = menu();
                 } else if (opcion == 2) {
-                    Lista rand = bubbleSort2(historia);
+                    Lista rand = historia.bubbleSort2();
                     Node temp = rand.inicio;
                     int i = 0;
                     while (i < 5 && temp != null) {
                         System.err.println((i + 1) + ") " + temp.nombre + ": ID:" + temp.id + " ---BW: " + temp.bw);
                         temp = temp.next;
                         i++;
-                    }
-                    rand.display();
+                    } pressAnyKeyToContinue(); //rand.display();
                     opcion = menu();
                 } else if (opcion == 3) {
-                    Node high = maxTime(historia);
+                    Node high = historia.maxTime();
                     System.out.println(high.id + " : " + high.nombre + " : Turnos-" + (high.turnoF - high.turnoI));
+                    pressAnyKeyToContinue();
                     opcion = menu();
                 } else if (opcion == 4) {
                     System.out.println("ID del cliente: ");
                     int u = myObj.nextInt();
-                    Node search = search(historia, u);
+                    Node search = historia.search(u);
                     System.out.println("ID: " + search.id + "\nNombre:" + search.nombre + "\nIMG Colores: " + search.c + "\nIMG BW: " + search.bw);
+                    pressAnyKeyToContinue();
                     opcion = menu();
                 } else {
                     System.out.println("Opcion invalido: Regresando al Menu Principal");
@@ -134,12 +146,14 @@ public class Main {
     public static int menu() {
         Scanner myObj = new Scanner(System.in);
         int opcion = 0;
+        System.out.println("\n--------------------------");
         System.out.println("1. Parametros Iniciales\n"
                 + "2. Ejecutar Paso\n"
                 + "3. Estado en memoria de las estructuras\n"
                 + "4. Reportes\n"
                 + "5. Acerca De\n"
                 + "6. Salir");
+        System.out.println("--------------------------\n");
         try {
             opcion = myObj.nextInt();
         } catch (Exception e) {
@@ -148,122 +162,12 @@ public class Main {
         return opcion;
     }
 
-    public static Lista bubbleSort1(Lista historial) { // Colores
-        Lista temp = historial;
-        Node current = temp.inicio;
-        Node trail = current;
-        Boolean sorted = false;
-
-        if (temp.inicio == null) {
-            System.out.println("Lista esta vacio");
-        } else if (current.next == null) {
-            return temp;
-        } else if (current.next.next == null) {
-            if (current.c < current.next.c) {
-                Node rand = current.next;
-                rand.next = current;
-                current.next = null;
-                temp.inicio = rand;
-                return temp;
-            }
-        } else {
-            while (sorted == false) {
-                sorted = true;
-                current = temp.inicio;
-                while (current.next != null) {
-                    if (temp.inicio.c < temp.inicio.next.c) {
-                        Node rand = temp.inicio.next.next;
-                        temp.inicio.next.next = temp.inicio;
-                        temp.inicio = temp.inicio.next;
-                        temp.inicio.next.next = rand;
-                        sorted = false;
-                        break;
-                    }
-                    if (current.c < current.next.c) {
-                        Node rand = current.next.next;
-                        trail.next = current.next;
-                        trail.next.next = current;
-                        current.next = rand;
-                        sorted = false;
-                        break;
-                    }
-                    trail = current;
-                    current = current.next;
-                }
-            }
+    private static void pressAnyKeyToContinue() {
+        System.out.println("Press Enter key to continue...");
+        try {
+            System.in.read();
+        } catch (Exception e) {
         }
-        return temp;
     }
 
-    public static Lista bubbleSort2(Lista historial) { // BW
-        Lista temp = historial;
-        Node current = temp.inicio;
-        Node trail = current;
-        Boolean sorted = false;
-
-        if (temp.inicio == null) {
-            System.out.println("Lista esta vacio");
-        } else if (current.next == null) {
-            return temp;
-        } else if (current.next.next == null) {
-            if (current.bw > current.next.bw) {
-                Node rand = current.next;
-                rand.next = current;
-                current.next = null;
-                temp.inicio = rand;
-                return temp;
-            }
-        } else {
-            while (sorted == false) {
-                sorted = true;
-                current = temp.inicio;
-                while (current.next != null) {
-                    if (temp.inicio.bw > temp.inicio.next.bw) {
-                        Node rand = temp.inicio.next.next;
-                        temp.inicio.next.next = temp.inicio;
-                        temp.inicio = temp.inicio.next;
-                        temp.inicio.next.next = rand;
-                        sorted = false;
-                        break;
-                    }
-                    if (current.bw > current.next.bw) {
-                        Node rand = current.next.next;
-                        trail.next = current.next;
-                        trail.next.next = current;
-                        current.next = rand;
-                        sorted = false;
-                        break;
-                    }
-                    trail = current;
-                    current = current.next;
-                }
-            }
-        }
-        return temp;
-    }
-
-    public static Node maxTime(Lista historial) {
-        int max = 0;
-        Node high = new Node();
-        Node current = historial.inicio;
-        while (current != null) {
-            if ((current.turnoF - current.turnoI) > max) {
-                max = current.turnoF - current.turnoI;
-                high = current;
-            }
-            current = current.next;
-        }
-        return high;
-    }
-
-    public static Node search(Lista historial, int id) {
-        Node current = historial.inicio;
-        while(current != null){
-            if(current.id == id){
-                return current;
-            }
-            current = current.next;
-        }
-        return null;
-    }
 }
