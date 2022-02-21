@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd_proyecto_fase1_201612174;
 
 /**
@@ -41,8 +36,7 @@ public class Pila {
             Node temp = inicio;
             while(temp.next != fin){
                 temp = temp.next;
-            }
-            //System.out.println(fin.data + " has been removed");
+            }//System.out.println(fin.data + " has been removed");
             fin = temp;
             fin.next = null;
         }

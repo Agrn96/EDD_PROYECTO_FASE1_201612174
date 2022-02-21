@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd_proyecto_fase1_201612174;
 
 import java.io.IOException;
@@ -21,14 +16,14 @@ public class Main {
         Scanner myObj = new Scanner(System.in);
         int n, opcion = 0, turno = 0;
 
-        Lista colaInicial = new Lista();
-        Lista espera = new Lista();
-        Lista ventanillaC = new Lista(0);
-        Lista ventanillaT = new Lista(0, 0);
-        Lista colaBW = new Lista();
-        Lista colaC = new Lista();
-        Lista historia = new Lista();
-        
+        Lista colaInicial = new Lista();        //Cola 
+        Lista espera = new Lista();             //Lista DOblemente Enlazada Circular
+        Lista ventanillaC = new Lista(0);       //Lista
+        Lista ventanillaT = new Lista(0, 0);    //Lista de Pilas
+        Lista colaBW = new Lista();             //Cola
+        Lista colaC = new Lista();              //Cola
+        Lista historia = new Lista();           //Lista
+        leer_json leer = new leer_json();
         Graphing graph = new Graphing();
 
         opcion = menu();
@@ -40,7 +35,13 @@ public class Main {
                 System.out.println("--------------------------");
                 opcion = myObj.nextInt();
                 if (opcion == 1) {
-                    System.out.println("Placeholder");
+                    System.out.println("Ingresar nombre del archivo");
+                    myObj.nextLine();
+                    String t = myObj.nextLine();
+                    //String fileName = "D:\\Documents\\Projects\\EDD_PROYECTO_FASE1_201612174\\src\\edd_proyecto_fase1_201612174\\" + t;
+                    String fileName = "src\\edd_proyecto_fase1_201612174\\" + t;
+                    System.out.println(fileName);
+                    leer.leer(colaInicial, fileName);
                     opcion = menu();
                 } else if (opcion == 2) {
                     System.out.println("--------------------------");
@@ -98,41 +99,32 @@ public class Main {
                 opcion = myObj.nextInt();
                 if (opcion == 1) {
                     Lista rand = historia.bubbleSort1();
-                    Node temp = rand.inicio;
-                    int i = 0;
-                    while (i < 5 && temp != null) {
-                        System.err.println((i + 1) + ") " + temp.nombre + ": ID:" + temp.id + " ---Colores: " + temp.c);
-                        temp = temp.next;
-                        i++;
-                    } pressAnyKeyToContinue(); //rand.display();
+                    graph.reportes(rand, opcion);
+                    graph.graph("reporte");
                     opcion = menu();
                 } else if (opcion == 2) {
                     Lista rand = historia.bubbleSort2();
-                    Node temp = rand.inicio;
-                    int i = 0;
-                    while (i < 5 && temp != null) {
-                        System.err.println((i + 1) + ") " + temp.nombre + ": ID:" + temp.id + " ---BW: " + temp.bw);
-                        temp = temp.next;
-                        i++;
-                    } pressAnyKeyToContinue(); //rand.display();
+                    graph.reportes(rand, opcion);
+                    graph.graph("reporte");
                     opcion = menu();
                 } else if (opcion == 3) {
                     Node high = historia.maxTime();
-                    System.out.println(high.id + " : " + high.nombre + " : Turnos-" + (high.turnoF - high.turnoI));
-                    pressAnyKeyToContinue();
+                    graph.reportes(high);
+                    graph.graph("reporte");
                     opcion = menu();
                 } else if (opcion == 4) {
                     System.out.println("ID del cliente: ");
                     int u = myObj.nextInt();
                     Node search = historia.search(u);
-                    System.out.println("ID: " + search.id + "\nNombre:" + search.nombre + "\nIMG Colores: " + search.c + "\nIMG BW: " + search.bw);
-                    pressAnyKeyToContinue();
+                    graph.reportes(search);
+                    graph.graph("reporte");
                     opcion = menu();
                 } else {
                     System.out.println("Opcion invalido: Regresando al Menu Principal");
                 }
             } else if (opcion == 5) {
                 System.out.println("5. Acerca De:\nAlberto Gabriel Reyes Ning\n201612174");
+                opcion = menu();
             } else if (opcion == 6) {
                 System.out.println("Saliendo del Aplicacion");
                 System.exit(0);
@@ -161,13 +153,4 @@ public class Main {
         }
         return opcion;
     }
-
-    private static void pressAnyKeyToContinue() {
-        System.out.println("Press Enter key to continue...");
-        try {
-            System.in.read();
-        } catch (Exception e) {
-        }
-    }
-
 }

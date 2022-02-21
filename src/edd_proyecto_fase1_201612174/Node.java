@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edd_proyecto_fase1_201612174;
 
 /**
@@ -12,9 +7,10 @@ package edd_proyecto_fase1_201612174;
 public class Node {
 
     Pila info = new Pila();
-    public int data, id, c, bw, tiempoCompleto = 0, tempC = 0, tempBW = 0, turnoI, turnoF;
+    public int data, id, c, bw, tempC = 0, tempBW = 0, turnoI, turnoF;
     public String nombre;
     public Node next = null;
+    public Node prev = null;
 
     public Node() {
     }
@@ -39,7 +35,6 @@ public class Node {
         id = 0;
         c = 0;
         bw = 0;
-        tiempoCompleto = 0;
         tempC = 0;
         tempBW = 0;
         nombre = "";
@@ -49,10 +44,10 @@ public class Node {
         this.id = temp.id;
         this.c = temp.c;
         this.bw = temp.bw;
-        this.tiempoCompleto = temp.tiempoCompleto;
+        this.turnoI = temp.turnoI;
+        this.turnoF = temp.turnoF;
         this.tempC = 0;
         this.tempBW = 0;
         this.nombre = temp.nombre;
     }
-
 }

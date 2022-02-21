@@ -1,0 +1,11 @@
+digraph G
+{
+	rankdir="TB"
+
+R1 [label="Cliente : 1 IMG C :5"];
+R2 [label="Cliente : 8 IMG C :0"];
+R1 -> R2
+R2 -> R3
+R3 -> R4
+R4 -> R5
+}

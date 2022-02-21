@@ -1,89 +1,65 @@
 digraph G
 {
 	rankdir="TB"
-	CI0 [label="Cliente: 12 IMG BW: 1 IMG C: 3"];
-	CI1 [label="Cliente: 13 IMG BW: 3 IMG C: 5"];
-	CI2 [label="Cliente: 14 IMG BW: 5 IMG C: 5"];
-	CI3 [label="Cliente: 15 IMG BW: 1 IMG C: 2"];
-	CI4 [label="Cliente: 16 IMG BW: 0 IMG C: 5"];
-	CI5 [label="Cliente: 17 IMG BW: 0 IMG C: 5"];
-	CI6 [label="Cliente: 18 IMG BW: 2 IMG C: 0"];
-	CI7 [label="Cliente: 19 IMG BW: 1 IMG C: 0"];
-	CI8 [label="Cliente: 20 IMG BW: 1 IMG C: 5"];
-	CI9 [label="Cliente: 21 IMG BW: 3 IMG C: 4"];
-	CI10 [label="Cliente: 22 IMG BW: 5 IMG C: 2"];
-	CI11 [label="Cliente: 23 IMG BW: 1 IMG C: 1"];
-	CI12 [label="Cliente: 24 IMG BW: 3 IMG C: 2"];
-	CI13 [label="Cliente: 25 IMG BW: 2 IMG C: 1"];
-	CI14 [label="Cliente: 26 IMG BW: 4 IMG C: 2"];
+	CI0 [label="Cliente: 4 IMG BW: 2 IMG C: 2",style=filled, color=white];
+	CI1 [label="Cliente: 5 IMG BW: 1 IMG C: 2",style=filled, color=white];
+	CI2 [label="Cliente: 6 IMG BW: 1 IMG C: 3",style=filled, color=white];
 
-CI0 -> CI1 -> CI2 -> CI3 -> CI4 -> CI5 -> CI6 -> CI7 -> CI8 -> CI9 -> CI10 -> CI11 -> CI12 -> CI13 -> CI14
-VC0 [label="Cliente: 7 IMG BW: 4 IMG C: 5"];
+
+subgraph cluster_CI {
+	style=filled;
+	color=lightgrey;
+	label="Cola Inicial"
+	CI0 -> CI1 -> CI2;
+}
+subgraph cluster_vent0{
+subgraph cluster_v0{
+VC0 [label="Cliente: 1 IMG BW: 0 IMG C: 5"];
 VT0 [label="Ventanilla: 1"];
-
-IMG0 [label="IMG BW"];
+IMG0 [label="IMG C"];
 VT0 -> IMG0
-IMG1 [label="IMG BW"];
-IMG0 -> IMG1
-IMG2 [label="IMG BW"];
-IMG1 -> IMG2
-IMG3 [label="IMG BW"];
-IMG2 -> IMG3
-IMG4 [label="IMG C"];
-IMG3 -> IMG4
-IMG5 [label="IMG C"];
-IMG4 -> IMG5
-IMG6 [label="IMG C"];
-IMG5 -> IMG6
-VC1 [label="Cliente: 11 IMG BW: 1 IMG C: 0"];
+IMG1 [label="IMG C"];
+IMG0 -> IMG1}
+subgraph cluster_v1{
+VC1 [label="Cliente: 2 IMG BW: 3 IMG C: 4"];
 VT1 [label="Ventanilla: 2"];
+IMG2 [label="IMG BW"];
+VT1 -> IMG2}
+subgraph cluster_v2{
+VC2 [label="Cliente: 3 IMG BW: 2 IMG C: 3"];
+VT2 [label="Ventanilla: 3"];}
 
-IMG7 [label="IMG BW"];
-VT1 -> IMG7
-VC2 [label="Cliente: 10 IMG BW: 4 IMG C: 2"];
-VT2 [label="Ventanilla: 3"];
-
-IMG8 [label="IMG BW"];
-VT2 -> IMG8
-IMG9 [label="IMG BW"];
-IMG8 -> IMG9
 VT0 -> VT1 -> VT2
 VC0 -> VC1 -> VC2
 
 VC0 -> VT0
 VC1 -> VT1
 VC2 -> VT2
-	E0 [label="Cliente: 4 IMG BW: 4 IMG C: 4"];
-	E1 [label="Cliente: 5 IMG BW: 3 IMG C: 2"];
-	E2 [label="Cliente: 6 IMG BW: 2 IMG C: 4"];
-	E3 [label="Cliente: 8 IMG BW: 3 IMG C: 0"];
-	E4 [label="Cliente: 9 IMG BW: 0 IMG C: 3"];
+label="Ventanillas";
+}
 
-E0 -> E1 -> E2 -> E3 -> E4 -> E0
+subgraph cluster_Espera {
+style=filled
+color=lightyellow
 
+label="Lista de Espera"
+}
+
+subgraph cluster_CBW {
+style=filled
+color=lightgrey
 
 CBW0 [label="Impresora Black & White"];
-CBW1 [label="IMG BW"];
-CBW2 [label="IMG BW"];
-CBW3 [label="IMG BW"];
-CBW4 [label="IMG BW"];
-CBW5 [label="IMG BW"];
-CBW0 -> CBW1 -> CBW2 -> CBW3 -> CBW4 -> CBW5
+CBW0
+}
 
+subgraph cluster_CC {
+style=filled
+color=lightblue
 
 CC0 [label="Impresora Colour"];
-CC1 [label="IMG C"];
-CC2 [label="IMG C"];
-CC3 [label="IMG C"];
-CC4 [label="IMG C"];
-CC5 [label="IMG C"];
-CC6 [label="IMG C"];
-CC7 [label="IMG C"];
-CC8 [label="IMG C"];
-CC9 [label="IMG C"];
-CC10 [label="IMG C"];
-CC11 [label="IMG C"];
-CC12 [label="IMG C"];
-CC13 [label="IMG C"];
-CC0 -> CC1 -> CC2 -> CC3 -> CC4 -> CC5 -> CC6 -> CC7 -> CC8 -> CC9 -> CC10 -> CC11 -> CC12 -> CC13
+CC0}
+Impresora -> CC0
+Impresora -> CBW0
+label="Impresoras"
 }
