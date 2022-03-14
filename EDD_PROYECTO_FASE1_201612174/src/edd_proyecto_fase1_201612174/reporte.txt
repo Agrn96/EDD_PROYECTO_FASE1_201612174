@@ -1,0 +1,6 @@
+digraph G
+{
+	rankdir="TB"
+R1 [label="Cliente 3 IMG C: 0 IMG BW: 3 TURNOS: 7"];
+	R1
+}
