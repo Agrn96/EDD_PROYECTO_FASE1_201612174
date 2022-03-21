@@ -3,18 +3,29 @@ digraph G
 rankdir="TB"
 node[shape = rectangle]
 label="Carnet: 201612174"
-MD -> 65 -> 67 -> 69 -> 71 -> 73
-MD -> 100 -> 101 -> 102 -> 103 -> 104
-1 -> 3x -> 1
-1 -> 3x -> 1[constraint=false]
-3x -> 1x -> 3x
-3 -> 1x -> 3[constraint=false]
-2 -> 6x -> 2
-1 -> 6x -> 1[constraint=false]
-6x -> 4x -> 6x
-2 -> 4x -> 2[constraint=false]
-3 -> 2x -> 3
-6x -> 2x -> 6x
-2x -> 5x -> 2x
-4x -> 5x -> 4x
+MD -> a1 -> a2 -> a3 -> a4 -> a5
+MD -> b1 -> b2 -> b3 -> b4 -> b5
+{rank=same;MD;b1;b2;b3;b4;b5;}
+a1 -> x1 -> a1[constraint=false]
+b3 -> x1 -> b3
+
+{rank=same;a1;x1;}
+a2 -> x4 -> a2[constraint=false]
+b2 -> x4 -> b2
+
+{rank=same;a2;x4;}
+a3 -> x5 -> a3[constraint=false]
+x4 -> x5 -> x4
+
+{rank=same;a3;x5;}
+a4 -> x2 -> a4[constraint=false]
+x1 -> x2 -> x1
+
+{rank=same;a4;x2;}
+a5 -> x6 -> a5[constraint=false]
+b1 -> x6 -> b1
+x6 -> x3 -> x6[constraint=false]
+b4 -> x3 -> b4
+
+{rank=same;a5;x6;x3;}
 }

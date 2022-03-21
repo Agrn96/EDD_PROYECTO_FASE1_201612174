@@ -50,7 +50,6 @@ public class Lista_Orthogonal {
             System.out.println(temp.id);
         }
         if (temp.nodeAccess == null) {            //Checks if headers point to something
-
             temp.nodeAccess = newNode;          //If it doesn't, it'll point to it from the coloumn
             temp = inicio.prev;                 //Sets it to the row
             while (temp.id != x) {                //Searches for the right row
@@ -83,8 +82,8 @@ public class Lista_Orthogonal {
                 }
             }
         } else {                                //If header already points to a node, it does a comparison
-
             if (temp.nodeAccess.row > newNode.row) { //If it's smaller than node access, it becomes the new node access
+                
                 System.out.println(newNode.row + " GGG " + newNode.col);
                 temp.nodeAccess.up = newNode;
                 newNode.down = temp.nodeAccess;
@@ -123,6 +122,7 @@ public class Lista_Orthogonal {
 
             } else {                                    // Otherwise, it compares the col until it reaches the correct one
                 temp_ = temp.nodeAccess;
+                
                 while (temp_ != null) {
                     if (temp_.down == null) {
                         temp_.down = newNode;
@@ -130,9 +130,11 @@ public class Lista_Orthogonal {
                         break;
                     } else {
                         if (temp_.down.row > newNode.row) {
+                            System.out.println(data + " ddd");
                             temp_.down.up = newNode;
-                            newNode.down = temp_;
+                            newNode.up = temp_;
                             newNode.down = temp_.down;
+                            
                             temp_.down = newNode;
                         }
                     }
@@ -242,9 +244,10 @@ public class Lista_Orthogonal {
         }
 
     }
-    public void graph(String fileName){
+
+    public void graph(String fileName) {
         try {
-            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\" + fileName +".txt");
+            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\" + fileName + ".txt");
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nnode[shape = rectangle]\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora());
             myWriter.write("}");
@@ -256,61 +259,63 @@ public class Lista_Orthogonal {
             e.printStackTrace();
         }
     }
-    
-    public String graficadora(){
+
+    public String graficadora() {
         String cadena;
+        String rowInfo = "MD;";
         cadena = "MD -> ";
-        for(int i = 0; i < row; i++){
-            int a = 65 + i;
-            char c = (char)a; //Verificar como cambiar a letras;
-            if(i == row-1){
-                cadena += c + i + "\n";
+        for (int i = 0; i < row; i++) {
+            if (i == row - 1) {
+                cadena += "a" + (i + 1) + "\n";
             } else {
-                cadena += c + i + " -> ";
+                cadena += "a" + (i + 1) + " -> ";
             }
+
         }
-       cadena += "MD -> ";
-        for(int i = 0; i < col; i++){
-            if(i == col-1){
-                cadena += i+100 + "\n";
+
+        cadena += "MD -> ";
+        for (int i = 0; i < col; i++) {
+            if (i == col - 1) {
+                cadena += "b" + (i + 1) + "\n";
             } else {
-                cadena += i+100 + " -> ";
+                cadena += "b" + (i + 1) + " -> ";
             }
+            rowInfo += "b" + (i + 1) + ";";
         }
-        
+        cadena += "{rank=same;" + rowInfo + "}\n";
         Node temp = inicio.prev;
-        while(temp != null){
-            String row = "";
-            row += temp.id + ";";
+        while (temp != null) {
+            rowInfo = "";
+            rowInfo += "a" + temp.id + ";";
             Node temp_ = temp.nodeAccess;
-            if(temp.nodeAccess == null){
+            if (temp.nodeAccess == null) {
                 temp = temp.prev;
                 continue;
             } else {
-                cadena += temp_.row + " -> " + temp_.data + "x -> " + temp_.row + "\n";
-                row += temp_.data + ";";
-                if(temp_.up == null){
-                    cadena += temp_.col + " -> " + temp_.data + "x -> " + temp_.col+ "[constraint=false]\n";
+                cadena += "a" + temp_.row + " -> x" + temp_.data + " -> a" + temp_.row + "[constraint=false]\n";
+                rowInfo += "x" + temp_.data + ";";
+                if (temp_.up == null) {
+                    System.out.println(temp_.data);
+                    cadena += "b" + temp_.col + " -> x" + temp_.data + " -> b" + temp_.col + "\n";
                 } else {
-                    cadena += temp_.up.data + "x -> " + temp_.data + "x -> " + temp_.up.data + "x\n";
+                    cadena += "x" + temp_.up.data + " -> x" + temp_.data + " -> x" + temp_.up.data + "\n";
                 }
                 temp_ = temp_.right;
             }
-            while(temp_ != null){
-                cadena += temp_.left.data + "x -> " + temp_.data + "x -> " + temp_.left.data + "x\n";
-                row += temp_.data + ";";
-                if(temp_.up == null){
-                    cadena += temp_.col + " -> " + temp_.data + "x -> " + temp_.col+ "[constraint=false]\n";
+            while (temp_ != null) {
+                cadena += "x" + temp_.left.data + " -> x" + temp_.data + " -> x" + temp_.left.data + "[constraint=false]\n";
+                rowInfo += "x" + temp_.data + ";";
+                if (temp_.up == null) {
+                    cadena += "b" + temp_.col + " -> x" + temp_.data + " -> b" + temp_.col + "\n";
                 } else {
-                    cadena += temp_.up.data + "x -> " + temp_.data + "x -> " + temp_.up.data + "x\n";
+                    cadena += "x" + temp_.up.data + " -> x" + temp_.data + " -> x" + temp_.up.data + "\n";
                 }
                 temp_ = temp_.right;
             }
             temp = temp.prev;
+            cadena += "\n{rank=same;" + rowInfo + "}\n";
         }
-        
-        
-        
+
         return cadena;
     }
 }
