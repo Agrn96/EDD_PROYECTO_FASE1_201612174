@@ -9,8 +9,23 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Lista_Orthogonal MD = new Lista_Orthogonal();
         
-        // TODO code application logic here
+        MD.add_headers("t",5,5);
+        MD.display();
+        MD.add_nodes(3, 1, 2);
+        MD.add_nodes(1, 3, 1);
+        MD.add_nodes(1, 1, 3);
+        MD.add_nodes(2, 2, 4);
+        MD.add_nodes(3, 2, 5);
+        MD.add_nodes(2, 1, 6);
+        //MD.add_nodes(3, 1, 2);
+        
+        System.out.println("New");
+        MD.display();
+        System.out.println("New");
+        MD.display2();
     }
+    
     
 }
