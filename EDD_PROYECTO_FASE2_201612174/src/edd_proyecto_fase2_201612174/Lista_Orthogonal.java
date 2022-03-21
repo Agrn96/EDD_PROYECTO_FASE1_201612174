@@ -1,5 +1,8 @@
 package edd_proyecto_fase2_201612174;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
@@ -19,6 +22,8 @@ public class Lista_Orthogonal {
     public void add_headers(String name, int x, int y) {
         Node node_Header = new Node(name);  // Create new node that has matrix name (1st block)
         this.inicio = node_Header;
+        this.row = x;
+        this.col = y;
         Node temp = this.inicio;
         for (int i = 0; i < x; i++) {         // Create all the row headers in the matrix
             Node row = new Node(i + 1);
@@ -237,7 +242,75 @@ public class Lista_Orthogonal {
         }
 
     }
-    //public void graph(){
-
-    //}
+    public void graph(String fileName){
+        try {
+            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\" + fileName +".txt");
+            myWriter.write("digraph G\n{\nrankdir=\"TB\"\nnode[shape = rectangle]\nlabel=\"Carnet: 201612174\"\n");
+            myWriter.write(graficadora());
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("MD");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+    
+    public String graficadora(){
+        String cadena;
+        cadena = "MD -> ";
+        for(int i = 0; i < row; i++){
+            int a = 65 + i;
+            char c = (char)a; //Verificar como cambiar a letras;
+            if(i == row-1){
+                cadena += c + i + "\n";
+            } else {
+                cadena += c + i + " -> ";
+            }
+        }
+       cadena += "MD -> ";
+        for(int i = 0; i < col; i++){
+            if(i == col-1){
+                cadena += i+100 + "\n";
+            } else {
+                cadena += i+100 + " -> ";
+            }
+        }
+        
+        Node temp = inicio.prev;
+        while(temp != null){
+            String row = "";
+            row += temp.id + ";";
+            Node temp_ = temp.nodeAccess;
+            if(temp.nodeAccess == null){
+                temp = temp.prev;
+                continue;
+            } else {
+                cadena += temp_.row + " -> " + temp_.data + "x -> " + temp_.row + "\n";
+                row += temp_.data + ";";
+                if(temp_.up == null){
+                    cadena += temp_.col + " -> " + temp_.data + "x -> " + temp_.col+ "[constraint=false]\n";
+                } else {
+                    cadena += temp_.up.data + "x -> " + temp_.data + "x -> " + temp_.up.data + "x\n";
+                }
+                temp_ = temp_.right;
+            }
+            while(temp_ != null){
+                cadena += temp_.left.data + "x -> " + temp_.data + "x -> " + temp_.left.data + "x\n";
+                row += temp_.data + ";";
+                if(temp_.up == null){
+                    cadena += temp_.col + " -> " + temp_.data + "x -> " + temp_.col+ "[constraint=false]\n";
+                } else {
+                    cadena += temp_.up.data + "x -> " + temp_.data + "x -> " + temp_.up.data + "x\n";
+                }
+                temp_ = temp_.right;
+            }
+            temp = temp.prev;
+        }
+        
+        
+        
+        return cadena;
+    }
 }

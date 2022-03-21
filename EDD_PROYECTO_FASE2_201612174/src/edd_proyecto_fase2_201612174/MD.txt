@@ -1,0 +1,20 @@
+digraph G
+{
+rankdir="TB"
+node[shape = rectangle]
+label="Carnet: 201612174"
+MD -> 65 -> 67 -> 69 -> 71 -> 73
+MD -> 100 -> 101 -> 102 -> 103 -> 104
+1 -> 3x -> 1
+1 -> 3x -> 1[constraint=false]
+3x -> 1x -> 3x
+3 -> 1x -> 3[constraint=false]
+2 -> 6x -> 2
+1 -> 6x -> 1[constraint=false]
+6x -> 4x -> 6x
+2 -> 4x -> 2[constraint=false]
+3 -> 2x -> 3
+6x -> 2x -> 6x
+2x -> 5x -> 2x
+4x -> 5x -> 4x
+}

@@ -18,6 +18,7 @@ public class Main {
         MD.add_nodes(1, 1, 3);
         MD.add_nodes(2, 2, 4);
         MD.add_nodes(3, 2, 5);
+        //MD.add_nodes(1, 3, 7); // Duplicates are taking into account the col pointers but not adding the row ones
         MD.add_nodes(2, 1, 6);
         //MD.add_nodes(3, 1, 2);
         
@@ -25,6 +26,7 @@ public class Main {
         MD.display();
         System.out.println("New");
         MD.display2();
+        MD.graph("MD");
     }
     
     
