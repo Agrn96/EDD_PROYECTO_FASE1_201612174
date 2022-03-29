@@ -77,14 +77,14 @@ public class ABB {
         if (temp == null) {
             return;
         }
-        displayPreO(temp.left);
-        displayPreO(temp.right);
+        displayPostO(temp.left);
+        displayPostO(temp.right);
         System.out.println(temp.data);
     }
     //Graph ABB
     public void graficar(Node_ABB node) {
         try {
-            FileWriter myWriter = new FileWriter("src\\edd_tarea5_201612174\\reporte.txt");
+            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\reporte.txt");
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora(node));
             myWriter.write("}");
@@ -116,8 +116,8 @@ public class ABB {
     public static void imprimir(String fileName) {
         try {
             String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
-            String fileInputPath = "src\\edd_tarea5_201612174\\" + fileName + ".txt";
-            String fileOutputPath = "src\\edd_tarea5_201612174\\" + fileName + ".jpg";
+            String fileInputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".txt";
+            String fileOutputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".jpg";
 
             String tParam = "-Tjpg";
             String tOParam = "-o";

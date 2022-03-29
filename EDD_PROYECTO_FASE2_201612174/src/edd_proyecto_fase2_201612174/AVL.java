@@ -1,0 +1,184 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edd_proyecto_fase2_201612174;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+/**
+ *
+ * @author 201612174 --Alberto Gabriel Reyes Ning
+ */
+public class AVL {
+
+    Node_AVL raiz;
+
+    public AVL() {
+        raiz = null;
+    }
+
+    public int height(Node_AVL x) {
+        if (x == null) {
+            return 0;
+        } else {
+            return x.height;
+        }
+        //Math.max(3, 5);
+    }
+
+    public Node_AVL rightRotate(Node_AVL x) {
+        Node_AVL temp = x.left;
+        Node_AVL temp_ = temp.right;
+
+        temp.right = x;
+        x.left = temp_;
+
+        x.height = Math.max(height(x.left), height(x.right)) + 1;
+        temp.height = Math.max(height(temp.left), height(temp.right)) + 1;
+
+        return temp;
+    }
+
+    public Node_AVL leftRotate(Node_AVL x) {
+        Node_AVL temp = x.right;
+        Node_AVL temp_ = temp.left;
+
+        temp.left = x;
+        x.right = temp_;
+
+        x.height = Math.max(height(x.left), height(x.right)) + 1;
+        temp.height = Math.max(height(temp.left), height(temp.right)) + 1;
+
+        return temp;
+    }
+
+    public int getBalance(Node_AVL x) {
+        if (x == null) {
+            return 0;
+        } else {
+            return height(x.left) - height(x.right);
+        }
+    }
+    
+    public Node_AVL insert(Node_AVL x, int data){
+        if(x == null){
+            return (new Node_AVL(data));
+        }
+        
+        if(data < x.data){
+            x.left = insert(x.left, data);
+        } else if (data > x.data){
+            x.right = insert(x.right, data);
+        } else {
+            return x;
+        }
+        
+        x.height = 1 + Math.max(height(x.left), height(x.right));
+        
+        int balance = getBalance(x);
+        
+        if( balance > 1 && data < x.left.data){
+            return rightRotate(x);
+        }
+        
+        if(balance < -1 && data > x.right.data){
+            return leftRotate(x);
+        }
+        
+        if(balance > 1 && data > x.left.data){
+            x.left = leftRotate(x.left);
+            return rightRotate(x);
+        }
+        
+        if(balance < -1 && data < x.right.data){
+            x.right = rightRotate(x.right);
+            return leftRotate(x);
+        }
+        
+        return x;
+    }
+    
+    public void preOrder(Node_AVL x){
+        if(x != null){
+            System.out.print(x.data + " ");
+            preOrder(x.left);
+            preOrder(x.right);
+        }
+    }
+    
+    public void postOrder(Node_AVL x){
+        if(x != null){
+            postOrder(x.left);
+            postOrder(x.right);
+            System.out.print(x.data + " ");
+        }
+    }
+    
+    public void enOrden(Node_AVL x){
+        if(x != null){
+            enOrden(x.left);
+            System.out.print(x.data + " ");
+            enOrden(x.right);
+        }
+    }
+    
+    public void graficar(Node_AVL node) {
+        try {
+            FileWriter myWriter = new FileWriter("src\\edd_tarea6_201612174\\reporte.txt");
+            myWriter.write("digraph G\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\n");
+            myWriter.write(graficadora(node));
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            imprimir("reporte");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(Node_AVL node) {
+        String cadena = "";
+        if ((node.left == null) && (node.right == null)) {
+            cadena = "nodo" + node.data + "[ label =\"" + node.data + "\"]; \n";
+        } else {
+            cadena = "nodo" + node.data + " [ label =\"" + node.data + "\"];\n";
+        }
+        if (node.left != null) {//:C0
+            cadena = cadena + graficadora(node.left) + "nodo" + node.data + "->nodo" + node.left.data + "\n";
+        }
+        if (node.right != null) {//:C1
+            cadena = cadena + graficadora(node.right) + "nodo" + node.data + "->nodo" + node.right.data + "\n";
+        }
+        return cadena;
+    }
+
+    public void imprimir(String fileName) {
+        try {
+            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
+            String fileInputPath = "src\\edd_tarea6_201612174\\" + fileName + ".txt";
+            String fileOutputPath = "src\\edd_tarea6_201612174\\" + fileName + ".jpg";
+
+            String tParam = "-Tjpg";
+            String tOParam = "-o";
+
+            String[] cmd = new String[5];
+            cmd[0] = dotPath;
+            cmd[1] = tParam;
+            cmd[2] = fileInputPath;
+            cmd[3] = tOParam;
+            cmd[4] = fileOutputPath;
+
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(cmd);
+        } catch (IOException e) {
+        } finally {
+        }
+    }
+    
+    
+    
+}

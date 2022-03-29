@@ -4,7 +4,9 @@ package edd_proyecto_fase2_201612174;
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
 public class Node {
-    int id, col, row, data;
+    int id, col_, row_, data;
+    long col, row;
+    String color;
     Node next, prev, nodeAccess, right, left, up, down;
     String name;
     
@@ -32,6 +34,16 @@ public class Node {
         this.col = col;
         this.row = fila;
         this.data = data;
+        this.right = null;
+        this.left = null;
+        this.up = null;
+        this.down = null;
+    }
+    
+    public Node(long fila, long col, String data){   //Node inside matrix
+        this.col = col;
+        this.row = fila;
+        this.color = data;
         this.right = null;
         this.left = null;
         this.up = null;

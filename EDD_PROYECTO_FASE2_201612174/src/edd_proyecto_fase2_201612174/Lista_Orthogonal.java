@@ -11,12 +11,13 @@ public class Lista_Orthogonal {
     Node inicio, fin, next;
     int row, col;
 
-    public Lista_Orthogonal() {
+    public Lista_Orthogonal(int x, int y) {
         this.inicio = null;
         this.fin = null;
         this.next = null;
-        this.row = 0;
-        this.col = 0;
+        this.row = x;
+        this.col = y;
+        add_headers("Capa", x, y);
     }
 
     public void add_headers(String name, int x, int y) {
@@ -198,6 +199,141 @@ public class Lista_Orthogonal {
         }
     }
 
+    
+    public void add_nodes(long x, long y, String data) { // Change data 
+        Node newNode = new Node(x, y, data);
+        System.out.println(newNode.row + " TTT " + newNode.col);
+        Node temp = this.inicio.next; // col
+        Node temp_;
+        while (temp.id != y) {                    //sets it to the correct coloumn
+            temp = temp.next;
+        }
+        if (temp.nodeAccess == null) {            //Checks if headers point to something
+            temp.nodeAccess = newNode;          //If it doesn't, it'll point to it from the coloumn
+            temp = inicio.prev;                 //Sets it to the row
+            while (temp.id != x) {                //Searches for the right row
+                temp = temp.prev;
+            }                                   //Should be on the right row now
+            if (temp.nodeAccess == null) {
+                temp.nodeAccess = newNode;
+            } else {
+                if (temp.nodeAccess.col > newNode.col) { //If it's smaller than node access, it becomes the new node access
+                    temp.nodeAccess.left = newNode;
+                    newNode.right = temp.nodeAccess;
+                    temp.nodeAccess = newNode;
+                } else {                                    // Otherwise, it compares the col until it reaches the correct one
+                    temp_ = temp.nodeAccess;
+                    while (temp_ != null) {
+                        if (temp_.right == null) {
+                            temp_.right = newNode;
+                            newNode.left = temp_;
+                            break;
+                        } else {
+                            if (temp_.right.col > newNode.col) {
+                                temp_.right.left = newNode;
+                                newNode.left = temp_;
+                                newNode.right = temp_.right;
+                                temp_.right = newNode;
+                            }
+                        }
+                        temp_ = temp.right;
+                    }
+                }
+            }
+        } else {                                //If header already points to a node, it does a comparison
+            if (temp.nodeAccess.row > newNode.row) { //If it's smaller than node access, it becomes the new node access
+                
+                System.out.println(newNode.row + " GGG " + newNode.col);
+                temp.nodeAccess.up = newNode;
+                newNode.down = temp.nodeAccess;
+                temp.nodeAccess = newNode;
+
+                temp = inicio.prev;
+                while (temp.id != x) {
+                    temp = temp.prev;
+                }
+                if (temp.nodeAccess == null) {
+                    temp.nodeAccess = newNode;
+                } else {
+                    if (temp.nodeAccess.col > newNode.col) {
+                        temp.nodeAccess.left = newNode;
+                        newNode.right = temp.nodeAccess;
+                        temp.nodeAccess = newNode;
+                    } else {
+                        temp_ = temp.nodeAccess;
+                        while (temp_ != null) {
+                            if (temp_.right == null) {
+                                temp_.right = newNode;
+                                newNode.left = temp_;
+                                break;
+                            } else {
+                                if (temp_.right.col > newNode.col) {
+                                    temp_.right.left = newNode;
+                                    newNode.left = temp_;
+                                    newNode.right = temp_.right;
+                                    temp_.right = newNode;
+                                }
+                            }
+                            temp_ = temp.right;
+                        }
+                    }
+                }
+
+            } else {                                    // Otherwise, it compares the col until it reaches the correct one
+                temp_ = temp.nodeAccess;
+                
+                while (temp_ != null) {
+                    if (temp_.down == null) {
+                        temp_.down = newNode;
+                        newNode.up = temp_;
+                        break;
+                    } else {
+                        if (temp_.down.row > newNode.row) {
+                            System.out.println(data + " ddd");
+                            temp_.down.up = newNode;
+                            newNode.up = temp_;
+                            newNode.down = temp_.down;
+                            
+                            temp_.down = newNode;
+                        }
+                    }
+                    temp_ = temp.down;
+                }
+                while (temp.id != x) {                //Searches for the right row
+                    temp = temp.prev;
+                }                                   //Should be on the right row now
+                if (temp.nodeAccess == null) {
+                    temp.nodeAccess = newNode;
+                } else {
+                    System.out.println(temp.nodeAccess.row + ":" + temp.nodeAccess.col + " FFF " + newNode.row + ":" + newNode.col);
+                    if (temp.nodeAccess.col > newNode.col) { //If it's smaller than node access, it becomes the new node access
+                        temp.nodeAccess.left = newNode;
+                        newNode.right = temp.nodeAccess;
+                        temp.nodeAccess = newNode;
+                        System.out.println("row_nodeA_change");
+                    } else {                                    // Otherwise, it compares the col until it reaches the correct one
+                        temp_ = temp.nodeAccess;
+                        while (temp_ != null) {
+                            if (temp_.right == null) {
+                                temp_.right = newNode;
+                                newNode.left = temp_;
+                                break;
+                            } else {
+                                if (temp_.right.col > newNode.col) {
+                                    temp_.right.left = newNode;
+                                    newNode.left = temp_;
+                                    newNode.right = temp_.right;
+                                    temp_.right = newNode;
+                                }
+                            }
+                            temp_ = temp.right;
+                        }
+                    }//Verify row nodes
+                }
+            }
+        }
+    }
+
     public void display() {
         Node temp = inicio;
         Node temp_ = temp.next;
@@ -213,7 +349,7 @@ public class Lista_Orthogonal {
             temp_ = temp.nodeAccess;
             System.out.print(temp.id + " ");
             while (temp_ != null) {
-                System.out.print(temp_.data + " ");
+                System.out.print(temp_.color + " ");
                 temp_ = temp_.right;
             }
             System.out.println("");
@@ -270,9 +406,7 @@ public class Lista_Orthogonal {
             } else {
                 cadena += "a" + (i + 1) + " -> ";
             }
-
         }
-
         cadena += "MD -> ";
         for (int i = 0; i < col; i++) {
             if (i == col - 1) {
@@ -293,7 +427,7 @@ public class Lista_Orthogonal {
                 continue;
             } else {
                 cadena += "a" + temp_.row + " -> x" + temp_.data + " -> a" + temp_.row + "[constraint=false]\n";
-                rowInfo += "x" + temp_.data + ";";
+                rowInfo += "x" + temp_.data + ";"; //data -> color
                 if (temp_.up == null) {
                     System.out.println(temp_.data);
                     cadena += "b" + temp_.col + " -> x" + temp_.data + " -> b" + temp_.col + "\n";
