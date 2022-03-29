@@ -14,7 +14,7 @@ public class Node_MD {
     int col_No, row_No, id;
     String data;
     
-    Node_MD(int x, int y){
+    Node_MD(int x, int y, String data){
         //Nodes inside Matrix
         this.right = null;
         this.left = null;
@@ -22,7 +22,7 @@ public class Node_MD {
         this.down = null;
         this.row_No = x;
         this.col_No = y;
-        this.data = null;
+        this.data = data;
     }
     
     Node_MD(int id){
@@ -30,7 +30,7 @@ public class Node_MD {
         this.col = null;
         this.row = null;
         this.node_Access = null;
-        this.id = 0;
+        this.id = id;
     }
     
 }

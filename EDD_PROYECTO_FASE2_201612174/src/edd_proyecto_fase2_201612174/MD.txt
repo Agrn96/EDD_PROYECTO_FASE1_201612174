@@ -4,28 +4,30 @@ rankdir="TB"
 node[shape = rectangle]
 label="Carnet: 201612174"
 MD -> a1 -> a2 -> a3 -> a4 -> a5
-MD -> b1 -> b2 -> b3 -> b4 -> b5
-{rank=same;MD;b1;b2;b3;b4;b5;}
-a1 -> x1 -> a1[constraint=false]
-b3 -> x1 -> b3
+MD -> b1 -> b2 -> b3 -> b4
+{rank=same;MD;b1;b2;b3;b4;}
+a1 -> xSecond -> a1[constraint=false]
+b3 -> xSecond -> b3
 
-{rank=same;a1;x1;}
-a2 -> x4 -> a2[constraint=false]
-b2 -> x4 -> b2
+{rank=same;a1;xSecond;}
+a2 -> xFourth -> a2[constraint=false]
+b2 -> xFourth -> b2
 
-{rank=same;a2;x4;}
-a3 -> x5 -> a3[constraint=false]
-x4 -> x5 -> x4
+{rank=same;a2;xFourth;}
+a3 -> xEighth -> a3[constraint=false]
+b1 -> xEighth -> b1
+xEighth -> xFifth -> xEighth[constraint=false]
+xFourth -> xFifth -> xFourth
 
-{rank=same;a3;x5;}
-a4 -> x2 -> a4[constraint=false]
-x1 -> x2 -> x1
+{rank=same;a3;xEighth;xFifth;}
+a4 -> xFirst -> a4[constraint=false]
+xSecond -> xFirst -> xSecond
 
-{rank=same;a4;x2;}
-a5 -> x6 -> a5[constraint=false]
-b1 -> x6 -> b1
-x6 -> x3 -> x6[constraint=false]
-b4 -> x3 -> b4
+{rank=same;a4;xFirst;}
+a5 -> xSeventh -> a5[constraint=false]
+xEighth -> xSeventh -> xEighth
+xSeventh -> xThird -> xSeventh[constraint=false]
+b4 -> xThird -> b4
 
-{rank=same;a5;x6;x3;}
+{rank=same;a5;xSeventh;xThird;}
 }
