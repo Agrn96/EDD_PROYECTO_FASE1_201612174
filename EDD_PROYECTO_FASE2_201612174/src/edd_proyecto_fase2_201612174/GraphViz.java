@@ -19,10 +19,10 @@ public class GraphViz {
     public static void imprimir(String fileName) {
         try {
             String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
-            String fileInputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".txt";
-            String fileOutputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".jpg";
+            String fileInputPath = "src\\Salidas\\" + fileName + ".txt";
+            String fileOutputPath = "src\\Salidas\\" + fileName + ".png";
 
-            String tParam = "-Tjpg";
+            String tParam = "-Tpng";
             String tOParam = "-o";
 
             String[] cmd = new String[5];

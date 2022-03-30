@@ -54,9 +54,9 @@ public class Main {
     }
     private static void carga_Masiva_Capa() throws FileNotFoundException, IOException, ParseException{
         JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\sonic.json"));
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\mario.json"));
         Iterator<JSONObject> iterator = jsonArray.iterator();
-        
+        Matriz_Dispersa MD_Main = new Matriz_Dispersa();
         while(iterator.hasNext()) {
             JSONObject capa = iterator.next();
             Long id = (Long) capa.get("id_capa");
@@ -75,9 +75,11 @@ public class Main {
                 String color = (String) obj.get("color");
                 System.out.println("F: " + row_ + " C: " + col_ + " D: " + color);
                 MD.add_Node(row_, col_, color);
+                MD_Main.add_Node(row_, col_, color);
             }
             MD.display();
             MD.graph(id_);
         }
+        MD_Main.graph("TEST");
     }
 }

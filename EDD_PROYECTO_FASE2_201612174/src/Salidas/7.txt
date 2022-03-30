@@ -1,0 +1,1345 @@
+digraph G
+{
+rankdir="TB"
+node[shape = rectangle]
+label="Carnet: 201612174"
+MD -> a0 -> a1 -> a2 -> a3 -> a4 -> a5 -> a6 -> a7 -> a8 -> a9 -> a10 -> a11 -> a12 -> a13 -> a14 -> a15 -> a16 -> a17 -> a18 -> a19 -> a20 -> a21 -> a22 -> a23 -> a24 -> a25 -> a26 -> a27 -> a28 -> a29 -> a30 -> a31 -> a32 -> a33 -> a34 -> a35 -> a36 -> a37 -> a38 -> a39 -> a40 -> a41 -> a42 -> a43 -> a44 -> a45 -> a46 -> a47 -> a48 -> a49 -> a50 -> a51 -> a52 -> a53 -> a54 -> a55 -> a56 -> a57 -> a58 -> a59 -> a60 -> a61 -> a62 -> a63 -> a64 -> a65 -> a66 -> a67 -> a68 -> a69 -> a70 -> a71 -> a72 -> a73 -> a74 -> a75 -> a76 -> a77 -> a78 -> a79 -> a80 -> a81 -> a82 -> a83 -> a84 -> a85 -> a86 -> a87 -> a88 -> a89 -> a90 -> a91 -> a92 -> a93 -> a94 -> a95 -> a96 -> a97 -> a98 -> a99 -> a100 -> a101 -> a102 -> a103 -> a104 -> a105 -> a106 -> a107 -> a108 -> a109 -> a110 -> a111 -> a112 -> a113 -> a114 -> a115 -> a116 -> a117 -> a118 -> a119 -> a120 -> a121 -> a122 -> a123 -> a124 -> a125 -> a126 -> a127 -> a128 -> a129 -> a130 -> a131 -> a132 -> a133 -> a134 -> a135 -> a136 -> a137 -> a138 -> a139 -> a140 -> a141 -> a142 -> a143 -> a144 -> a145 -> a146 -> a147 -> a148 -> a149 -> a150 -> a151 -> a152 -> a153 -> a154 -> a155 -> a156 -> a157 -> a158 -> a159 -> a160 -> a161
+MD -> b0 -> b1 -> b2 -> b3 -> b4 -> b5 -> b6 -> b7 -> b8 -> b9 -> b10 -> b11 -> b12 -> b13 -> b14 -> b15 -> b16 -> b17 -> b18 -> b19 -> b20 -> b21 -> b22 -> b23 -> b24 -> b25 -> b26 -> b27 -> b28 -> b29 -> b30 -> b31 -> b32 -> b33 -> b34 -> b35 -> b36 -> b37 -> b38 -> b39 -> b40 -> b41 -> b42 -> b43 -> b44 -> b45 -> b46 -> b47 -> b48 -> b49 -> b50 -> b51 -> b52 -> b53 -> b54 -> b55 -> b56 -> b57 -> b58 -> b59 -> b60 -> b61 -> b62 -> b63 -> b64 -> b65 -> b66 -> b67 -> b68 -> b69 -> b70 -> b71 -> b72 -> b73 -> b74 -> b75 -> b76 -> b77
+{rank=same;MD;b0;b1;b2;b3;b4;b5;b6;b7;b8;b9;b10;b11;b12;b13;b14;b15;b16;b17;b18;b19;b20;b21;b22;b23;b24;b25;b26;b27;b28;b29;b30;b31;b32;b33;b34;b35;b36;b37;b38;b39;b40;b41;b42;b43;b44;b45;b46;b47;b48;b49;b50;b51;b52;b53;b54;b55;b56;b57;b58;b59;b60;b61;b62;b63;b64;b65;b66;b67;b68;b69;b70;b71;b72;b73;b74;b75;b76;b77;}
+x55y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a55 -> x55y28 -> a55[constraint=false]
+b28 -> x55y28 -> b28
+x55y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x55y28 -> x55y29 -> x55y28[constraint=false]
+b29 -> x55y29 -> b29
+x55y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x55y29 -> x55y30 -> x55y29[constraint=false]
+b30 -> x55y30 -> b30
+x55y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x55y30 -> x55y31 -> x55y30[constraint=false]
+b31 -> x55y31 -> b31
+
+{rank=same;a55;x55y28;x55y29;x55y30;x55y31;}
+x56y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a56 -> x56y28 -> a56[constraint=false]
+x55y28 -> x56y28 -> x55y28
+x56y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x56y28 -> x56y29 -> x56y28[constraint=false]
+x55y29 -> x56y29 -> x55y29
+x56y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x56y29 -> x56y30 -> x56y29[constraint=false]
+x55y30 -> x56y30 -> x55y30
+x56y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x56y30 -> x56y31 -> x56y30[constraint=false]
+x55y31 -> x56y31 -> x55y31
+
+{rank=same;a56;x56y28;x56y29;x56y30;x56y31;}
+x57y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a57 -> x57y28 -> a57[constraint=false]
+x56y28 -> x57y28 -> x56y28
+x57y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x57y28 -> x57y29 -> x57y28[constraint=false]
+x56y29 -> x57y29 -> x56y29
+x57y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x57y29 -> x57y30 -> x57y29[constraint=false]
+x56y30 -> x57y30 -> x56y30
+x57y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x57y30 -> x57y31 -> x57y30[constraint=false]
+x56y31 -> x57y31 -> x56y31
+
+{rank=same;a57;x57y28;x57y29;x57y30;x57y31;}
+x58y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a58 -> x58y30 -> a58[constraint=false]
+x57y30 -> x58y30 -> x57y30
+x58y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x58y30 -> x58y31 -> x58y30[constraint=false]
+x57y31 -> x58y31 -> x57y31
+
+{rank=same;a58;x58y30;x58y31;}
+x59y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a59 -> x59y30 -> a59[constraint=false]
+x58y30 -> x59y30 -> x58y30
+x59y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x59y30 -> x59y31 -> x59y30[constraint=false]
+x58y31 -> x59y31 -> x58y31
+x59y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x59y31 -> x59y32 -> x59y31[constraint=false]
+b32 -> x59y32 -> b32
+x59y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x59y32 -> x59y33 -> x59y32[constraint=false]
+b33 -> x59y33 -> b33
+x59y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x59y33 -> x59y34 -> x59y33[constraint=false]
+b34 -> x59y34 -> b34
+x59y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x59y34 -> x59y35 -> x59y34[constraint=false]
+b35 -> x59y35 -> b35
+
+{rank=same;a59;x59y30;x59y31;x59y32;x59y33;x59y34;x59y35;}
+x60y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a60 -> x60y30 -> a60[constraint=false]
+x59y30 -> x60y30 -> x59y30
+x60y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x60y30 -> x60y31 -> x60y30[constraint=false]
+x59y31 -> x60y31 -> x59y31
+x60y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x60y31 -> x60y32 -> x60y31[constraint=false]
+x59y32 -> x60y32 -> x59y32
+x60y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x60y32 -> x60y33 -> x60y32[constraint=false]
+x59y33 -> x60y33 -> x59y33
+x60y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x60y33 -> x60y34 -> x60y33[constraint=false]
+x59y34 -> x60y34 -> x59y34
+x60y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x60y34 -> x60y35 -> x60y34[constraint=false]
+x59y35 -> x60y35 -> x59y35
+
+{rank=same;a60;x60y30;x60y31;x60y32;x60y33;x60y34;x60y35;}
+x61y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a61 -> x61y30 -> a61[constraint=false]
+x60y30 -> x61y30 -> x60y30
+x61y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x61y30 -> x61y31 -> x61y30[constraint=false]
+x60y31 -> x61y31 -> x60y31
+x61y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x61y31 -> x61y32 -> x61y31[constraint=false]
+x60y32 -> x61y32 -> x60y32
+x61y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x61y32 -> x61y33 -> x61y32[constraint=false]
+x60y33 -> x61y33 -> x60y33
+x61y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x61y33 -> x61y34 -> x61y33[constraint=false]
+x60y34 -> x61y34 -> x60y34
+x61y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x61y34 -> x61y35 -> x61y34[constraint=false]
+x60y35 -> x61y35 -> x60y35
+
+{rank=same;a61;x61y30;x61y31;x61y32;x61y33;x61y34;x61y35;}
+x62y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a62 -> x62y30 -> a62[constraint=false]
+x61y30 -> x62y30 -> x61y30
+x62y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x62y30 -> x62y31 -> x62y30[constraint=false]
+x61y31 -> x62y31 -> x61y31
+x62y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x62y31 -> x62y32 -> x62y31[constraint=false]
+x61y32 -> x62y32 -> x61y32
+x62y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x62y32 -> x62y33 -> x62y32[constraint=false]
+x61y33 -> x62y33 -> x61y33
+x62y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x62y33 -> x62y34 -> x62y33[constraint=false]
+x61y34 -> x62y34 -> x61y34
+x62y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x62y34 -> x62y35 -> x62y34[constraint=false]
+x61y35 -> x62y35 -> x61y35
+
+{rank=same;a62;x62y30;x62y31;x62y32;x62y33;x62y34;x62y35;}
+x74y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a74 -> x74y58 -> a74[constraint=false]
+b58 -> x74y58 -> b58
+x74y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y58 -> x74y59 -> x74y58[constraint=false]
+b59 -> x74y59 -> b59
+x74y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y59 -> x74y60 -> x74y59[constraint=false]
+b60 -> x74y60 -> b60
+x74y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y60 -> x74y61 -> x74y60[constraint=false]
+b61 -> x74y61 -> b61
+x74y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y61 -> x74y62 -> x74y61[constraint=false]
+b62 -> x74y62 -> b62
+x74y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y62 -> x74y63 -> x74y62[constraint=false]
+b63 -> x74y63 -> b63
+x74y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y63 -> x74y64 -> x74y63[constraint=false]
+b64 -> x74y64 -> b64
+x74y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y64 -> x74y65 -> x74y64[constraint=false]
+b65 -> x74y65 -> b65
+x74y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y65 -> x74y66 -> x74y65[constraint=false]
+b66 -> x74y66 -> b66
+x74y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y66 -> x74y67 -> x74y66[constraint=false]
+b67 -> x74y67 -> b67
+x74y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y67 -> x74y68 -> x74y67[constraint=false]
+b68 -> x74y68 -> b68
+x74y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x74y68 -> x74y69 -> x74y68[constraint=false]
+b69 -> x74y69 -> b69
+
+{rank=same;a74;x74y58;x74y59;x74y60;x74y61;x74y62;x74y63;x74y64;x74y65;x74y66;x74y67;x74y68;x74y69;}
+x75y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a75 -> x75y58 -> a75[constraint=false]
+x74y58 -> x75y58 -> x74y58
+x75y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y58 -> x75y59 -> x75y58[constraint=false]
+x74y59 -> x75y59 -> x74y59
+x75y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y59 -> x75y60 -> x75y59[constraint=false]
+x74y60 -> x75y60 -> x74y60
+x75y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y60 -> x75y61 -> x75y60[constraint=false]
+x74y61 -> x75y61 -> x74y61
+x75y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y61 -> x75y62 -> x75y61[constraint=false]
+x74y62 -> x75y62 -> x74y62
+x75y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y62 -> x75y63 -> x75y62[constraint=false]
+x74y63 -> x75y63 -> x74y63
+x75y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y63 -> x75y64 -> x75y63[constraint=false]
+x74y64 -> x75y64 -> x74y64
+x75y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y64 -> x75y65 -> x75y64[constraint=false]
+x74y65 -> x75y65 -> x74y65
+x75y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y65 -> x75y66 -> x75y65[constraint=false]
+x74y66 -> x75y66 -> x74y66
+x75y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y66 -> x75y67 -> x75y66[constraint=false]
+x74y67 -> x75y67 -> x74y67
+x75y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y67 -> x75y68 -> x75y67[constraint=false]
+x74y68 -> x75y68 -> x74y68
+x75y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x75y68 -> x75y69 -> x75y68[constraint=false]
+x74y69 -> x75y69 -> x74y69
+
+{rank=same;a75;x75y58;x75y59;x75y60;x75y61;x75y62;x75y63;x75y64;x75y65;x75y66;x75y67;x75y68;x75y69;}
+x76y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a76 -> x76y58 -> a76[constraint=false]
+x75y58 -> x76y58 -> x75y58
+x76y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y58 -> x76y59 -> x76y58[constraint=false]
+x75y59 -> x76y59 -> x75y59
+x76y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y59 -> x76y60 -> x76y59[constraint=false]
+x75y60 -> x76y60 -> x75y60
+x76y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y60 -> x76y61 -> x76y60[constraint=false]
+x75y61 -> x76y61 -> x75y61
+x76y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y61 -> x76y62 -> x76y61[constraint=false]
+x75y62 -> x76y62 -> x75y62
+x76y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y62 -> x76y63 -> x76y62[constraint=false]
+x75y63 -> x76y63 -> x75y63
+x76y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y63 -> x76y64 -> x76y63[constraint=false]
+x75y64 -> x76y64 -> x75y64
+x76y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y64 -> x76y65 -> x76y64[constraint=false]
+x75y65 -> x76y65 -> x75y65
+x76y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y65 -> x76y66 -> x76y65[constraint=false]
+x75y66 -> x76y66 -> x75y66
+x76y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y66 -> x76y67 -> x76y66[constraint=false]
+x75y67 -> x76y67 -> x75y67
+x76y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y67 -> x76y68 -> x76y67[constraint=false]
+x75y68 -> x76y68 -> x75y68
+x76y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y68 -> x76y69 -> x76y68[constraint=false]
+x75y69 -> x76y69 -> x75y69
+x76y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x76y69 -> x76y70 -> x76y69[constraint=false]
+b70 -> x76y70 -> b70
+
+{rank=same;a76;x76y58;x76y59;x76y60;x76y61;x76y62;x76y63;x76y64;x76y65;x76y66;x76y67;x76y68;x76y69;x76y70;}
+x77y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a77 -> x77y58 -> a77[constraint=false]
+x76y58 -> x77y58 -> x76y58
+x77y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y58 -> x77y59 -> x77y58[constraint=false]
+x76y59 -> x77y59 -> x76y59
+x77y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y59 -> x77y60 -> x77y59[constraint=false]
+x76y60 -> x77y60 -> x76y60
+x77y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y60 -> x77y61 -> x77y60[constraint=false]
+x76y61 -> x77y61 -> x76y61
+x77y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y61 -> x77y62 -> x77y61[constraint=false]
+x76y62 -> x77y62 -> x76y62
+x77y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y62 -> x77y63 -> x77y62[constraint=false]
+x76y63 -> x77y63 -> x76y63
+x77y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y63 -> x77y64 -> x77y63[constraint=false]
+x76y64 -> x77y64 -> x76y64
+x77y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y64 -> x77y65 -> x77y64[constraint=false]
+x76y65 -> x77y65 -> x76y65
+x77y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y65 -> x77y66 -> x77y65[constraint=false]
+x76y66 -> x77y66 -> x76y66
+x77y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y66 -> x77y67 -> x77y66[constraint=false]
+x76y67 -> x77y67 -> x76y67
+x77y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y67 -> x77y68 -> x77y67[constraint=false]
+x76y68 -> x77y68 -> x76y68
+x77y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y68 -> x77y69 -> x77y68[constraint=false]
+x76y69 -> x77y69 -> x76y69
+x77y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x77y69 -> x77y70 -> x77y69[constraint=false]
+x76y70 -> x77y70 -> x76y70
+
+{rank=same;a77;x77y58;x77y59;x77y60;x77y61;x77y62;x77y63;x77y64;x77y65;x77y66;x77y67;x77y68;x77y69;x77y70;}
+x78y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a78 -> x78y58 -> a78[constraint=false]
+x77y58 -> x78y58 -> x77y58
+x78y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y58 -> x78y59 -> x78y58[constraint=false]
+x77y59 -> x78y59 -> x77y59
+x78y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y59 -> x78y60 -> x78y59[constraint=false]
+x77y60 -> x78y60 -> x77y60
+x78y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y60 -> x78y61 -> x78y60[constraint=false]
+x77y61 -> x78y61 -> x77y61
+x78y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y61 -> x78y62 -> x78y61[constraint=false]
+x77y62 -> x78y62 -> x77y62
+x78y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y62 -> x78y63 -> x78y62[constraint=false]
+x77y63 -> x78y63 -> x77y63
+x78y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y63 -> x78y64 -> x78y63[constraint=false]
+x77y64 -> x78y64 -> x77y64
+x78y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y64 -> x78y65 -> x78y64[constraint=false]
+x77y65 -> x78y65 -> x77y65
+x78y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y65 -> x78y66 -> x78y65[constraint=false]
+x77y66 -> x78y66 -> x77y66
+x78y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y66 -> x78y67 -> x78y66[constraint=false]
+x77y67 -> x78y67 -> x77y67
+x78y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y67 -> x78y68 -> x78y67[constraint=false]
+x77y68 -> x78y68 -> x77y68
+x78y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y68 -> x78y69 -> x78y68[constraint=false]
+x77y69 -> x78y69 -> x77y69
+x78y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x78y69 -> x78y70 -> x78y69[constraint=false]
+x77y70 -> x78y70 -> x77y70
+
+{rank=same;a78;x78y58;x78y59;x78y60;x78y61;x78y62;x78y63;x78y64;x78y65;x78y66;x78y67;x78y68;x78y69;x78y70;}
+x79y58[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a79 -> x79y58 -> a79[constraint=false]
+x78y58 -> x79y58 -> x78y58
+x79y59[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y58 -> x79y59 -> x79y58[constraint=false]
+x78y59 -> x79y59 -> x78y59
+x79y60[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y59 -> x79y60 -> x79y59[constraint=false]
+x78y60 -> x79y60 -> x78y60
+x79y61[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y60 -> x79y61 -> x79y60[constraint=false]
+x78y61 -> x79y61 -> x78y61
+x79y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y61 -> x79y62 -> x79y61[constraint=false]
+x78y62 -> x79y62 -> x78y62
+x79y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y62 -> x79y63 -> x79y62[constraint=false]
+x78y63 -> x79y63 -> x78y63
+x79y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y63 -> x79y64 -> x79y63[constraint=false]
+x78y64 -> x79y64 -> x78y64
+x79y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y64 -> x79y65 -> x79y64[constraint=false]
+x78y65 -> x79y65 -> x78y65
+x79y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y65 -> x79y66 -> x79y65[constraint=false]
+x78y66 -> x79y66 -> x78y66
+x79y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y66 -> x79y67 -> x79y66[constraint=false]
+x78y67 -> x79y67 -> x78y67
+x79y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y67 -> x79y68 -> x79y67[constraint=false]
+x78y68 -> x79y68 -> x78y68
+x79y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y68 -> x79y69 -> x79y68[constraint=false]
+x78y69 -> x79y69 -> x78y69
+x79y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x79y69 -> x79y70 -> x79y69[constraint=false]
+x78y70 -> x79y70 -> x78y70
+
+{rank=same;a79;x79y58;x79y59;x79y60;x79y61;x79y62;x79y63;x79y64;x79y65;x79y66;x79y67;x79y68;x79y69;x79y70;}
+x80y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a80 -> x80y62 -> a80[constraint=false]
+x79y62 -> x80y62 -> x79y62
+x80y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x80y62 -> x80y63 -> x80y62[constraint=false]
+x79y63 -> x80y63 -> x79y63
+x80y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x80y63 -> x80y64 -> x80y63[constraint=false]
+x79y64 -> x80y64 -> x79y64
+x80y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x80y64 -> x80y65 -> x80y64[constraint=false]
+x79y65 -> x80y65 -> x79y65
+x80y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x80y65 -> x80y66 -> x80y65[constraint=false]
+x79y66 -> x80y66 -> x79y66
+
+{rank=same;a80;x80y62;x80y63;x80y64;x80y65;x80y66;}
+x81y62[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a81 -> x81y62 -> a81[constraint=false]
+x80y62 -> x81y62 -> x80y62
+x81y63[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x81y62 -> x81y63 -> x81y62[constraint=false]
+x80y63 -> x81y63 -> x80y63
+x81y64[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x81y63 -> x81y64 -> x81y63[constraint=false]
+x80y64 -> x81y64 -> x80y64
+x81y65[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x81y64 -> x81y65 -> x81y64[constraint=false]
+x80y65 -> x81y65 -> x80y65
+x81y66[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x81y65 -> x81y66 -> x81y65[constraint=false]
+x80y66 -> x81y66 -> x80y66
+
+{rank=same;a81;x81y62;x81y63;x81y64;x81y65;x81y66;}
+x143y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a143 -> x143y38 -> a143[constraint=false]
+b38 -> x143y38 -> b38
+x143y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y38 -> x143y39 -> x143y38[constraint=false]
+b39 -> x143y39 -> b39
+x143y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y39 -> x143y40 -> x143y39[constraint=false]
+b40 -> x143y40 -> b40
+x143y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y40 -> x143y41 -> x143y40[constraint=false]
+b41 -> x143y41 -> b41
+x143y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y41 -> x143y42 -> x143y41[constraint=false]
+b42 -> x143y42 -> b42
+x143y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y42 -> x143y43 -> x143y42[constraint=false]
+b43 -> x143y43 -> b43
+x143y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y43 -> x143y44 -> x143y43[constraint=false]
+b44 -> x143y44 -> b44
+x143y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y44 -> x143y45 -> x143y44[constraint=false]
+b45 -> x143y45 -> b45
+x143y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y45 -> x143y46 -> x143y45[constraint=false]
+b46 -> x143y46 -> b46
+x143y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y46 -> x143y47 -> x143y46[constraint=false]
+b47 -> x143y47 -> b47
+x143y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x143y47 -> x143y48 -> x143y47[constraint=false]
+b48 -> x143y48 -> b48
+
+{rank=same;a143;x143y38;x143y39;x143y40;x143y41;x143y42;x143y43;x143y44;x143y45;x143y46;x143y47;x143y48;}
+x144y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a144 -> x144y38 -> a144[constraint=false]
+x143y38 -> x144y38 -> x143y38
+x144y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y38 -> x144y39 -> x144y38[constraint=false]
+x143y39 -> x144y39 -> x143y39
+x144y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y39 -> x144y40 -> x144y39[constraint=false]
+x143y40 -> x144y40 -> x143y40
+x144y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y40 -> x144y41 -> x144y40[constraint=false]
+x143y41 -> x144y41 -> x143y41
+x144y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y41 -> x144y42 -> x144y41[constraint=false]
+x143y42 -> x144y42 -> x143y42
+x144y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y42 -> x144y43 -> x144y42[constraint=false]
+x143y43 -> x144y43 -> x143y43
+x144y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y43 -> x144y44 -> x144y43[constraint=false]
+x143y44 -> x144y44 -> x143y44
+x144y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y44 -> x144y45 -> x144y44[constraint=false]
+x143y45 -> x144y45 -> x143y45
+x144y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y45 -> x144y46 -> x144y45[constraint=false]
+x143y46 -> x144y46 -> x143y46
+x144y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y46 -> x144y47 -> x144y46[constraint=false]
+x143y47 -> x144y47 -> x143y47
+x144y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x144y47 -> x144y48 -> x144y47[constraint=false]
+x143y48 -> x144y48 -> x143y48
+
+{rank=same;a144;x144y38;x144y39;x144y40;x144y41;x144y42;x144y43;x144y44;x144y45;x144y46;x144y47;x144y48;}
+x151y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a151 -> x151y42 -> a151[constraint=false]
+x144y42 -> x151y42 -> x144y42
+x151y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y42 -> x151y43 -> x151y42[constraint=false]
+x144y43 -> x151y43 -> x144y43
+x151y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y43 -> x151y44 -> x151y43[constraint=false]
+x144y44 -> x151y44 -> x144y44
+x151y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y44 -> x151y45 -> x151y44[constraint=false]
+x144y45 -> x151y45 -> x144y45
+x151y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y45 -> x151y46 -> x151y45[constraint=false]
+x144y46 -> x151y46 -> x144y46
+x151y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y46 -> x151y47 -> x151y46[constraint=false]
+x144y47 -> x151y47 -> x144y47
+x151y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y47 -> x151y48 -> x151y47[constraint=false]
+x144y48 -> x151y48 -> x144y48
+x151y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y48 -> x151y49 -> x151y48[constraint=false]
+b49 -> x151y49 -> b49
+x151y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y49 -> x151y50 -> x151y49[constraint=false]
+b50 -> x151y50 -> b50
+x151y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y50 -> x151y51 -> x151y50[constraint=false]
+b51 -> x151y51 -> b51
+x151y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y51 -> x151y52 -> x151y51[constraint=false]
+b52 -> x151y52 -> b52
+x151y53[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y52 -> x151y53 -> x151y52[constraint=false]
+b53 -> x151y53 -> b53
+x151y54[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y53 -> x151y54 -> x151y53[constraint=false]
+b54 -> x151y54 -> b54
+x151y55[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y54 -> x151y55 -> x151y54[constraint=false]
+b55 -> x151y55 -> b55
+x151y56[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y55 -> x151y56 -> x151y55[constraint=false]
+b56 -> x151y56 -> b56
+x151y57[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y56 -> x151y57 -> x151y56[constraint=false]
+b57 -> x151y57 -> b57
+x151y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y57 -> x151y67 -> x151y57[constraint=false]
+x79y67 -> x151y67 -> x79y67
+x151y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y67 -> x151y68 -> x151y67[constraint=false]
+x79y68 -> x151y68 -> x79y68
+x151y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y68 -> x151y69 -> x151y68[constraint=false]
+x79y69 -> x151y69 -> x79y69
+x151y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y69 -> x151y70 -> x151y69[constraint=false]
+x79y70 -> x151y70 -> x79y70
+x151y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y70 -> x151y71 -> x151y70[constraint=false]
+b71 -> x151y71 -> b71
+x151y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y71 -> x151y72 -> x151y71[constraint=false]
+b72 -> x151y72 -> b72
+x151y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y72 -> x151y73 -> x151y72[constraint=false]
+b73 -> x151y73 -> b73
+x151y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y73 -> x151y74 -> x151y73[constraint=false]
+b74 -> x151y74 -> b74
+x151y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y74 -> x151y75 -> x151y74[constraint=false]
+b75 -> x151y75 -> b75
+x151y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y75 -> x151y76 -> x151y75[constraint=false]
+b76 -> x151y76 -> b76
+x151y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x151y76 -> x151y77 -> x151y76[constraint=false]
+b77 -> x151y77 -> b77
+
+{rank=same;a151;x151y42;x151y43;x151y44;x151y45;x151y46;x151y47;x151y48;x151y49;x151y50;x151y51;x151y52;x151y53;x151y54;x151y55;x151y56;x151y57;x151y67;x151y68;x151y69;x151y70;x151y71;x151y72;x151y73;x151y74;x151y75;x151y76;x151y77;}
+x152y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a152 -> x152y42 -> a152[constraint=false]
+x151y42 -> x152y42 -> x151y42
+x152y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y42 -> x152y43 -> x152y42[constraint=false]
+x151y43 -> x152y43 -> x151y43
+x152y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y43 -> x152y44 -> x152y43[constraint=false]
+x151y44 -> x152y44 -> x151y44
+x152y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y44 -> x152y45 -> x152y44[constraint=false]
+x151y45 -> x152y45 -> x151y45
+x152y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y45 -> x152y46 -> x152y45[constraint=false]
+x151y46 -> x152y46 -> x151y46
+x152y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y46 -> x152y47 -> x152y46[constraint=false]
+x151y47 -> x152y47 -> x151y47
+x152y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y47 -> x152y48 -> x152y47[constraint=false]
+x151y48 -> x152y48 -> x151y48
+x152y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y48 -> x152y49 -> x152y48[constraint=false]
+x151y49 -> x152y49 -> x151y49
+x152y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y49 -> x152y50 -> x152y49[constraint=false]
+x151y50 -> x152y50 -> x151y50
+x152y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y50 -> x152y51 -> x152y50[constraint=false]
+x151y51 -> x152y51 -> x151y51
+x152y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y51 -> x152y52 -> x152y51[constraint=false]
+x151y52 -> x152y52 -> x151y52
+x152y53[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y52 -> x152y53 -> x152y52[constraint=false]
+x151y53 -> x152y53 -> x151y53
+x152y54[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y53 -> x152y54 -> x152y53[constraint=false]
+x151y54 -> x152y54 -> x151y54
+x152y55[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y54 -> x152y55 -> x152y54[constraint=false]
+x151y55 -> x152y55 -> x151y55
+x152y56[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y55 -> x152y56 -> x152y55[constraint=false]
+x151y56 -> x152y56 -> x151y56
+x152y57[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y56 -> x152y57 -> x152y56[constraint=false]
+x151y57 -> x152y57 -> x151y57
+x152y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y57 -> x152y67 -> x152y57[constraint=false]
+x151y67 -> x152y67 -> x151y67
+x152y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y67 -> x152y68 -> x152y67[constraint=false]
+x151y68 -> x152y68 -> x151y68
+x152y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y68 -> x152y69 -> x152y68[constraint=false]
+x151y69 -> x152y69 -> x151y69
+x152y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y69 -> x152y70 -> x152y69[constraint=false]
+x151y70 -> x152y70 -> x151y70
+x152y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y70 -> x152y71 -> x152y70[constraint=false]
+x151y71 -> x152y71 -> x151y71
+x152y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y71 -> x152y72 -> x152y71[constraint=false]
+x151y72 -> x152y72 -> x151y72
+x152y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y72 -> x152y73 -> x152y72[constraint=false]
+x151y73 -> x152y73 -> x151y73
+x152y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y73 -> x152y74 -> x152y73[constraint=false]
+x151y74 -> x152y74 -> x151y74
+x152y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y74 -> x152y75 -> x152y74[constraint=false]
+x151y75 -> x152y75 -> x151y75
+x152y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y75 -> x152y76 -> x152y75[constraint=false]
+x151y76 -> x152y76 -> x151y76
+x152y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x152y76 -> x152y77 -> x152y76[constraint=false]
+x151y77 -> x152y77 -> x151y77
+
+{rank=same;a152;x152y42;x152y43;x152y44;x152y45;x152y46;x152y47;x152y48;x152y49;x152y50;x152y51;x152y52;x152y53;x152y54;x152y55;x152y56;x152y57;x152y67;x152y68;x152y69;x152y70;x152y71;x152y72;x152y73;x152y74;x152y75;x152y76;x152y77;}
+x153y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a153 -> x153y42 -> a153[constraint=false]
+x152y42 -> x153y42 -> x152y42
+x153y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y42 -> x153y43 -> x153y42[constraint=false]
+x152y43 -> x153y43 -> x152y43
+x153y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y43 -> x153y44 -> x153y43[constraint=false]
+x152y44 -> x153y44 -> x152y44
+x153y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y44 -> x153y45 -> x153y44[constraint=false]
+x152y45 -> x153y45 -> x152y45
+x153y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y45 -> x153y46 -> x153y45[constraint=false]
+x152y46 -> x153y46 -> x152y46
+x153y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y46 -> x153y47 -> x153y46[constraint=false]
+x152y47 -> x153y47 -> x152y47
+x153y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y47 -> x153y48 -> x153y47[constraint=false]
+x152y48 -> x153y48 -> x152y48
+x153y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y48 -> x153y49 -> x153y48[constraint=false]
+x152y49 -> x153y49 -> x152y49
+x153y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y49 -> x153y50 -> x153y49[constraint=false]
+x152y50 -> x153y50 -> x152y50
+x153y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y50 -> x153y51 -> x153y50[constraint=false]
+x152y51 -> x153y51 -> x152y51
+x153y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y51 -> x153y52 -> x153y51[constraint=false]
+x152y52 -> x153y52 -> x152y52
+x153y53[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y52 -> x153y53 -> x153y52[constraint=false]
+x152y53 -> x153y53 -> x152y53
+x153y54[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y53 -> x153y54 -> x153y53[constraint=false]
+x152y54 -> x153y54 -> x152y54
+x153y55[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y54 -> x153y55 -> x153y54[constraint=false]
+x152y55 -> x153y55 -> x152y55
+x153y56[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y55 -> x153y56 -> x153y55[constraint=false]
+x152y56 -> x153y56 -> x152y56
+x153y57[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y56 -> x153y57 -> x153y56[constraint=false]
+x152y57 -> x153y57 -> x152y57
+x153y67[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y57 -> x153y67 -> x153y57[constraint=false]
+x152y67 -> x153y67 -> x152y67
+x153y68[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y67 -> x153y68 -> x153y67[constraint=false]
+x152y68 -> x153y68 -> x152y68
+x153y69[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y68 -> x153y69 -> x153y68[constraint=false]
+x152y69 -> x153y69 -> x152y69
+x153y70[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y69 -> x153y70 -> x153y69[constraint=false]
+x152y70 -> x153y70 -> x152y70
+x153y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y70 -> x153y71 -> x153y70[constraint=false]
+x152y71 -> x153y71 -> x152y71
+x153y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y71 -> x153y72 -> x153y71[constraint=false]
+x152y72 -> x153y72 -> x152y72
+x153y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y72 -> x153y73 -> x153y72[constraint=false]
+x152y73 -> x153y73 -> x152y73
+x153y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y73 -> x153y74 -> x153y73[constraint=false]
+x152y74 -> x153y74 -> x152y74
+x153y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y74 -> x153y75 -> x153y74[constraint=false]
+x152y75 -> x153y75 -> x152y75
+x153y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y75 -> x153y76 -> x153y75[constraint=false]
+x152y76 -> x153y76 -> x152y76
+x153y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x153y76 -> x153y77 -> x153y76[constraint=false]
+x152y77 -> x153y77 -> x152y77
+
+{rank=same;a153;x153y42;x153y43;x153y44;x153y45;x153y46;x153y47;x153y48;x153y49;x153y50;x153y51;x153y52;x153y53;x153y54;x153y55;x153y56;x153y57;x153y67;x153y68;x153y69;x153y70;x153y71;x153y72;x153y73;x153y74;x153y75;x153y76;x153y77;}
+x154y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a154 -> x154y42 -> a154[constraint=false]
+x153y42 -> x154y42 -> x153y42
+x154y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y42 -> x154y43 -> x154y42[constraint=false]
+x153y43 -> x154y43 -> x153y43
+x154y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y43 -> x154y44 -> x154y43[constraint=false]
+x153y44 -> x154y44 -> x153y44
+x154y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y44 -> x154y45 -> x154y44[constraint=false]
+x153y45 -> x154y45 -> x153y45
+x154y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y45 -> x154y46 -> x154y45[constraint=false]
+x153y46 -> x154y46 -> x153y46
+x154y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y46 -> x154y47 -> x154y46[constraint=false]
+x153y47 -> x154y47 -> x153y47
+x154y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y47 -> x154y48 -> x154y47[constraint=false]
+x153y48 -> x154y48 -> x153y48
+x154y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y48 -> x154y49 -> x154y48[constraint=false]
+x153y49 -> x154y49 -> x153y49
+x154y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y49 -> x154y50 -> x154y49[constraint=false]
+x153y50 -> x154y50 -> x153y50
+x154y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y50 -> x154y51 -> x154y50[constraint=false]
+x153y51 -> x154y51 -> x153y51
+x154y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y51 -> x154y52 -> x154y51[constraint=false]
+x153y52 -> x154y52 -> x153y52
+x154y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y52 -> x154y71 -> x154y52[constraint=false]
+x153y71 -> x154y71 -> x153y71
+x154y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y71 -> x154y72 -> x154y71[constraint=false]
+x153y72 -> x154y72 -> x153y72
+x154y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y72 -> x154y73 -> x154y72[constraint=false]
+x153y73 -> x154y73 -> x153y73
+x154y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y73 -> x154y74 -> x154y73[constraint=false]
+x153y74 -> x154y74 -> x153y74
+x154y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y74 -> x154y75 -> x154y74[constraint=false]
+x153y75 -> x154y75 -> x153y75
+x154y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y75 -> x154y76 -> x154y75[constraint=false]
+x153y76 -> x154y76 -> x153y76
+x154y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x154y76 -> x154y77 -> x154y76[constraint=false]
+x153y77 -> x154y77 -> x153y77
+
+{rank=same;a154;x154y42;x154y43;x154y44;x154y45;x154y46;x154y47;x154y48;x154y49;x154y50;x154y51;x154y52;x154y71;x154y72;x154y73;x154y74;x154y75;x154y76;x154y77;}
+x155y25[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a155 -> x155y25 -> a155[constraint=false]
+b25 -> x155y25 -> b25
+x155y26[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y25 -> x155y26 -> x155y25[constraint=false]
+b26 -> x155y26 -> b26
+x155y27[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y26 -> x155y27 -> x155y26[constraint=false]
+b27 -> x155y27 -> b27
+x155y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y27 -> x155y28 -> x155y27[constraint=false]
+x57y28 -> x155y28 -> x57y28
+x155y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y28 -> x155y29 -> x155y28[constraint=false]
+x57y29 -> x155y29 -> x57y29
+x155y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y29 -> x155y30 -> x155y29[constraint=false]
+x62y30 -> x155y30 -> x62y30
+x155y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y30 -> x155y31 -> x155y30[constraint=false]
+x62y31 -> x155y31 -> x62y31
+x155y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y31 -> x155y32 -> x155y31[constraint=false]
+x62y32 -> x155y32 -> x62y32
+x155y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y32 -> x155y33 -> x155y32[constraint=false]
+x62y33 -> x155y33 -> x62y33
+x155y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y33 -> x155y34 -> x155y33[constraint=false]
+x62y34 -> x155y34 -> x62y34
+x155y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y34 -> x155y35 -> x155y34[constraint=false]
+x62y35 -> x155y35 -> x62y35
+x155y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y35 -> x155y36 -> x155y35[constraint=false]
+b36 -> x155y36 -> b36
+x155y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y36 -> x155y37 -> x155y36[constraint=false]
+b37 -> x155y37 -> b37
+x155y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y37 -> x155y38 -> x155y37[constraint=false]
+x144y38 -> x155y38 -> x144y38
+x155y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y38 -> x155y39 -> x155y38[constraint=false]
+x144y39 -> x155y39 -> x144y39
+x155y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y39 -> x155y40 -> x155y39[constraint=false]
+x144y40 -> x155y40 -> x144y40
+x155y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y40 -> x155y41 -> x155y40[constraint=false]
+x144y41 -> x155y41 -> x144y41
+x155y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y41 -> x155y42 -> x155y41[constraint=false]
+x154y42 -> x155y42 -> x154y42
+x155y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y42 -> x155y43 -> x155y42[constraint=false]
+x154y43 -> x155y43 -> x154y43
+x155y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y43 -> x155y44 -> x155y43[constraint=false]
+x154y44 -> x155y44 -> x154y44
+x155y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y44 -> x155y45 -> x155y44[constraint=false]
+x154y45 -> x155y45 -> x154y45
+x155y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y45 -> x155y46 -> x155y45[constraint=false]
+x154y46 -> x155y46 -> x154y46
+x155y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y46 -> x155y47 -> x155y46[constraint=false]
+x154y47 -> x155y47 -> x154y47
+x155y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y47 -> x155y48 -> x155y47[constraint=false]
+x154y48 -> x155y48 -> x154y48
+x155y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y48 -> x155y49 -> x155y48[constraint=false]
+x154y49 -> x155y49 -> x154y49
+x155y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y49 -> x155y50 -> x155y49[constraint=false]
+x154y50 -> x155y50 -> x154y50
+x155y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y50 -> x155y51 -> x155y50[constraint=false]
+x154y51 -> x155y51 -> x154y51
+x155y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y51 -> x155y52 -> x155y51[constraint=false]
+x154y52 -> x155y52 -> x154y52
+x155y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y52 -> x155y71 -> x155y52[constraint=false]
+x154y71 -> x155y71 -> x154y71
+x155y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y71 -> x155y72 -> x155y71[constraint=false]
+x154y72 -> x155y72 -> x154y72
+x155y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y72 -> x155y73 -> x155y72[constraint=false]
+x154y73 -> x155y73 -> x154y73
+x155y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y73 -> x155y74 -> x155y73[constraint=false]
+x154y74 -> x155y74 -> x154y74
+x155y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y74 -> x155y75 -> x155y74[constraint=false]
+x154y75 -> x155y75 -> x154y75
+x155y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y75 -> x155y76 -> x155y75[constraint=false]
+x154y76 -> x155y76 -> x154y76
+x155y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x155y76 -> x155y77 -> x155y76[constraint=false]
+x154y77 -> x155y77 -> x154y77
+
+{rank=same;a155;x155y25;x155y26;x155y27;x155y28;x155y29;x155y30;x155y31;x155y32;x155y33;x155y34;x155y35;x155y36;x155y37;x155y38;x155y39;x155y40;x155y41;x155y42;x155y43;x155y44;x155y45;x155y46;x155y47;x155y48;x155y49;x155y50;x155y51;x155y52;x155y71;x155y72;x155y73;x155y74;x155y75;x155y76;x155y77;}
+x156y25[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a156 -> x156y25 -> a156[constraint=false]
+x155y25 -> x156y25 -> x155y25
+x156y26[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y25 -> x156y26 -> x156y25[constraint=false]
+x155y26 -> x156y26 -> x155y26
+x156y27[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y26 -> x156y27 -> x156y26[constraint=false]
+x155y27 -> x156y27 -> x155y27
+x156y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y27 -> x156y28 -> x156y27[constraint=false]
+x155y28 -> x156y28 -> x155y28
+x156y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y28 -> x156y29 -> x156y28[constraint=false]
+x155y29 -> x156y29 -> x155y29
+x156y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y29 -> x156y30 -> x156y29[constraint=false]
+x155y30 -> x156y30 -> x155y30
+x156y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y30 -> x156y31 -> x156y30[constraint=false]
+x155y31 -> x156y31 -> x155y31
+x156y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y31 -> x156y32 -> x156y31[constraint=false]
+x155y32 -> x156y32 -> x155y32
+x156y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y32 -> x156y33 -> x156y32[constraint=false]
+x155y33 -> x156y33 -> x155y33
+x156y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y33 -> x156y34 -> x156y33[constraint=false]
+x155y34 -> x156y34 -> x155y34
+x156y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y34 -> x156y35 -> x156y34[constraint=false]
+x155y35 -> x156y35 -> x155y35
+x156y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y35 -> x156y36 -> x156y35[constraint=false]
+x155y36 -> x156y36 -> x155y36
+x156y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y36 -> x156y37 -> x156y36[constraint=false]
+x155y37 -> x156y37 -> x155y37
+x156y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y37 -> x156y38 -> x156y37[constraint=false]
+x155y38 -> x156y38 -> x155y38
+x156y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y38 -> x156y39 -> x156y38[constraint=false]
+x155y39 -> x156y39 -> x155y39
+x156y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y39 -> x156y40 -> x156y39[constraint=false]
+x155y40 -> x156y40 -> x155y40
+x156y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y40 -> x156y41 -> x156y40[constraint=false]
+x155y41 -> x156y41 -> x155y41
+x156y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y41 -> x156y42 -> x156y41[constraint=false]
+x155y42 -> x156y42 -> x155y42
+x156y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y42 -> x156y43 -> x156y42[constraint=false]
+x155y43 -> x156y43 -> x155y43
+x156y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y43 -> x156y44 -> x156y43[constraint=false]
+x155y44 -> x156y44 -> x155y44
+x156y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y44 -> x156y45 -> x156y44[constraint=false]
+x155y45 -> x156y45 -> x155y45
+x156y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y45 -> x156y46 -> x156y45[constraint=false]
+x155y46 -> x156y46 -> x155y46
+x156y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y46 -> x156y47 -> x156y46[constraint=false]
+x155y47 -> x156y47 -> x155y47
+x156y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y47 -> x156y48 -> x156y47[constraint=false]
+x155y48 -> x156y48 -> x155y48
+x156y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y48 -> x156y49 -> x156y48[constraint=false]
+x155y49 -> x156y49 -> x155y49
+x156y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y49 -> x156y50 -> x156y49[constraint=false]
+x155y50 -> x156y50 -> x155y50
+x156y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y50 -> x156y51 -> x156y50[constraint=false]
+x155y51 -> x156y51 -> x155y51
+x156y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y51 -> x156y52 -> x156y51[constraint=false]
+x155y52 -> x156y52 -> x155y52
+x156y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y52 -> x156y71 -> x156y52[constraint=false]
+x155y71 -> x156y71 -> x155y71
+x156y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y71 -> x156y72 -> x156y71[constraint=false]
+x155y72 -> x156y72 -> x155y72
+x156y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y72 -> x156y73 -> x156y72[constraint=false]
+x155y73 -> x156y73 -> x155y73
+x156y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y73 -> x156y74 -> x156y73[constraint=false]
+x155y74 -> x156y74 -> x155y74
+x156y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y74 -> x156y75 -> x156y74[constraint=false]
+x155y75 -> x156y75 -> x155y75
+x156y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y75 -> x156y76 -> x156y75[constraint=false]
+x155y76 -> x156y76 -> x155y76
+x156y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x156y76 -> x156y77 -> x156y76[constraint=false]
+x155y77 -> x156y77 -> x155y77
+
+{rank=same;a156;x156y25;x156y26;x156y27;x156y28;x156y29;x156y30;x156y31;x156y32;x156y33;x156y34;x156y35;x156y36;x156y37;x156y38;x156y39;x156y40;x156y41;x156y42;x156y43;x156y44;x156y45;x156y46;x156y47;x156y48;x156y49;x156y50;x156y51;x156y52;x156y71;x156y72;x156y73;x156y74;x156y75;x156y76;x156y77;}
+x157y25[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a157 -> x157y25 -> a157[constraint=false]
+x156y25 -> x157y25 -> x156y25
+x157y26[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y25 -> x157y26 -> x157y25[constraint=false]
+x156y26 -> x157y26 -> x156y26
+x157y27[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y26 -> x157y27 -> x157y26[constraint=false]
+x156y27 -> x157y27 -> x156y27
+x157y28[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y27 -> x157y28 -> x157y27[constraint=false]
+x156y28 -> x157y28 -> x156y28
+x157y29[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y28 -> x157y29 -> x157y28[constraint=false]
+x156y29 -> x157y29 -> x156y29
+x157y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y29 -> x157y30 -> x157y29[constraint=false]
+x156y30 -> x157y30 -> x156y30
+x157y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y30 -> x157y31 -> x157y30[constraint=false]
+x156y31 -> x157y31 -> x156y31
+x157y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y31 -> x157y32 -> x157y31[constraint=false]
+x156y32 -> x157y32 -> x156y32
+x157y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y32 -> x157y33 -> x157y32[constraint=false]
+x156y33 -> x157y33 -> x156y33
+x157y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y33 -> x157y34 -> x157y33[constraint=false]
+x156y34 -> x157y34 -> x156y34
+x157y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y34 -> x157y35 -> x157y34[constraint=false]
+x156y35 -> x157y35 -> x156y35
+x157y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y35 -> x157y36 -> x157y35[constraint=false]
+x156y36 -> x157y36 -> x156y36
+x157y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y36 -> x157y37 -> x157y36[constraint=false]
+x156y37 -> x157y37 -> x156y37
+x157y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y37 -> x157y38 -> x157y37[constraint=false]
+x156y38 -> x157y38 -> x156y38
+x157y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y38 -> x157y39 -> x157y38[constraint=false]
+x156y39 -> x157y39 -> x156y39
+x157y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y39 -> x157y40 -> x157y39[constraint=false]
+x156y40 -> x157y40 -> x156y40
+x157y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y40 -> x157y41 -> x157y40[constraint=false]
+x156y41 -> x157y41 -> x156y41
+x157y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y41 -> x157y42 -> x157y41[constraint=false]
+x156y42 -> x157y42 -> x156y42
+x157y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y42 -> x157y43 -> x157y42[constraint=false]
+x156y43 -> x157y43 -> x156y43
+x157y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y43 -> x157y44 -> x157y43[constraint=false]
+x156y44 -> x157y44 -> x156y44
+x157y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y44 -> x157y45 -> x157y44[constraint=false]
+x156y45 -> x157y45 -> x156y45
+x157y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y45 -> x157y46 -> x157y45[constraint=false]
+x156y46 -> x157y46 -> x156y46
+x157y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y46 -> x157y47 -> x157y46[constraint=false]
+x156y47 -> x157y47 -> x156y47
+x157y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y47 -> x157y48 -> x157y47[constraint=false]
+x156y48 -> x157y48 -> x156y48
+x157y49[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y48 -> x157y49 -> x157y48[constraint=false]
+x156y49 -> x157y49 -> x156y49
+x157y50[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y49 -> x157y50 -> x157y49[constraint=false]
+x156y50 -> x157y50 -> x156y50
+x157y51[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y50 -> x157y51 -> x157y50[constraint=false]
+x156y51 -> x157y51 -> x156y51
+x157y52[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y51 -> x157y52 -> x157y51[constraint=false]
+x156y52 -> x157y52 -> x156y52
+x157y71[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y52 -> x157y71 -> x157y52[constraint=false]
+x156y71 -> x157y71 -> x156y71
+x157y72[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y71 -> x157y72 -> x157y71[constraint=false]
+x156y72 -> x157y72 -> x156y72
+x157y73[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y72 -> x157y73 -> x157y72[constraint=false]
+x156y73 -> x157y73 -> x156y73
+x157y74[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y73 -> x157y74 -> x157y73[constraint=false]
+x156y74 -> x157y74 -> x156y74
+x157y75[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y74 -> x157y75 -> x157y74[constraint=false]
+x156y75 -> x157y75 -> x156y75
+x157y76[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y75 -> x157y76 -> x157y75[constraint=false]
+x156y76 -> x157y76 -> x156y76
+x157y77[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x157y76 -> x157y77 -> x157y76[constraint=false]
+x156y77 -> x157y77 -> x156y77
+
+{rank=same;a157;x157y25;x157y26;x157y27;x157y28;x157y29;x157y30;x157y31;x157y32;x157y33;x157y34;x157y35;x157y36;x157y37;x157y38;x157y39;x157y40;x157y41;x157y42;x157y43;x157y44;x157y45;x157y46;x157y47;x157y48;x157y49;x157y50;x157y51;x157y52;x157y71;x157y72;x157y73;x157y74;x157y75;x157y76;x157y77;}
+x158y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a158 -> x158y30 -> a158[constraint=false]
+x157y30 -> x158y30 -> x157y30
+x158y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y30 -> x158y31 -> x158y30[constraint=false]
+x157y31 -> x158y31 -> x157y31
+x158y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y31 -> x158y32 -> x158y31[constraint=false]
+x157y32 -> x158y32 -> x157y32
+x158y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y32 -> x158y33 -> x158y32[constraint=false]
+x157y33 -> x158y33 -> x157y33
+x158y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y33 -> x158y34 -> x158y33[constraint=false]
+x157y34 -> x158y34 -> x157y34
+x158y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y34 -> x158y35 -> x158y34[constraint=false]
+x157y35 -> x158y35 -> x157y35
+x158y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y35 -> x158y36 -> x158y35[constraint=false]
+x157y36 -> x158y36 -> x157y36
+x158y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y36 -> x158y37 -> x158y36[constraint=false]
+x157y37 -> x158y37 -> x157y37
+x158y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y37 -> x158y38 -> x158y37[constraint=false]
+x157y38 -> x158y38 -> x157y38
+x158y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y38 -> x158y39 -> x158y38[constraint=false]
+x157y39 -> x158y39 -> x157y39
+x158y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y39 -> x158y40 -> x158y39[constraint=false]
+x157y40 -> x158y40 -> x157y40
+x158y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y40 -> x158y41 -> x158y40[constraint=false]
+x157y41 -> x158y41 -> x157y41
+x158y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y41 -> x158y42 -> x158y41[constraint=false]
+x157y42 -> x158y42 -> x157y42
+x158y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y42 -> x158y43 -> x158y42[constraint=false]
+x157y43 -> x158y43 -> x157y43
+x158y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y43 -> x158y44 -> x158y43[constraint=false]
+x157y44 -> x158y44 -> x157y44
+x158y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y44 -> x158y45 -> x158y44[constraint=false]
+x157y45 -> x158y45 -> x157y45
+x158y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y45 -> x158y46 -> x158y45[constraint=false]
+x157y46 -> x158y46 -> x157y46
+x158y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y46 -> x158y47 -> x158y46[constraint=false]
+x157y47 -> x158y47 -> x157y47
+x158y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x158y47 -> x158y48 -> x158y47[constraint=false]
+x157y48 -> x158y48 -> x157y48
+
+{rank=same;a158;x158y30;x158y31;x158y32;x158y33;x158y34;x158y35;x158y36;x158y37;x158y38;x158y39;x158y40;x158y41;x158y42;x158y43;x158y44;x158y45;x158y46;x158y47;x158y48;}
+x159y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a159 -> x159y30 -> a159[constraint=false]
+x158y30 -> x159y30 -> x158y30
+x159y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y30 -> x159y31 -> x159y30[constraint=false]
+x158y31 -> x159y31 -> x158y31
+x159y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y31 -> x159y32 -> x159y31[constraint=false]
+x158y32 -> x159y32 -> x158y32
+x159y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y32 -> x159y33 -> x159y32[constraint=false]
+x158y33 -> x159y33 -> x158y33
+x159y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y33 -> x159y34 -> x159y33[constraint=false]
+x158y34 -> x159y34 -> x158y34
+x159y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y34 -> x159y35 -> x159y34[constraint=false]
+x158y35 -> x159y35 -> x158y35
+x159y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y35 -> x159y36 -> x159y35[constraint=false]
+x158y36 -> x159y36 -> x158y36
+x159y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y36 -> x159y37 -> x159y36[constraint=false]
+x158y37 -> x159y37 -> x158y37
+x159y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y37 -> x159y38 -> x159y37[constraint=false]
+x158y38 -> x159y38 -> x158y38
+x159y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y38 -> x159y39 -> x159y38[constraint=false]
+x158y39 -> x159y39 -> x158y39
+x159y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y39 -> x159y40 -> x159y39[constraint=false]
+x158y40 -> x159y40 -> x158y40
+x159y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y40 -> x159y41 -> x159y40[constraint=false]
+x158y41 -> x159y41 -> x158y41
+x159y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y41 -> x159y42 -> x159y41[constraint=false]
+x158y42 -> x159y42 -> x158y42
+x159y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y42 -> x159y43 -> x159y42[constraint=false]
+x158y43 -> x159y43 -> x158y43
+x159y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y43 -> x159y44 -> x159y43[constraint=false]
+x158y44 -> x159y44 -> x158y44
+x159y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y44 -> x159y45 -> x159y44[constraint=false]
+x158y45 -> x159y45 -> x158y45
+x159y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y45 -> x159y46 -> x159y45[constraint=false]
+x158y46 -> x159y46 -> x158y46
+x159y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y46 -> x159y47 -> x159y46[constraint=false]
+x158y47 -> x159y47 -> x158y47
+x159y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x159y47 -> x159y48 -> x159y47[constraint=false]
+x158y48 -> x159y48 -> x158y48
+
+{rank=same;a159;x159y30;x159y31;x159y32;x159y33;x159y34;x159y35;x159y36;x159y37;x159y38;x159y39;x159y40;x159y41;x159y42;x159y43;x159y44;x159y45;x159y46;x159y47;x159y48;}
+x160y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a160 -> x160y30 -> a160[constraint=false]
+x159y30 -> x160y30 -> x159y30
+x160y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y30 -> x160y31 -> x160y30[constraint=false]
+x159y31 -> x160y31 -> x159y31
+x160y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y31 -> x160y32 -> x160y31[constraint=false]
+x159y32 -> x160y32 -> x159y32
+x160y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y32 -> x160y33 -> x160y32[constraint=false]
+x159y33 -> x160y33 -> x159y33
+x160y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y33 -> x160y34 -> x160y33[constraint=false]
+x159y34 -> x160y34 -> x159y34
+x160y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y34 -> x160y35 -> x160y34[constraint=false]
+x159y35 -> x160y35 -> x159y35
+x160y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y35 -> x160y36 -> x160y35[constraint=false]
+x159y36 -> x160y36 -> x159y36
+x160y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y36 -> x160y37 -> x160y36[constraint=false]
+x159y37 -> x160y37 -> x159y37
+x160y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y37 -> x160y38 -> x160y37[constraint=false]
+x159y38 -> x160y38 -> x159y38
+x160y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y38 -> x160y39 -> x160y38[constraint=false]
+x159y39 -> x160y39 -> x159y39
+x160y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y39 -> x160y40 -> x160y39[constraint=false]
+x159y40 -> x160y40 -> x159y40
+x160y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y40 -> x160y41 -> x160y40[constraint=false]
+x159y41 -> x160y41 -> x159y41
+x160y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y41 -> x160y42 -> x160y41[constraint=false]
+x159y42 -> x160y42 -> x159y42
+x160y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y42 -> x160y43 -> x160y42[constraint=false]
+x159y43 -> x160y43 -> x159y43
+x160y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y43 -> x160y44 -> x160y43[constraint=false]
+x159y44 -> x160y44 -> x159y44
+x160y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y44 -> x160y45 -> x160y44[constraint=false]
+x159y45 -> x160y45 -> x159y45
+x160y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y45 -> x160y46 -> x160y45[constraint=false]
+x159y46 -> x160y46 -> x159y46
+x160y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y46 -> x160y47 -> x160y46[constraint=false]
+x159y47 -> x160y47 -> x159y47
+x160y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x160y47 -> x160y48 -> x160y47[constraint=false]
+x159y48 -> x160y48 -> x159y48
+
+{rank=same;a160;x160y30;x160y31;x160y32;x160y33;x160y34;x160y35;x160y36;x160y37;x160y38;x160y39;x160y40;x160y41;x160y42;x160y43;x160y44;x160y45;x160y46;x160y47;x160y48;}
+x161y30[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+a161 -> x161y30 -> a161[constraint=false]
+x160y30 -> x161y30 -> x160y30
+x161y31[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y30 -> x161y31 -> x161y30[constraint=false]
+x160y31 -> x161y31 -> x160y31
+x161y32[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y31 -> x161y32 -> x161y31[constraint=false]
+x160y32 -> x161y32 -> x160y32
+x161y33[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y32 -> x161y33 -> x161y32[constraint=false]
+x160y33 -> x161y33 -> x160y33
+x161y34[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y33 -> x161y34 -> x161y33[constraint=false]
+x160y34 -> x161y34 -> x160y34
+x161y35[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y34 -> x161y35 -> x161y34[constraint=false]
+x160y35 -> x161y35 -> x160y35
+x161y36[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y35 -> x161y36 -> x161y35[constraint=false]
+x160y36 -> x161y36 -> x160y36
+x161y37[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y36 -> x161y37 -> x161y36[constraint=false]
+x160y37 -> x161y37 -> x160y37
+x161y38[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y37 -> x161y38 -> x161y37[constraint=false]
+x160y38 -> x161y38 -> x160y38
+x161y39[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y38 -> x161y39 -> x161y38[constraint=false]
+x160y39 -> x161y39 -> x160y39
+x161y40[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y39 -> x161y40 -> x161y39[constraint=false]
+x160y40 -> x161y40 -> x160y40
+x161y41[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y40 -> x161y41 -> x161y40[constraint=false]
+x160y41 -> x161y41 -> x160y41
+x161y42[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y41 -> x161y42 -> x161y41[constraint=false]
+x160y42 -> x161y42 -> x160y42
+x161y43[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y42 -> x161y43 -> x161y42[constraint=false]
+x160y43 -> x161y43 -> x160y43
+x161y44[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y43 -> x161y44 -> x161y43[constraint=false]
+x160y44 -> x161y44 -> x160y44
+x161y45[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y44 -> x161y45 -> x161y44[constraint=false]
+x160y45 -> x161y45 -> x160y45
+x161y46[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y45 -> x161y46 -> x161y45[constraint=false]
+x160y46 -> x161y46 -> x160y46
+x161y47[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y46 -> x161y47 -> x161y46[constraint=false]
+x160y47 -> x161y47 -> x160y47
+x161y48[label = "#8A4818", style = filled, fillcolor = "#8A4818"]
+x161y47 -> x161y48 -> x161y47[constraint=false]
+x160y48 -> x161y48 -> x160y48
+
+{rank=same;a161;x161y30;x161y31;x161y32;x161y33;x161y34;x161y35;x161y36;x161y37;x161y38;x161y39;x161y40;x161y41;x161y42;x161y43;x161y44;x161y45;x161y46;x161y47;x161y48;}
+}

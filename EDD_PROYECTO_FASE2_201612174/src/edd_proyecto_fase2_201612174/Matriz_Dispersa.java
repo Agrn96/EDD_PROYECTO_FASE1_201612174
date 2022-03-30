@@ -31,10 +31,10 @@ public class Matriz_Dispersa {
         Node_MD temp = this.inicio;
         if (this.inicio.row == null) {
             while (x > row_Max) {
+                ++row_Max;
                 Node_MD newNode = new Node_MD(row_Max);
                 temp.row = newNode;
                 temp = temp.row;
-                row_Max++;
             }
             return;
         }
@@ -43,10 +43,10 @@ public class Matriz_Dispersa {
             temp = temp.row;
         }
         while (x > row_Max) {
+            ++row_Max;
             Node_MD newNode = new Node_MD(row_Max);
             temp.row = newNode;
             temp = temp.row;
-            row_Max++;
         }
     }
 
@@ -54,10 +54,10 @@ public class Matriz_Dispersa {
         Node_MD temp = this.inicio;
         if (this.inicio.col == null) {
             while (y > col_Max) {
+                ++col_Max;
                 Node_MD newNode = new Node_MD(col_Max);
                 temp.col = newNode;
                 temp = temp.col;
-                col_Max++;
             }
             return;
         }
@@ -66,10 +66,10 @@ public class Matriz_Dispersa {
             temp = temp.col;
         }
         while (y > col_Max) {
+            ++col_Max;
             Node_MD newNode = new Node_MD(col_Max);
             temp.col = newNode;
             temp = temp.col;
-            col_Max++;
         }
     }
 
@@ -214,7 +214,7 @@ public class Matriz_Dispersa {
     
     public void graph(String fileName) {
         try {
-            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\" + fileName + ".txt");
+            FileWriter myWriter = new FileWriter("src\\Salidas\\" + fileName + ".txt");
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nnode[shape = rectangle]\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora());
             myWriter.write("}");
@@ -231,21 +231,21 @@ public class Matriz_Dispersa {
         String cadena;
         String rowInfo = "MD;";
         cadena = "MD -> ";
-        for (int i = 0; i < row_Max; i++) {
-            if (i == row_Max - 1) {
-                cadena += "a" + (i + 1) + "\n";
+        for (int i = 0; i <= row_Max; i++) {
+            if (i == row_Max) {
+                cadena += "a" + (i) + "\n";
             } else {
-                cadena += "a" + (i + 1) + " -> ";
+                cadena += "a" + (i) + " -> ";
             }
         }
         cadena += "MD -> ";
-        for (int i = 0; i < col_Max; i++) {
-            if (i == col_Max - 1) {
-                cadena += "b" + (i + 1) + "\n";
+        for (int i = 0; i <= col_Max; i++) {
+            if (i == col_Max) {
+                cadena += "b" + (i) + "\n";
             } else {
-                cadena += "b" + (i + 1) + " -> ";
+                cadena += "b" + (i) + " -> ";
             }
-            rowInfo += "b" + (i + 1) + ";";
+            rowInfo += "b" + (i) + ";";
         }
         cadena += "{rank=same;" + rowInfo + "}\n";
         Node_MD temp = inicio.row;
