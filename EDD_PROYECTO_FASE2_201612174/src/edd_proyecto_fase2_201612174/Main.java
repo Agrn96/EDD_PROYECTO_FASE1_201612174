@@ -19,27 +19,27 @@ public class Main {
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
         Matriz_Dispersa MD = new Matriz_Dispersa();
-        
-        MD.add_Node(0,0,"test");
+        carga_Masiva_Capa();
+        //MD.add_Node(0,0,"test");
         
         //MD.add_headers("t",5,5);
         //MD.display();
-        MD.add_Node(4, 3, "First");
-        MD.add_Node(1, 3, "Second");
-        MD.add_Node(5, 4, "Third");
-        MD.add_Node(2, 2, "Fourth");
-        MD.add_Node(3, 2, "Fifth");
-        MD.add_Node(1, 3, "Sixth"); // Duplicates are taking into account the col pointers but not adding the row ones
-        MD.add_Node(5, 1, "Seventh");
-        MD.add_Node(3, 1, "Eighth");
-        
-        System.out.println("New");
-        MD.display();
-        System.out.println("New");
-        MD.display2();
-        
-        //MD.display2();
-        MD.graph("MD");
+//        MD.add_Node(4, 3, "CCAA22");
+//        MD.add_Node(1, 3, "000000");
+//        MD.add_Node(5, 4, "321FFF");
+//        MD.add_Node(2, 3, "333333");
+//        MD.add_Node(3, 2, "FFF321");
+//        MD.add_Node(1, 3, "FFFF00"); // Duplicates are taking into account the col pointers but not adding the row ones
+//        MD.add_Node(5, 1, "FF321F");
+//        MD.add_Node(3, 1, "F321FF");
+//        
+//        System.out.println("New");
+//        MD.display();
+//        System.out.println("New");
+//        MD.display2();
+//        
+//        //MD.display2();
+//        MD.graph("MD");
         
         
         //AVL
@@ -52,66 +52,32 @@ public class Main {
         //avl.graficar(avl.raiz);
         //avl.imprimir("reporte");
     }
-    private static void cargaMasivaCapa() throws FileNotFoundException, IOException, ParseException{
+    private static void carga_Masiva_Capa() throws FileNotFoundException, IOException, ParseException{
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\sonic.json"));
         Iterator<JSONObject> iterator = jsonArray.iterator();
+        
         while(iterator.hasNext()) {
             JSONObject capa = iterator.next();
-            //long id = (long) capa.get("id_capa");
+            Long id = (Long) capa.get("id_capa");
+            String id_ = id.toString();
             JSONArray pixeles = (JSONArray) capa.get("pixeles");
             Iterator<JSONObject> iterator2 = pixeles.iterator();
-                
-            Lista_Orthogonal MD = new Lista_Orthogonal(50,50);
-            //Matriz m = new Matriz((int) id, "Capa");
+            System.out.println(id_ + " CAPA NUEVO MATRIZ");
+            Matriz_Dispersa MD = new Matriz_Dispersa();
+            MD.add_Node(0, 0, id_);
             while (iterator2.hasNext()){
                 JSONObject obj = iterator2.next();
-                long fila = (long) obj.get("fila");
-                long columna = (long) obj.get("columna");
+                long row = (long) obj.get("fila");
+                int row_ = (int) row;
+                long col = (long) obj.get("columna");
+                int col_ = (int) col;
                 String color = (String) obj.get("color");
-                System.out.println("F: " + fila + " C: " + columna + " D: " + color);
-                MD.add_nodes(fila, columna, color);
-                //m.insert((int) columna, (int) fila, color);
+                System.out.println("F: " + row_ + " C: " + col_ + " D: " + color);
+                MD.add_Node(row_, col_, color);
             }
             MD.display();
-            //MD.graph("MD2");
-            //generarDot("capa" + id, m.graph());
+            MD.graph(id_);
         }
     }
-    
-    /*
-    private static void cargaMasivaClientes() throws FileNotFoundException, IOException, ParseException{
-        //BTreeClients b = new BTreeClients(2);
-        
-        JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("./Clientes.json"));
-        Iterator<JSONObject> iterator = jsonArray.iterator();
-        while(iterator.hasNext()){
-            JSONObject cliente = iterator.next();
-            String dpi = (String) cliente.get("dpi");
-            String nombre_cliente = (String) cliente.get("nombre_cliente");
-            String password = (String) cliente.get("password");
-            b.insert(new Cliente(dpi, nombre_cliente, password));
-        }
-        generarDot("BTreeClients", b.graph());
-    }
-    */
-    /*
-    private static void cargaMasivaClientes() throws FileNotFoundException, IOException, ParseException{
-        //BTreeClients b = new BTreeClients(2);
-        
-        JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("./Clientes.json"));
-        Iterator<JSONObject> iterator = jsonArray.iterator();
-        while(iterator.hasNext()){
-            JSONObject cliente = iterator.next();
-            String dpi = (String) cliente.get("dpi");
-            String nombre_cliente = (String) cliente.get("nombre_cliente");
-            String password = (String) cliente.get("password");
-            b.insert(new Cliente(dpi, nombre_cliente, password));
-        }
-        generarDot("BTreeClients", b.graph());
-    }
-*/
-    
 }

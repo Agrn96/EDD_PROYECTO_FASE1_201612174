@@ -18,8 +18,8 @@ public class Matriz_Dispersa {
     Node_MD inicio;
 
     Matriz_Dispersa() {
-        this.col_Max = 0;
-        this.row_Max = 0;
+        this.col_Max = -1;
+        this.row_Max = -1;
         this.inicio = null;
     }
 
@@ -31,10 +31,10 @@ public class Matriz_Dispersa {
         Node_MD temp = this.inicio;
         if (this.inicio.row == null) {
             while (x > row_Max) {
-                ++row_Max;
                 Node_MD newNode = new Node_MD(row_Max);
                 temp.row = newNode;
                 temp = temp.row;
+                row_Max++;
             }
             return;
         }
@@ -43,10 +43,10 @@ public class Matriz_Dispersa {
             temp = temp.row;
         }
         while (x > row_Max) {
-            ++row_Max;
             Node_MD newNode = new Node_MD(row_Max);
             temp.row = newNode;
             temp = temp.row;
+            row_Max++;
         }
     }
 
@@ -54,10 +54,10 @@ public class Matriz_Dispersa {
         Node_MD temp = this.inicio;
         if (this.inicio.col == null) {
             while (y > col_Max) {
-                ++col_Max;
                 Node_MD newNode = new Node_MD(col_Max);
                 temp.col = newNode;
                 temp = temp.col;
+                col_Max++;
             }
             return;
         }
@@ -66,10 +66,10 @@ public class Matriz_Dispersa {
             temp = temp.col;
         }
         while (y > col_Max) {
-            ++col_Max;
             Node_MD newNode = new Node_MD(col_Max);
             temp.col = newNode;
             temp = temp.col;
+            col_Max++;
         }
     }
 
@@ -220,7 +220,7 @@ public class Matriz_Dispersa {
             myWriter.write("}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-            GraphViz.imprimir("MD");
+            GraphViz.imprimir(fileName);
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -257,30 +257,31 @@ public class Matriz_Dispersa {
                 temp = temp.row;
                 continue;
             } else {
-                cadena += "a" + temp_.row_No + " -> x" + temp_.data + " -> a" + temp_.row_No + "[constraint=false]\n";
-                rowInfo += "x" + temp_.data + ";"; //data -> color
+                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"" + temp_.data + "\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
+                cadena += "a" + temp_.row_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> a" + temp_.row_No + "[constraint=false]\n";
+                rowInfo += "x" + temp_.row_No + "y" + temp_.col_No + ";"; //data -> color
                 if (temp_.up == null) {
                     System.out.println(temp_.data);
-                    cadena += "b" + temp_.col_No + " -> x" + temp_.data + " -> b" + temp_.col_No + "\n";
+                    cadena += "b" + temp_.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> b" + temp_.col_No + "\n";
                 } else {
-                    cadena += "x" + temp_.up.data + " -> x" + temp_.data + " -> x" + temp_.up.data + "\n";
+                    cadena += "x" + temp_.up.row_No + "y" + temp_.up.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> x" + temp_.up.row_No + "y" + temp_.up.col_No + "\n";
                 }
                 temp_ = temp_.right;
             }
             while (temp_ != null) {
-                cadena += "x" + temp_.left.data + " -> x" + temp_.data + " -> x" + temp_.left.data + "[constraint=false]\n";
-                rowInfo += "x" + temp_.data + ";";
+                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"" + temp_.data + "\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
+                cadena += "x" + temp_.left.row_No + "y" + temp_.left.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> x" + temp_.left.row_No + "y" + temp_.left.col_No + "[constraint=false]\n";
+                rowInfo += "x" + temp_.row_No + "y" + temp_.col_No + ";";
                 if (temp_.up == null) {
-                    cadena += "b" + temp_.col_No + " -> x" + temp_.data + " -> b" + temp_.col_No + "\n";
+                    cadena += "b" + temp_.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> b" + temp_.col_No + "\n";
                 } else {
-                    cadena += "x" + temp_.up.data + " -> x" + temp_.data + " -> x" + temp_.up.data + "\n";
+                    cadena += "x" + temp_.up.row_No + "y" + temp_.up.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> x" + temp_.up.row_No + "y" + temp_.up.col_No + "\n";
                 }
                 temp_ = temp_.right;
             }
             temp = temp.row;
             cadena += "\n{rank=same;" + rowInfo + "}\n";
         }
-
         return cadena;
     }
 }
