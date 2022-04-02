@@ -12,8 +12,15 @@ package edd_proyecto_fase2_201612174;
 public class Node_AVL {
     Node_AVL left, right;
     int data, height;
-    public Node_AVL(int x){
-        this.data = x;
+    ABB node_Access;
+//    public Node_AVL(int x){
+//        this.data = x;
+//        height = 1;
+//    }
+    
+    public Node_AVL(ABB newNode){
+        this.data = newNode.raiz.data;
         height = 1;
+        this.node_Access = newNode;
     }
 }

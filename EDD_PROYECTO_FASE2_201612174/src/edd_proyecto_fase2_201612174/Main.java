@@ -8,6 +8,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import Interfaz.*;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
 
 /**
  * @author 201612174 --Alberto Gabriel Reyes Ning
@@ -18,10 +21,42 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
-        Matriz_Dispersa MD = new Matriz_Dispersa();
-        carga_Masiva_Capa();
-        //MD.add_Node(0,0,"test");
+        ArbolB usuarios = new ArbolB();
         
+        usuarios.insertar("6251456780101", "Random", "Random");
+        usuarios.insertar("8846571357767", "Random", "Random");
+        usuarios.insertar("8747893864590", "Random", "Random");
+        usuarios.insertar("7630752110900", "Random", "Random");
+        usuarios.insertar("5918943572369", "Random", "Random");
+        usuarios.insertar("5637293833292", "Random", "Random");
+        usuarios.insertar("9271174649561", "Random", "Random");
+        usuarios.insertar("2407234920600", "Random", "Random");
+        usuarios.insertar("6307043402800", "Random", "Random");
+        usuarios.insertar("6469799687585", "Random", "Random");
+        usuarios.insertar("9085473429306", "Random", "Random");
+        usuarios.insertar("9842335442045", "Random", "Random");
+        usuarios.insertar("4694710804592", "Random", "Random");
+        usuarios.graph("random");
+        
+        
+//        test frame = new test();
+//        Login log = new Login();
+//        frame.setLayout(new BorderLayout());
+//        frame.setVisible(true);
+//        frame.add(log, BorderLayout.CENTER);
+//        log.setVisible(true);
+//        System.out.println("test");
+//        Matriz_Dispersa MD = new Matriz_Dispersa();
+//        ABB arbol = carga_Masiva_Capa();
+//        System.out.println("\nARBOL:");
+//        arbol.displayIO(arbol.raiz);
+//        System.out.println("\nARBOL:");
+//        arbol.displayPostO(arbol.raiz);
+//        System.out.println("\nARBOL:");
+//        arbol.displayPreO(arbol.raiz);
+//        arbol.graficar(arbol.raiz);
+        //MD.add_Node(0,0,"test");
+
         //MD.add_headers("t",5,5);
         //MD.display();
 //        MD.add_Node(4, 3, "CCAA22");
@@ -40,8 +75,6 @@ public class Main {
 //        
 //        //MD.display2();
 //        MD.graph("MD");
-        
-        
         //AVL
         //AVL avl = new AVL();
         //int[] x = {75, 40, 23, 8, 6, 37, 32, 45, 25, 1, 88, 29, 4, 11, 39, 14, 66, 24, 12, 7};
@@ -52,12 +85,15 @@ public class Main {
         //avl.graficar(avl.raiz);
         //avl.imprimir("reporte");
     }
-    private static void carga_Masiva_Capa() throws FileNotFoundException, IOException, ParseException{
+
+    private static ABB carga_Masiva_Capa() throws FileNotFoundException, IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\mario.json"));
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\sonic.json"));
         Iterator<JSONObject> iterator = jsonArray.iterator();
         Matriz_Dispersa MD_Main = new Matriz_Dispersa();
-        while(iterator.hasNext()) {
+        MD_Main.add_Node(0, 0, "TEST");
+        ABB arbol = new ABB();
+        while (iterator.hasNext()) {
             JSONObject capa = iterator.next();
             Long id = (Long) capa.get("id_capa");
             String id_ = id.toString();
@@ -66,20 +102,25 @@ public class Main {
             System.out.println(id_ + " CAPA NUEVO MATRIZ");
             Matriz_Dispersa MD = new Matriz_Dispersa();
             MD.add_Node(0, 0, id_);
-            while (iterator2.hasNext()){
+            while (iterator2.hasNext()) {
                 JSONObject obj = iterator2.next();
                 long row = (long) obj.get("fila");
                 int row_ = (int) row;
                 long col = (long) obj.get("columna");
                 int col_ = (int) col;
                 String color = (String) obj.get("color");
-                System.out.println("F: " + row_ + " C: " + col_ + " D: " + color);
+                //System.out.println("F: " + row_ + " C: " + col_ + " D: " + color);
                 MD.add_Node(row_, col_, color);
                 MD_Main.add_Node(row_, col_, color);
             }
-            MD.display();
+            System.out.println("NEW MD: " + MD.inicio.data);
+            arbol.insert(MD);
+            //MD.display();
             MD.graph(id_);
         }
+
         MD_Main.graph("TEST");
+
+        return arbol;
     }
 }

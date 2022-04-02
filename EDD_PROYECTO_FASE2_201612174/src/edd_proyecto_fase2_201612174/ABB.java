@@ -14,14 +14,17 @@ import java.io.IOException;
  */
 public class ABB {
 
-    Node_ABB raiz = new Node_ABB();
+    Node_ABB raiz;
 
     public ABB() {
+        raiz = new Node_ABB();
     }
 
-    public void insert(int data) {
+    public void insert(Matriz_Dispersa MD) {
+        int data = Integer.parseInt(MD.inicio.data); 
+        System.out.println("TEST::::" + data);
         Node_ABB temp = this.raiz;
-        Node_ABB rand = new Node_ABB(data);
+        Node_ABB rand = new Node_ABB(MD);
         Boolean status = false;
 
         while (status == false) {
@@ -60,7 +63,7 @@ public class ABB {
         }
 
         displayIO(temp.left);
-        System.out.println(temp.data);
+        System.out.print(temp.data + " ");
         displayIO(temp.right);
     }
 
@@ -68,7 +71,7 @@ public class ABB {
         if (temp == null) {
             return;
         }
-        System.out.println(temp.data);
+        System.out.print(temp.data + " ");
         displayPreO(temp.left);
         displayPreO(temp.right);
     }
@@ -79,7 +82,7 @@ public class ABB {
         }
         displayPostO(temp.left);
         displayPostO(temp.right);
-        System.out.println(temp.data);
+        System.out.print(temp.data + " ");
     }
     //Graph ABB
     public void graficar(Node_ABB node) {

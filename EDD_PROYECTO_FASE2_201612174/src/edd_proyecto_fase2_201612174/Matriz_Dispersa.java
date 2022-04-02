@@ -17,7 +17,7 @@ public class Matriz_Dispersa {
     int col_Max, row_Max;
     Node_MD inicio;
 
-    Matriz_Dispersa() {
+    public Matriz_Dispersa() {
         this.col_Max = -1;
         this.row_Max = -1;
         this.inicio = null;
@@ -38,7 +38,7 @@ public class Matriz_Dispersa {
             }
             return;
         }
-        
+
         while (temp.row != null) {
             temp = temp.row;
         }
@@ -50,7 +50,7 @@ public class Matriz_Dispersa {
         }
     }
 
-    void add_Header_Col(int y) {        
+    void add_Header_Col(int y) {
         Node_MD temp = this.inicio;
         if (this.inicio.col == null) {
             while (y > col_Max) {
@@ -61,7 +61,7 @@ public class Matriz_Dispersa {
             }
             return;
         }
-        
+
         while (temp.col != null) {
             temp = temp.col;
         }
@@ -75,9 +75,10 @@ public class Matriz_Dispersa {
 
     void add_Node(int x, int y, String data) {
         Node_MD newNode = new Node_MD(x, y, data);
-
+        
         if (this.inicio == null) {
             add_Head(newNode);
+            System.out.println("testing if it is working: " + data);
             return;
         }
 
@@ -95,7 +96,7 @@ public class Matriz_Dispersa {
 
     void add_Col_Pointers(Node_MD newNode) {
         Node_MD temp = this.inicio.col;                 //Col
-        System.out.println("test");
+        //System.out.println("test");
         Node_MD temp_;
 
         while (temp.id != newNode.col_No) {                        //Correct Col
@@ -113,7 +114,7 @@ public class Matriz_Dispersa {
             temp_ = temp.node_Access;
             while (temp_ != null) {
                 if (temp_.row_No == newNode.row_No) {
-                    System.out.println("ERROR: Nodo Duplicado");
+                    //System.out.println("ERROR: Nodo Duplicado");
                     return;
                 } else if (temp_.down == null) {
                     temp_.down = newNode;
@@ -149,7 +150,7 @@ public class Matriz_Dispersa {
             temp_ = temp.node_Access;
             while (temp_ != null) {
                 if (temp_.col_No == newNode.col_No) {
-                    System.out.println("ERROR: Nodo Duplicado");
+                    //System.out.println("ERROR: Nodo Duplicado");
                     return;
                 } else if (temp_.right == null) {
                     temp_.right = newNode;
@@ -188,7 +189,7 @@ public class Matriz_Dispersa {
             temp = temp.row;
         }
     }
-    
+
     void display2() {
         Node_MD temp = inicio;
         Node_MD temp_ = temp.row;
@@ -211,7 +212,22 @@ public class Matriz_Dispersa {
             temp = temp.col;
         }
     }
-    
+
+    void add_Matrix(Matriz_Dispersa first, Matriz_Dispersa second) {
+        Node_MD temp = second.inicio.row;
+        while (temp != null) {
+            if (temp.node_Access == null) {
+                continue;
+            } else {
+                Node_MD temp_ = temp.node_Access;
+                while (temp_ != null) {
+                    first.add_Node(temp_.row_No, temp_.col_No, temp_.data);
+                    temp_ = temp_.right;
+                }
+            }
+        }
+    }
+
     public void graph(String fileName) {
         try {
             FileWriter myWriter = new FileWriter("src\\Salidas\\" + fileName + ".txt");

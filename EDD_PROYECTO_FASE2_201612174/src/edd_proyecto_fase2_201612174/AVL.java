@@ -63,15 +63,16 @@ public class AVL {
         }
     }
     
-    public Node_AVL insert(Node_AVL x, int data){
+    public Node_AVL insert(Node_AVL x, ABB newNode){
+        int data = newNode.raiz.data;
         if(x == null){
-            return (new Node_AVL(data));
+            return (new Node_AVL(newNode));
         }
         
         if(data < x.data){
-            x.left = insert(x.left, data);
+            x.left = insert(x.left, newNode);
         } else if (data > x.data){
-            x.right = insert(x.right, data);
+            x.right = insert(x.right, newNode);
         } else {
             return x;
         }
