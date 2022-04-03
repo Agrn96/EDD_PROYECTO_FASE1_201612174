@@ -6,17 +6,12 @@
 package edd_proyecto_fase2_201612174;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -47,11 +42,14 @@ public class Carga_Masiva {
 
     public static void cargaMasivaImages(File f, String usuarioID, ArbolB usuarios) throws FileNotFoundException, IOException, ParseException {
         String path = "src\\Salidas\\" + usuarioID + "\\Images";
-
+        String[] top = new String[5];
+        int[] top5 = new int[5];
+        int count;
+        
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
         Iterator<JSONObject> iterator = jsonArray.iterator();
-        AVL internalTree = new AVL();
+        AVL avl = new AVL();
         NodoB usuario = usuarios.find(usuarioID);
         ABB random = usuario.node_Capas;
         while (iterator.hasNext()) {
@@ -62,7 +60,7 @@ public class Carga_Masiva {
 
             ABB arbol = new ABB();
             arbol.raiz.data = id;
-            internalTree.raiz = internalTree.insert(internalTree.raiz, arbol);
+            avl.raiz = avl.insert(avl.raiz, arbol);
             Long t = (Long) id;
             Matriz_Dispersa MD = new Matriz_Dispersa();
             MD.add_Node(0, 0, t.toString());
@@ -76,11 +74,9 @@ public class Carga_Masiva {
                 MD.add_Matrix(MD_);
             });
             MD.graph2(usuarioID, id);
-            //arbol.graficar(arbol.raiz, usuarioID, arbol.raiz.data);
-            //internalTree.graficar(internalTree.raiz);
-            //GraphViz.imprimir("reporte1.txt");
+            avl.graficar(avl.raiz);
         }
-        usuario.node_Img = internalTree;
+        usuario.node_Img = avl;
         System.out.println("pause");
     }
 
