@@ -179,13 +179,12 @@ public class ArbolB {
     private String Show(RamaB x, int pos) {
         assert (x == null);
         NodoB temp = x.primero;
-        System.out.println("\nHeight: " + h);
         if (nodo != 0) {
             cadena += "Nodo" + pos + " -> Nodo" + nodo + "\n";
         }
         cadena += "Nodo" + nodo + " [label=\"";
         for (int i = 0; i < x.contador; i++) {
-            cadena += "<r" + i + ">|" + temp.id + "|";
+            cadena += "<r" + i + ">|" + temp.nombre_Cliente + "|";
             //System.out.print(temp.id + " ");
             temp = temp.siguiente;
         }
@@ -219,42 +218,28 @@ public class ArbolB {
     private void Search(RamaB x, int pos, String id, ABB capas) {
         assert (x == null);
         NodoB temp = x.primero;
-        //System.out.println("\nHeight: " + h);
         if (nodo != 0) {
             if (temp.id.compareTo(id) == 0) {
                 temp.node_Capas = capas;
             }
-            //cadena += "Nodo" + pos +  " -> Nodo" + nodo + "\n";
         }
-        //cadena += "Nodo" + nodo + " [label=\"";
         for (int i = 0; i < x.contador; i++) {
-            //cadena += "<r" + i + ">|" + temp.id + "|";
             if (temp.id.compareTo(id) == 0) {
                 temp.node_Capas = capas;
             }
-            //System.out.print(temp.id + " ");
             temp = temp.siguiente;
         }
-        //cadena += "\"];\n";
-        //System.out.println(cadena);
         int tmp = nodo;
         temp = x.primero;
         while (temp != null) {
             if (temp.izquierda != null) {
-                //        h++;
-                //      nodo++;
                 Search(temp.izquierda, tmp, id, capas);
-                //    h--;
             }
             if (temp.derecha != null) {
-                //  h++;
-                //nodo++;
                 Search(temp.derecha, tmp, id, capas);
-                //h--;
             }
             temp = temp.siguiente;
         }
-        //return temp;
     }
 
     public NodoB find(String usuarioID) {
@@ -266,7 +251,7 @@ public class ArbolB {
         }
 
         while (temp != null) {
-            if (temp.id == usuarioID) {
+            if (temp.id.compareTo(usuarioID) == 0) {
                 return temp;
             }
             if (temp.siguiente == null && usuarioID.compareTo(temp.id) > 0) {
@@ -278,29 +263,5 @@ public class ArbolB {
             }
         }
         return null;
-    }
-
-    public void imprimir(String fileName) {
-        try {
-            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
-            String fileInputPath = "src\\edd_tarea7_201612174\\" + fileName + ".txt";
-            String fileOutputPath = "src\\edd_tarea7_201612174\\" + fileName + ".png";
-
-            String tParam = "-Tpng";
-            String tOParam = "-o";
-
-            String[] cmd = new String[5];
-            cmd[0] = dotPath;
-            cmd[1] = tParam;
-            cmd[2] = fileInputPath;
-            cmd[3] = tOParam;
-            cmd[4] = fileOutputPath;
-            System.out.println("123");
-            Runtime rt = Runtime.getRuntime();
-            rt.exec(cmd);
-            System.out.println("456");
-        } catch (IOException e) {
-        } finally {
-        }
     }
 }

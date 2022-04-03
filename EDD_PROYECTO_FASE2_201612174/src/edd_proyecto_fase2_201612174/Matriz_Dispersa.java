@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Matriz_Dispersa {
 
-    int col_Max, row_Max;
+    int col_Max, row_Max, count=0;
     Node_MD inicio;
 
     public Matriz_Dispersa() {
@@ -292,7 +292,7 @@ public class Matriz_Dispersa {
                 temp = temp.row;
                 continue;
             } else {
-                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"" + temp_.data + "\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
+                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
                 cadena += "a" + temp_.row_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> a" + temp_.row_No + "[constraint=false]\n";
                 rowInfo += "x" + temp_.row_No + "y" + temp_.col_No + ";"; //data -> color
                 if (temp_.up == null) {
@@ -304,7 +304,7 @@ public class Matriz_Dispersa {
                 temp_ = temp_.right;
             }
             while (temp_ != null) {
-                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"" + temp_.data + "\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
+                cadena += "x" + temp_.row_No + "y" + temp_.col_No + "[label = \"\", style = filled, fillcolor = \"" + temp_.data + "\"]" + "\n";
                 cadena += "x" + temp_.left.row_No + "y" + temp_.left.col_No + " -> x" + temp_.row_No + "y" + temp_.col_No + " -> x" + temp_.left.row_No + "y" + temp_.left.col_No + "[constraint=false]\n";
                 rowInfo += "x" + temp_.row_No + "y" + temp_.col_No + ";";
                 if (temp_.up == null) {

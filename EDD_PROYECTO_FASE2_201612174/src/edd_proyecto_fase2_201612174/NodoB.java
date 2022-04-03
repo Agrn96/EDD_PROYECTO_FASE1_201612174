@@ -7,20 +7,20 @@ package edd_proyecto_fase2_201612174;
 public class NodoB {
 
     //Data
-    String id; // dpi
-    String nombre_Cliente; //Name
-    String password; //Password
+    public String id; // dpi
+    public String nombre_Cliente; //Name
+    public String password; //Password
     //Pointers
     NodoB siguiente;
     NodoB anterior;
     RamaB derecha;
     RamaB izquierda;
     //Pointer to album
-    Lista_DE node_Album;
+    public Lista_DE node_Album;
     //Pointer to capas
-    ABB node_Capas;
+    public ABB node_Capas;
     //Pointer to images
-    AVL node_Img;
+    public AVL node_Img;
 
     public NodoB(String id, String nombreC, String pass) {
         this.id = id;

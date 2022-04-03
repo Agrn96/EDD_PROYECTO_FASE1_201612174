@@ -22,34 +22,31 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
-        String usuarioID = "3999062130101";
         
         ArbolB usuarios = new ArbolB();
-        String path = "src\\edd_proyecto_fase2_201612174\\clients.json";
-        File f = new File(path);
-        Carga_Masiva.cargaMasivaUsuarios(f, usuarios);
+//        String path = "src\\edd_proyecto_fase2_201612174\\clients.json";
+//        File f = new File(path);
+//        Carga_Masiva.cargaMasivaUsuarios(f, usuarios);
+//        
+//        path = "src\\edd_proyecto_fase2_201612174\\Imagenes - Sonic.json";
+//        File file = new File(path);
+//        Carga_Masiva.cargaMasivaImages(file, usuarioID, usuarios);
+//        usuarios.graph("Usuarios");
+//        
+//        path = "src\\edd_proyecto_fase2_201612174\\albumes.json";
+//        file = new File(path);
+//        Carga_Masiva.cargaMasivaAlbums(usuarioID, usuarios, file);
+//        
+//        System.out.println("test");
 
-        ABB capas = Carga_Masiva.carga_Masiva_Capa(usuarioID);
-        usuarios.Search(usuarioID, capas); // Add Capas
-        
-        path = "src\\edd_proyecto_fase2_201612174\\Imagenes - Sonic.json";
-        File file = new File(path);
-        Carga_Masiva.cargaMasivaImages(file, usuarioID, usuarios);
-        usuarios.graph("Usuarios");
-        
-        path = "src\\edd_proyecto_fase2_201612174\\albumes.json";
-        file = new File(path);
-        Carga_Masiva.cargaMasivaAlbums(usuarioID, usuarios, file);
-        
+        Login log = new Login(usuarios, "");
+        log.setVisible(true);
+        //Admin admin = new Admin(usuarios);
+        //admin.setVisible(true);
+        //Usuarios rest = new Usuarios(usuarios, "123");
+        //rest.setVisible(true);
         System.out.println("test");
 
-//        test frame = new test();
-//        Login log = new Login();
-//        frame.setLayout(new BorderLayout());
-//        frame.setVisible(true);
-//        frame.add(log, BorderLayout.CENTER);
-//        log.setVisible(true);
-//        System.out.println("test");
 //        Matriz_Dispersa MD = new Matriz_Dispersa();
 //        ABB arbol = carga_Masiva_Capa();
 //        System.out.println("\nARBOL:");
@@ -87,9 +84,5 @@ public class Main {
         //}
         //avl.graficar(avl.raiz);
         //avl.imprimir("reporte");
-    }
-
-    
-
-    
+    }    
 }

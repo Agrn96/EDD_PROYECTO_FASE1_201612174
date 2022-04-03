@@ -31,7 +31,7 @@ import org.json.simple.parser.ParseException;
  */
 public class Carga_Masiva {
 
-    static void cargaMasivaUsuarios(File f, ArbolB usuarios) throws FileNotFoundException, IOException, ParseException {
+    public static void cargaMasivaUsuarios(File f, ArbolB usuarios) throws FileNotFoundException, IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
         Iterator<JSONObject> iterator = jsonArray.iterator();
@@ -42,9 +42,10 @@ public class Carga_Masiva {
             String pass = (String) image.get("password");
             usuarios.insertar(id, nombreC, pass);
         }
+        usuarios.graph("Usuarios");
     }
 
-    static void cargaMasivaImages(File f, String usuarioID, ArbolB usuarios) throws FileNotFoundException, IOException, ParseException {
+    public static void cargaMasivaImages(File f, String usuarioID, ArbolB usuarios) throws FileNotFoundException, IOException, ParseException {
         String path = "src\\Salidas\\" + usuarioID + "\\Images";
 
         JSONParser jsonParser = new JSONParser();
@@ -83,9 +84,9 @@ public class Carga_Masiva {
         System.out.println("pause");
     }
 
-    static ABB carga_Masiva_Capa(String usuarioID) throws FileNotFoundException, IOException, ParseException {
+    public static ABB carga_Masiva_Capa(File f, String usuarioID) throws FileNotFoundException, IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\sonic.json"));
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
         Iterator<JSONObject> iterator = jsonArray.iterator();
         Matriz_Dispersa MD_Main = new Matriz_Dispersa();
         MD_Main.add_Node(0, 0, "TEST");

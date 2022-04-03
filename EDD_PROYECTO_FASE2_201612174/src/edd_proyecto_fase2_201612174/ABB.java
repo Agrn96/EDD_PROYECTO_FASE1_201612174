@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class ABB {
 
-    Node_ABB raiz;
+    public Node_ABB raiz;
 
     public ABB() {
         raiz = new Node_ABB();
@@ -110,32 +110,48 @@ public class ABB {
         return temp.node_Access;
     }
 
-    public void displayIO(Node_ABB temp) { //EnOrden
+    public void displayIO(Node_ABB temp, Matriz_Dispersa MD, int go) { //EnOrden
         if (temp == null) {
             return;
         }
+        if(MD.count < go){
+            MD.add_Matrix(temp.node_Access);
+            MD.count++;
+        }
 
-        displayIO(temp.left);
+        displayIO(temp.left, MD, go);
         System.out.print(temp.data + " ");
-        displayIO(temp.right);
+        
+        displayIO(temp.right, MD, go);
     }
 
-    public void displayPreO(Node_ABB temp) {
+    public void displayPreO(Node_ABB temp, Matriz_Dispersa MD, int go) {
         if (temp == null) {
             return;
         }
+        if(MD.count < go){
+            MD.add_Matrix(temp.node_Access);
+            MD.count++;
+        }
         System.out.print(temp.data + " ");
-        displayPreO(temp.left);
-        displayPreO(temp.right);
+        
+        displayPreO(temp.left, MD, go);
+        displayPreO(temp.right, MD, go);
     }
 
-    public void displayPostO(Node_ABB temp) {
+    public void displayPostO(Node_ABB temp, Matriz_Dispersa MD, int go) {
+        
         if (temp == null) {
             return;
         }
-        displayPostO(temp.left);
-        displayPostO(temp.right);
+        if(MD.count < go){
+            MD.add_Matrix(temp.node_Access);
+            MD.count++;
+        }
+        displayPostO(temp.left, MD, go);
+        displayPostO(temp.right, MD, go);
         System.out.print(temp.data + " ");
+        
     }
     //Graph ABB
     public void graficar(Node_ABB node, String usuarioID, Long id) {

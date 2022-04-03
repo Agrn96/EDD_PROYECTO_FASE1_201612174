@@ -1,0 +1,114 @@
+digraph G
+{
+rankdir="TB"
+node[shape = rectangle]
+label="Carnet: 201612174"
+MD -> a0 -> a1 -> a2 -> a3 -> a4 -> a5 -> a6 -> a7 -> a8 -> a9 -> a10
+MD -> b0 -> b1 -> b2 -> b3 -> b4 -> b5 -> b6 -> b7 -> b8 -> b9 -> b10 -> b11 -> b12 -> b13 -> b14
+{rank=same;MD;b0;b1;b2;b3;b4;b5;b6;b7;b8;b9;b10;b11;b12;b13;b14;}
+x2y8[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a2 -> x2y8 -> a2[constraint=false]
+b8 -> x2y8 -> b8
+x2y9[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x2y8 -> x2y9 -> x2y8[constraint=false]
+b9 -> x2y9 -> b9
+x2y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x2y9 -> x2y10 -> x2y9[constraint=false]
+b10 -> x2y10 -> b10
+x2y13[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x2y10 -> x2y13 -> x2y10[constraint=false]
+b13 -> x2y13 -> b13
+x2y14[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x2y13 -> x2y14 -> x2y13[constraint=false]
+b14 -> x2y14 -> b14
+
+{rank=same;a2;x2y8;x2y9;x2y10;x2y13;x2y14;}
+x3y6[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a3 -> x3y6 -> a3[constraint=false]
+b6 -> x3y6 -> b6
+x3y7[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x3y6 -> x3y7 -> x3y6[constraint=false]
+b7 -> x3y7 -> b7
+x3y8[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x3y7 -> x3y8 -> x3y7[constraint=false]
+x2y8 -> x3y8 -> x2y8
+x3y9[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x3y8 -> x3y9 -> x3y8[constraint=false]
+x2y9 -> x3y9 -> x2y9
+x3y13[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x3y9 -> x3y13 -> x3y9[constraint=false]
+x2y13 -> x3y13 -> x2y13
+
+{rank=same;a3;x3y6;x3y7;x3y8;x3y9;x3y13;}
+x4y9[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a4 -> x4y9 -> a4[constraint=false]
+x3y9 -> x4y9 -> x3y9
+x4y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x4y9 -> x4y10 -> x4y9[constraint=false]
+x2y10 -> x4y10 -> x2y10
+
+{rank=same;a4;x4y9;x4y10;}
+x5y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a5 -> x5y10 -> a5[constraint=false]
+x4y10 -> x5y10 -> x4y10
+x5y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x5y10 -> x5y11 -> x5y10[constraint=false]
+b11 -> x5y11 -> b11
+x5y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x5y11 -> x5y12 -> x5y11[constraint=false]
+b12 -> x5y12 -> b12
+
+{rank=same;a5;x5y10;x5y11;x5y12;}
+x6y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a6 -> x6y10 -> a6[constraint=false]
+x5y10 -> x6y10 -> x5y10
+x6y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x6y10 -> x6y11 -> x6y10[constraint=false]
+x5y11 -> x6y11 -> x5y11
+x6y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x6y11 -> x6y12 -> x6y11[constraint=false]
+x5y12 -> x6y12 -> x5y12
+
+{rank=same;a6;x6y10;x6y11;x6y12;}
+x7y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a7 -> x7y10 -> a7[constraint=false]
+x6y10 -> x7y10 -> x6y10
+x7y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x7y10 -> x7y11 -> x7y10[constraint=false]
+x6y11 -> x7y11 -> x6y11
+x7y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x7y11 -> x7y12 -> x7y11[constraint=false]
+x6y12 -> x7y12 -> x6y12
+
+{rank=same;a7;x7y10;x7y11;x7y12;}
+x8y10[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a8 -> x8y10 -> a8[constraint=false]
+x7y10 -> x8y10 -> x7y10
+x8y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x8y10 -> x8y11 -> x8y10[constraint=false]
+x7y11 -> x8y11 -> x7y11
+x8y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x8y11 -> x8y12 -> x8y11[constraint=false]
+x7y12 -> x8y12 -> x7y12
+
+{rank=same;a8;x8y10;x8y11;x8y12;}
+x9y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a9 -> x9y11 -> a9[constraint=false]
+x8y11 -> x9y11 -> x8y11
+x9y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x9y11 -> x9y12 -> x9y11[constraint=false]
+x8y12 -> x9y12 -> x8y12
+
+{rank=same;a9;x9y11;x9y12;}
+x10y11[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+a10 -> x10y11 -> a10[constraint=false]
+x9y11 -> x10y11 -> x9y11
+x10y12[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x10y11 -> x10y12 -> x10y11[constraint=false]
+x9y12 -> x10y12 -> x9y12
+x10y13[label = "#0000FF", style = filled, fillcolor = "#0000FF"]
+x10y12 -> x10y13 -> x10y12[constraint=false]
+x3y13 -> x10y13 -> x3y13
+
+{rank=same;a10;x10y11;x10y12;x10y13;}
+}
