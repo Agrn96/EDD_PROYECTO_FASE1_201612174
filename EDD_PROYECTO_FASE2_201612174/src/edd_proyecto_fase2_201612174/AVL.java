@@ -7,13 +7,14 @@ package edd_proyecto_fase2_201612174;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  *
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
 public class AVL {
-
+    Long id;
     Node_AVL raiz;
 
     public AVL() {
@@ -64,7 +65,7 @@ public class AVL {
     }
     
     public Node_AVL insert(Node_AVL x, ABB newNode){
-        int data = newNode.raiz.data;
+        Long data = newNode.raiz.data;
         if(x == null){
             return (new Node_AVL(newNode));
         }
@@ -73,6 +74,44 @@ public class AVL {
             x.left = insert(x.left, newNode);
         } else if (data > x.data){
             x.right = insert(x.right, newNode);
+        } else {
+            return x;
+        }
+        
+        x.height = 1 + Math.max(height(x.left), height(x.right));
+        
+        int balance = getBalance(x);
+        
+        if( balance > 1 && data < x.left.data){
+            return rightRotate(x);
+        }
+        
+        if(balance < -1 && data > x.right.data){
+            return leftRotate(x);
+        }
+        
+        if(balance > 1 && data > x.left.data){
+            x.left = leftRotate(x.left);
+            return rightRotate(x);
+        }
+        
+        if(balance < -1 && data < x.right.data){
+            x.right = rightRotate(x.right);
+            return leftRotate(x);
+        }
+        
+        return x;
+    }
+    
+    public Node_AVL insert(Node_AVL x, Long data){
+        if(x == null){
+            return (new Node_AVL(data));
+        }
+        
+        if(data < x.data){
+            x.left = insert(x.left, data);
+        } else if (data > x.data){
+            x.right = insert(x.right, data);
         } else {
             return x;
         }
@@ -126,15 +165,31 @@ public class AVL {
         }
     }
     
+    public ABB search(Long data){
+        Node_AVL temp = this.raiz;
+        while(temp != null){
+            if(Objects.equals(data, temp.data)){
+                return temp.node_Access;
+            } 
+            if(data > temp.data){
+                temp = temp.right;
+            } 
+            if(data < temp.data){
+                temp = temp.left;
+            }
+        }
+        return temp.node_Access;
+    }
+    
     public void graficar(Node_AVL node) {
         try {
-            FileWriter myWriter = new FileWriter("src\\edd_tarea6_201612174\\reporte.txt");
+            FileWriter myWriter = new FileWriter("src\\Salidas\\reporte1.txt");
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora(node));
             myWriter.write("}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-            imprimir("reporte");
+            GraphViz.imprimir("reporte1");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

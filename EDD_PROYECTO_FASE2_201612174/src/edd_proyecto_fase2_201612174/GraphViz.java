@@ -16,7 +16,53 @@ public class GraphViz {
         
     }
     
-    public static void imprimir(String fileName) {
+    public static void imprimir(String path, String usuarioID, Long id) {//Images
+        try {
+            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
+            String fileInputPath = path;
+            String fileOutputPath = "src\\Salidas\\" +usuarioID + "\\Images\\" +  id + ".png";
+
+            String tParam = "-Tpng";
+            String tOParam = "-o";
+
+            String[] cmd = new String[5];
+            cmd[0] = dotPath;
+            cmd[1] = tParam;
+            cmd[2] = fileInputPath;
+            cmd[3] = tOParam;
+            cmd[4] = fileOutputPath;
+
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(cmd);
+        } catch (IOException e) {
+        } finally {
+        }
+    }
+    
+    public static void imprimir(String path, String usuarioID, Long id, int x) {//Capas
+        try {
+            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
+            String fileInputPath = path;
+            String fileOutputPath = "src\\Salidas\\" +usuarioID + "\\Capas\\" +  id + ".png";
+
+            String tParam = "-Tpng";
+            String tOParam = "-o";
+
+            String[] cmd = new String[5];
+            cmd[0] = dotPath;
+            cmd[1] = tParam;
+            cmd[2] = fileInputPath;
+            cmd[3] = tOParam;
+            cmd[4] = fileOutputPath;
+
+            Runtime rt = Runtime.getRuntime();
+            rt.exec(cmd);
+        } catch (IOException e) {
+        } finally {
+        }
+    }
+    
+    public static void imprimir(String fileName) { //Only used for image of usuarios
         try {
             String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
             String fileInputPath = "src\\Salidas\\" + fileName + ".txt";

@@ -23,26 +23,26 @@ public class ArbolB {
         this.insertar("1234567890101", "Admin", "EDD1S2022");
     }
 
-    public void insertar(String  id, String nombreC, String pass) {
+    public void insertar(String id, String nombreC, String pass) {
         NodoB nodo = new NodoB(id, nombreC, pass);
         String path = "src\\Salidas\\" + nodo.id;
         File f1 = new File(path);
         boolean bool = f1.mkdir();
-        if(bool){
+        if (bool) {
             System.out.println("Folder is created successfully");
-            String path1 = path + "\\Imagenes";
+            String path1 = path + "\\Images";
             path += "\\Capas";
-            
+
             System.out.println(path);
             f1 = new File(path);
             f1.mkdir();
-            
+
             f1 = new File(path1);
             f1.mkdir();
         } else {
             System.out.println("Error: Possible Duplicate");
         }
-        
+
         if (raiz == null) {
             raiz = new RamaB();
             raiz.insertar(nodo);
@@ -181,7 +181,7 @@ public class ArbolB {
         NodoB temp = x.primero;
         System.out.println("\nHeight: " + h);
         if (nodo != 0) {
-            cadena += "Nodo" + pos +  " -> Nodo" + nodo + "\n";
+            cadena += "Nodo" + pos + " -> Nodo" + nodo + "\n";
         }
         cadena += "Nodo" + nodo + " [label=\"";
         for (int i = 0; i < x.contador; i++) {
@@ -205,9 +205,79 @@ public class ArbolB {
                 nodo++;
                 Show(temp.derecha, tmp);
                 h--;
-            } temp = temp.siguiente;
+            }
+            temp = temp.siguiente;
         }
         return cadena;
+    }
+
+    public void Search(String id, ABB capas) {
+        Search(raiz, 0, id, capas);
+    }
+
+    // Display
+    private void Search(RamaB x, int pos, String id, ABB capas) {
+        assert (x == null);
+        NodoB temp = x.primero;
+        //System.out.println("\nHeight: " + h);
+        if (nodo != 0) {
+            if (temp.id.compareTo(id) == 0) {
+                temp.node_Capas = capas;
+            }
+            //cadena += "Nodo" + pos +  " -> Nodo" + nodo + "\n";
+        }
+        //cadena += "Nodo" + nodo + " [label=\"";
+        for (int i = 0; i < x.contador; i++) {
+            //cadena += "<r" + i + ">|" + temp.id + "|";
+            if (temp.id.compareTo(id) == 0) {
+                temp.node_Capas = capas;
+            }
+            //System.out.print(temp.id + " ");
+            temp = temp.siguiente;
+        }
+        //cadena += "\"];\n";
+        //System.out.println(cadena);
+        int tmp = nodo;
+        temp = x.primero;
+        while (temp != null) {
+            if (temp.izquierda != null) {
+                //        h++;
+                //      nodo++;
+                Search(temp.izquierda, tmp, id, capas);
+                //    h--;
+            }
+            if (temp.derecha != null) {
+                //  h++;
+                //nodo++;
+                Search(temp.derecha, tmp, id, capas);
+                //h--;
+            }
+            temp = temp.siguiente;
+        }
+        //return temp;
+    }
+
+    public NodoB find(String usuarioID) {
+        RamaB x = this.raiz;
+        NodoB temp = x.primero;
+
+        if (temp.id.compareTo(usuarioID) == 0) {
+            return temp;
+        }
+
+        while (temp != null) {
+            if (temp.id == usuarioID) {
+                return temp;
+            }
+            if (temp.siguiente == null && usuarioID.compareTo(temp.id) > 0) {
+                temp = temp.derecha.primero;
+            } else if (usuarioID.compareTo(temp.id) < 0) {
+                temp = temp.izquierda.primero;
+            } else {
+                temp = temp.siguiente;
+            }
+        }
+        return null;
     }
 
     public void imprimir(String fileName) {

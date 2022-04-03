@@ -12,19 +12,26 @@ package edd_proyecto_fase2_201612174;
 public class Node_ABB {
     Node_ABB left;
     Node_ABB right;
-    int data;
+    Long data;
     Matriz_Dispersa node_Access;
+    
     public Node_ABB(){
         this.left = null;
         this.right = null;
-        this.data = -1;
+        this.data = -1L;
         node_Access = null;
     }
     
     public Node_ABB(Matriz_Dispersa temp){
         this.left = null;
         this.right = null;
-        this.data = Integer.parseInt(temp.inicio.data);
+        this.data = Long.parseLong(temp.inicio.data);
         node_Access = temp;
+    }
+    
+    public Node_ABB(Long data){
+        this.left = null;
+        this.right = null;
+        this.data = data;
     }
 }

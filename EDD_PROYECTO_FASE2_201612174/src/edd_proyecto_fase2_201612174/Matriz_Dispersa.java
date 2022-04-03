@@ -213,30 +213,49 @@ public class Matriz_Dispersa {
         }
     }
 
-    void add_Matrix(Matriz_Dispersa first, Matriz_Dispersa second) {
+    void add_Matrix(Matriz_Dispersa second) {
         Node_MD temp = second.inicio.row;
         while (temp != null) {
             if (temp.node_Access == null) {
+                temp = temp.row;
                 continue;
             } else {
                 Node_MD temp_ = temp.node_Access;
                 while (temp_ != null) {
-                    first.add_Node(temp_.row_No, temp_.col_No, temp_.data);
+                    this.add_Node(temp_.row_No, temp_.col_No, temp_.data);
                     temp_ = temp_.right;
                 }
             }
+            temp = temp.row;
         }
     }
 
-    public void graph(String fileName) {
+    public void graph(String usuarioID,  Long fileName) {
         try {
-            FileWriter myWriter = new FileWriter("src\\Salidas\\" + fileName + ".txt");
+            String path = "src\\Salidas\\" + usuarioID + "\\Capas\\" + fileName + ".txt";
+            FileWriter myWriter = new FileWriter(path);
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nnode[shape = rectangle]\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora());
             myWriter.write("}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-            GraphViz.imprimir(fileName);
+            GraphViz.imprimir(path, usuarioID, fileName, 0);
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+    
+    public void graph2(String usuarioID,  Long fileName) {
+        try {
+            String path = "src\\Salidas\\" + usuarioID + "\\Images\\" + fileName + ".txt";
+            FileWriter myWriter = new FileWriter(path);
+            myWriter.write("digraph G\n{\nrankdir=\"TB\"\nnode[shape = rectangle]\nlabel=\"Carnet: 201612174\"\n");
+            myWriter.write(graficadora());
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir(path, usuarioID, fileName);
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

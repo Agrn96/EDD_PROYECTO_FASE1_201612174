@@ -16,7 +16,11 @@ public class NodoB {
     RamaB derecha;
     RamaB izquierda;
     //Pointer to album
-    Lista_DE node_Access;
+    Lista_DE node_Album;
+    //Pointer to capas
+    ABB node_Capas;
+    //Pointer to images
+    AVL node_Img;
 
     public NodoB(String id, String nombreC, String pass) {
         this.id = id;
@@ -26,6 +30,7 @@ public class NodoB {
         this.siguiente = null;
         this.derecha = null;
         this.izquierda = null;
+        this.node_Capas = null;
     }
 
 }

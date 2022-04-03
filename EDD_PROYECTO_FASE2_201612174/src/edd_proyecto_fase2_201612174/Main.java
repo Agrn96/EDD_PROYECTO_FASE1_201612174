@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import Interfaz.*;
 import java.awt.BorderLayout;
+import java.io.File;
 import javax.swing.JFrame;
 
 /**
@@ -21,24 +22,27 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, ParseException {
+        String usuarioID = "3999062130101";
+        
         ArbolB usuarios = new ArbolB();
+        String path = "src\\edd_proyecto_fase2_201612174\\clients.json";
+        File f = new File(path);
+        Carga_Masiva.cargaMasivaUsuarios(f, usuarios);
+
+        ABB capas = Carga_Masiva.carga_Masiva_Capa(usuarioID);
+        usuarios.Search(usuarioID, capas); // Add Capas
         
-        usuarios.insertar("6251456780101", "Random", "Random");
-        usuarios.insertar("8846571357767", "Random", "Random");
-        usuarios.insertar("8747893864590", "Random", "Random");
-        usuarios.insertar("7630752110900", "Random", "Random");
-        usuarios.insertar("5918943572369", "Random", "Random");
-        usuarios.insertar("5637293833292", "Random", "Random");
-        usuarios.insertar("9271174649561", "Random", "Random");
-        usuarios.insertar("2407234920600", "Random", "Random");
-        usuarios.insertar("6307043402800", "Random", "Random");
-        usuarios.insertar("6469799687585", "Random", "Random");
-        usuarios.insertar("9085473429306", "Random", "Random");
-        usuarios.insertar("9842335442045", "Random", "Random");
-        usuarios.insertar("4694710804592", "Random", "Random");
-        usuarios.graph("random");
+        path = "src\\edd_proyecto_fase2_201612174\\Imagenes - Sonic.json";
+        File file = new File(path);
+        Carga_Masiva.cargaMasivaImages(file, usuarioID, usuarios);
+        usuarios.graph("Usuarios");
         
+        path = "src\\edd_proyecto_fase2_201612174\\albumes.json";
+        file = new File(path);
+        Carga_Masiva.cargaMasivaAlbums(usuarioID, usuarios, file);
         
+        System.out.println("test");
+
 //        test frame = new test();
 //        Login log = new Login();
 //        frame.setLayout(new BorderLayout());
@@ -56,7 +60,6 @@ public class Main {
 //        arbol.displayPreO(arbol.raiz);
 //        arbol.graficar(arbol.raiz);
         //MD.add_Node(0,0,"test");
-
         //MD.add_headers("t",5,5);
         //MD.display();
 //        MD.add_Node(4, 3, "CCAA22");
@@ -86,41 +89,7 @@ public class Main {
         //avl.imprimir("reporte");
     }
 
-    private static ABB carga_Masiva_Capa() throws FileNotFoundException, IOException, ParseException {
-        JSONParser jsonParser = new JSONParser();
-        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("src\\edd_proyecto_fase2_201612174\\sonic.json"));
-        Iterator<JSONObject> iterator = jsonArray.iterator();
-        Matriz_Dispersa MD_Main = new Matriz_Dispersa();
-        MD_Main.add_Node(0, 0, "TEST");
-        ABB arbol = new ABB();
-        while (iterator.hasNext()) {
-            JSONObject capa = iterator.next();
-            Long id = (Long) capa.get("id_capa");
-            String id_ = id.toString();
-            JSONArray pixeles = (JSONArray) capa.get("pixeles");
-            Iterator<JSONObject> iterator2 = pixeles.iterator();
-            System.out.println(id_ + " CAPA NUEVO MATRIZ");
-            Matriz_Dispersa MD = new Matriz_Dispersa();
-            MD.add_Node(0, 0, id_);
-            while (iterator2.hasNext()) {
-                JSONObject obj = iterator2.next();
-                long row = (long) obj.get("fila");
-                int row_ = (int) row;
-                long col = (long) obj.get("columna");
-                int col_ = (int) col;
-                String color = (String) obj.get("color");
-                //System.out.println("F: " + row_ + " C: " + col_ + " D: " + color);
-                MD.add_Node(row_, col_, color);
-                MD_Main.add_Node(row_, col_, color);
-            }
-            System.out.println("NEW MD: " + MD.inicio.data);
-            arbol.insert(MD);
-            //MD.display();
-            MD.graph(id_);
-        }
+    
 
-        MD_Main.graph("TEST");
-
-        return arbol;
-    }
+    
 }

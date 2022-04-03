@@ -7,6 +7,7 @@ package edd_proyecto_fase2_201612174;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  *
@@ -21,10 +22,46 @@ public class ABB {
     }
 
     public void insert(Matriz_Dispersa MD) {
-        int data = Integer.parseInt(MD.inicio.data); 
+        Long data = Long.parseLong(MD.inicio.data); 
         System.out.println("TEST::::" + data);
         Node_ABB temp = this.raiz;
         Node_ABB rand = new Node_ABB(MD);
+        Boolean status = false;
+
+        while (status == false) {
+            if (temp.data == -1) {
+                temp.data = data;
+                this.raiz.node_Access = MD;
+                status = true;
+                System.out.println(data + " has been inserted as the root");
+            } else {
+                if (data == temp.data) {
+                    System.out.println("Error: Valor Duplicado");
+                    break;
+                } else if (data > temp.data) {
+                    if (temp.right == null) {
+                        temp.right = rand;
+                        status = true;
+                        System.out.println(data + " has been inserted on the right");
+                    } else {
+                        temp = temp.right;
+                    }
+                } else if (data < temp.data) {
+                    if (temp.left == null) {
+                        status = true;
+                        temp.left = rand;
+                        System.out.println(data + " has been inserted on the left");
+                    } else {
+                        temp = temp.left;
+                    }
+                }
+            }
+        }
+    }
+    
+    public void insert(Long data) {
+        Node_ABB temp = this.raiz;
+        Node_ABB rand = new Node_ABB(data);
         Boolean status = false;
 
         while (status == false) {
@@ -56,6 +93,22 @@ public class ABB {
             }
         }
     }
+    
+    public Matriz_Dispersa search(Long data){
+        Node_ABB temp = this.raiz;
+        while(temp != null){
+            if(Objects.equals(data, temp.data)){
+                return temp.node_Access;
+            } 
+            if(data > temp.data){
+                temp = temp.right;
+            } 
+            if(data < temp.data){
+                temp = temp.left;
+            }
+        }
+        return temp.node_Access;
+    }
 
     public void displayIO(Node_ABB temp) { //EnOrden
         if (temp == null) {
@@ -85,15 +138,16 @@ public class ABB {
         System.out.print(temp.data + " ");
     }
     //Graph ABB
-    public void graficar(Node_ABB node) {
+    public void graficar(Node_ABB node, String usuarioID, Long id) {
         try {
-            FileWriter myWriter = new FileWriter("src\\edd_proyecto_fase2_201612174\\reporte.txt");
+            String path = "src\\Salidas\\" + usuarioID + "\\Images\\" + id +".txt";
+            FileWriter myWriter = new FileWriter(path);
             myWriter.write("digraph G\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\n");
             myWriter.write(graficadora(node));
             myWriter.write("}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-            imprimir("reporte");
+            GraphViz.imprimir(path, usuarioID, id);
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -114,28 +168,5 @@ public class ABB {
             cadena = cadena + graficadora(node.right) + "nodo" + node.data + "->nodo" + node.right.data + "\n";
         }
         return cadena;
-    }
-
-    public static void imprimir(String fileName) {
-        try {
-            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
-            String fileInputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".txt";
-            String fileOutputPath = "src\\edd_proyecto_fase2_201612174\\" + fileName + ".jpg";
-
-            String tParam = "-Tjpg";
-            String tOParam = "-o";
-
-            String[] cmd = new String[5];
-            cmd[0] = dotPath;
-            cmd[1] = tParam;
-            cmd[2] = fileInputPath;
-            cmd[3] = tOParam;
-            cmd[4] = fileOutputPath;
-
-            Runtime rt = Runtime.getRuntime();
-            rt.exec(cmd);
-        } catch (IOException e) {
-        } finally {
-        }
     }
 }
