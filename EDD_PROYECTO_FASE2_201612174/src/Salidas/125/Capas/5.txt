@@ -1,0 +1,60 @@
+digraph G
+{
+rankdir="TB"
+node[shape = rectangle]
+label="Carnet: 201612174"
+MD -> a0 -> a1 -> a2 -> a3 -> a4 -> a5 -> a6 -> a7 -> a8 -> a9 -> a10 -> a11 -> a12 -> a13 -> a14 -> a15 -> a16 -> a17 -> a18 -> a19 -> a20 -> a21 -> a22 -> a23
+MD -> b0 -> b1 -> b2 -> b3 -> b4 -> b5 -> b6 -> b7 -> b8 -> b9 -> b10
+{rank=same;MD;b0;b1;b2;b3;b4;b5;b6;b7;b8;b9;b10;}
+x9y4[label = "", style = filled, fillcolor = "#8B8B8B"]
+a9 -> x9y4 -> a9[constraint=false]
+b4 -> x9y4 -> b4
+
+{rank=same;a9;x9y4;}
+x15y3[label = "", style = filled, fillcolor = "#8B8B8B"]
+a15 -> x15y3 -> a15[constraint=false]
+b3 -> x15y3 -> b3
+x15y8[label = "", style = filled, fillcolor = "#8B8B8B"]
+x15y3 -> x15y8 -> x15y3[constraint=false]
+b8 -> x15y8 -> b8
+
+{rank=same;a15;x15y3;x15y8;}
+x16y3[label = "", style = filled, fillcolor = "#8B8B8B"]
+a16 -> x16y3 -> a16[constraint=false]
+x15y3 -> x16y3 -> x15y3
+x16y7[label = "", style = filled, fillcolor = "#8B8B8B"]
+x16y3 -> x16y7 -> x16y3[constraint=false]
+b7 -> x16y7 -> b7
+
+{rank=same;a16;x16y3;x16y7;}
+x17y4[label = "", style = filled, fillcolor = "#8B8B8B"]
+a17 -> x17y4 -> a17[constraint=false]
+x9y4 -> x17y4 -> x9y4
+x17y10[label = "", style = filled, fillcolor = "#8B8B8B"]
+x17y4 -> x17y10 -> x17y4[constraint=false]
+b10 -> x17y10 -> b10
+
+{rank=same;a17;x17y4;x17y10;}
+x22y5[label = "", style = filled, fillcolor = "#8B8B8B"]
+a22 -> x22y5 -> a22[constraint=false]
+b5 -> x22y5 -> b5
+x22y6[label = "", style = filled, fillcolor = "#8B8B8B"]
+x22y5 -> x22y6 -> x22y5[constraint=false]
+b6 -> x22y6 -> b6
+x22y8[label = "", style = filled, fillcolor = "#8B8B8B"]
+x22y6 -> x22y8 -> x22y6[constraint=false]
+x15y8 -> x22y8 -> x15y8
+x22y9[label = "", style = filled, fillcolor = "#8B8B8B"]
+x22y8 -> x22y9 -> x22y8[constraint=false]
+b9 -> x22y9 -> b9
+x22y10[label = "", style = filled, fillcolor = "#8B8B8B"]
+x22y9 -> x22y10 -> x22y9[constraint=false]
+x17y10 -> x22y10 -> x17y10
+
+{rank=same;a22;x22y5;x22y6;x22y8;x22y9;x22y10;}
+x23y8[label = "", style = filled, fillcolor = "#8B8B8B"]
+a23 -> x23y8 -> a23[constraint=false]
+x22y8 -> x23y8 -> x22y8
+
+{rank=same;a23;x23y8;}
+}

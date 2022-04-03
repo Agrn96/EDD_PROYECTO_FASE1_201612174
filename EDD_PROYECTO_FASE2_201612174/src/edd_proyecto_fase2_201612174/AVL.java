@@ -202,30 +202,4 @@ public class AVL {
         }
         return cadena;
     }
-
-    public void imprimir(String fileName) {
-        try {
-            String dotPath = "D:\\Program Files (x86)\\Graphviz\\bin\\dot.exe";
-            String fileInputPath = "src\\edd_tarea6_201612174\\" + fileName + ".txt";
-            String fileOutputPath = "src\\edd_tarea6_201612174\\" + fileName + ".jpg";
-
-            String tParam = "-Tjpg";
-            String tOParam = "-o";
-
-            String[] cmd = new String[5];
-            cmd[0] = dotPath;
-            cmd[1] = tParam;
-            cmd[2] = fileInputPath;
-            cmd[3] = tOParam;
-            cmd[4] = fileOutputPath;
-
-            Runtime rt = Runtime.getRuntime();
-            rt.exec(cmd);
-        } catch (IOException e) {
-        } finally {
-        }
-    }
-    
-    
-    
 }

@@ -1,0 +1,9 @@
+digraph G
+{
+rankdir="TB"
+node[shape = record, width = 0.5]
+label="Carnet: 201612174"
+Nodo0 [label="<r0>|123|<r1>|Admin|"];
+Nodo0 [label="<r0>|123|<r1>|yes|<r2>|Admin|"];
+Nodo0 [label="<r0>|123|<r1>|yes|<r2>|Admin|<r3>|yes|"];
+}

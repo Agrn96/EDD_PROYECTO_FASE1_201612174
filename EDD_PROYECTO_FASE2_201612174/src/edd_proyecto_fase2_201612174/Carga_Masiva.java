@@ -155,9 +155,6 @@ public class Carga_Masiva {
                 + pathOut.toString());
         try {
             Files.copy(pathIn, pathOut);
-//            System.out.println(
-//                    "Number of bytes copied: "
-//                    + Files.copy(pathOut, pathIn));
         } // Catch block to handle the exceptions
         catch (IOException e) {
         }
