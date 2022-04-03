@@ -126,7 +126,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String user = jTextField1.getText();
         String pass = jTextField2.getText();
-
         if (user.equals("admin") && pass.equals("EDD2022")) {
             Admin admin = new Admin(usuarios);
             admin.setVisible(true);
@@ -135,7 +134,6 @@ public class Login extends javax.swing.JFrame {
             System.out.println(user);
             usuarioID = user;
             NodoB usuario = usuarios.find(usuarioID);
-
             if (usuario == null) {
                 JOptionPane.showMessageDialog(null, "User not found", "Log In", JOptionPane.ERROR_MESSAGE);
             } else {
@@ -147,8 +145,6 @@ public class Login extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(null, "User not found", "Log In", JOptionPane.ERROR_MESSAGE);
                 }
-
-                
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -162,9 +158,7 @@ public class Login extends javax.swing.JFrame {
                 String dpi = jTextField1.getText();
                 String nombre = jTextField2.getText();
                 String contra = jTextField3.getText();
-                
                 usuarios.insertar(dpi, nombre, contra);
-                
                 usuarios.graph("Usuarios");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,"Ingrese datos correctos","Error",JOptionPane.ERROR_MESSAGE);

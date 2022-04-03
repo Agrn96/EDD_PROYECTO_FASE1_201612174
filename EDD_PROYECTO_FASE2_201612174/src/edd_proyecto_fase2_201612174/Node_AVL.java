@@ -15,10 +15,6 @@ public class Node_AVL {
     int height;
     Long data;
     ABB node_Access;
-//    public Node_AVL(int x){
-//        this.data = x;
-//        height = 1;
-//    }
 
     Node_AVL(Long data) {
         this.data = data;

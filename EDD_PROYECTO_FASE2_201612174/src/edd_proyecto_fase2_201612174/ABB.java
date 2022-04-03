@@ -27,7 +27,6 @@ public class ABB {
         Node_ABB temp = this.raiz;
         Node_ABB rand = new Node_ABB(MD);
         Boolean status = false;
-
         while (status == false) {
             if (temp.data == -1) {
                 temp.data = data;
@@ -63,7 +62,6 @@ public class ABB {
         Node_ABB temp = this.raiz;
         Node_ABB rand = new Node_ABB(data);
         Boolean status = false;
-
         while (status == false) {
             if (temp.data == -1) {
                 temp.data = data;
@@ -118,10 +116,8 @@ public class ABB {
             MD.add_Matrix(temp.node_Access);
             MD.count++;
         }
-
         displayIO(temp.left, MD, go);
         System.out.print(temp.data + " ");
-        
         displayIO(temp.right, MD, go);
     }
 

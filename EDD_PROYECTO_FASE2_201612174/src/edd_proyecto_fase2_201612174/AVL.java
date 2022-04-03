@@ -33,23 +33,18 @@ public class AVL {
     public Node_AVL rightRotate(Node_AVL x) {
         Node_AVL temp = x.left;
         Node_AVL temp_ = temp.right;
-
         temp.right = x;
         x.left = temp_;
-
         x.height = Math.max(height(x.left), height(x.right)) + 1;
         temp.height = Math.max(height(temp.left), height(temp.right)) + 1;
-
         return temp;
     }
 
     public Node_AVL leftRotate(Node_AVL x) {
         Node_AVL temp = x.right;
         Node_AVL temp_ = temp.left;
-
         temp.left = x;
         x.right = temp_;
-
         x.height = Math.max(height(x.left), height(x.right)) + 1;
         temp.height = Math.max(height(temp.left), height(temp.right)) + 1;
 
@@ -85,21 +80,17 @@ public class AVL {
         if( balance > 1 && data < x.left.data){
             return rightRotate(x);
         }
-        
         if(balance < -1 && data > x.right.data){
             return leftRotate(x);
         }
-        
         if(balance > 1 && data > x.left.data){
             x.left = leftRotate(x.left);
             return rightRotate(x);
         }
-        
         if(balance < -1 && data < x.right.data){
             x.right = rightRotate(x.right);
             return leftRotate(x);
         }
-        
         return x;
     }
     

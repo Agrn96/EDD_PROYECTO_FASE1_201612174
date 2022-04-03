@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class Matriz_Dispersa {
 
-    int col_Max, row_Max, count=0;
+    int col_Max, row_Max, count = 0;
     Node_MD inicio;
 
     public Matriz_Dispersa() {
@@ -75,7 +75,7 @@ public class Matriz_Dispersa {
 
     void add_Node(int x, int y, String data) {
         Node_MD newNode = new Node_MD(x, y, data);
-        
+
         if (this.inicio == null) {
             add_Head(newNode);
             System.out.println("testing if it is working: " + data);
@@ -230,7 +230,7 @@ public class Matriz_Dispersa {
         }
     }
 
-    public void graph(String usuarioID,  Long fileName) {
+    public void graph(String usuarioID, Long fileName) {
         try {
             String path = "src\\Salidas\\" + usuarioID + "\\Capas\\" + fileName + ".txt";
             FileWriter myWriter = new FileWriter(path);
@@ -245,8 +245,8 @@ public class Matriz_Dispersa {
             e.printStackTrace();
         }
     }
-    
-    public void graph2(String usuarioID,  Long fileName) {
+
+    public void graph2(String usuarioID, Long fileName) {
         try {
             String path = "src\\Salidas\\" + usuarioID + "\\Images\\" + fileName + ".txt";
             FileWriter myWriter = new FileWriter(path);

@@ -1,9 +1,7 @@
 package edd_proyecto_fase2_201612174;
 
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.File;
-import java.awt.Desktop;
 import java.io.IOException;
 
 /**
@@ -11,7 +9,6 @@ import java.io.IOException;
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
 public class ArbolB {
-
     int orden_arbol = 5;
     int h = 0;
     int nodo = 0;

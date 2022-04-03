@@ -44,8 +44,7 @@ public class Carga_Masiva {
         String path = "src\\Salidas\\" + usuarioID + "\\Images";
         String[] top = new String[5];
         int[] top5 = new int[5];
-        int count;
-        
+        int count = 0;
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
         Iterator<JSONObject> iterator = jsonArray.iterator();
@@ -53,7 +52,7 @@ public class Carga_Masiva {
         NodoB usuario = usuarios.find(usuarioID);
         ABB random = usuario.node_Capas;
         while (iterator.hasNext()) {
-
+            
             JSONObject image = iterator.next();
             long id = (long) image.get("id");
             JSONArray capas = (JSONArray) image.get("capas");
@@ -69,7 +68,6 @@ public class Carga_Masiva {
                 Long idCapa = (Long) x;
                 System.out.println("Node: " + idCapa);
                 arbol.insert(idCapa);
-
                 Matriz_Dispersa MD_ = random.search(idCapa);
                 MD.add_Matrix(MD_);
             });
