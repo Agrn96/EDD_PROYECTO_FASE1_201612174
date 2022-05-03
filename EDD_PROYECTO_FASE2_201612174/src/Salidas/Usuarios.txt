@@ -3,7 +3,52 @@ digraph G
 rankdir="TB"
 node[shape = record, width = 0.5]
 label="Carnet: 201612174"
-Nodo0 [label="<r0>|123|<r1>|Admin|"];
-Nodo0 [label="<r0>|123|<r1>|yes|<r2>|Admin|"];
-Nodo0 [label="<r0>|123|<r1>|yes|<r2>|Admin|<r3>|yes|"];
+Nodo0 [label="<r0>|Aaron Juarez|"];
+Nodo0 -> Nodo1
+Nodo1 [label="<r0>|Jerome Kiddye|<r1>|Fernando Ambrosio|<r2>|Paula Monterrosa|"];
+Nodo1 -> Nodo2
+Nodo2 [label="<r0>|Clara Galle|<r1>|Admin|<r2>|Ultimo usuario|<r3>|Prentiss Mayhew|"];
+Nodo1 -> Nodo3
+Nodo3 [label="<r0>|Benjamin Beltran|<r1>|Danell Bineham|"];
+Nodo1 -> Nodo4
+Nodo4 [label="<r0>|Celeste Quiroa|<r1>|Tabbi Rintoul|<r2>|Paula Monterrosa|<r3>|David Tortola|<r4>|Penultimo usuario|"];
+Nodo1 -> Nodo5
+Nodo5 [label="<r0>|Celeste Quiroa|<r1>|Tabbi Rintoul|"];
+Nodo1 -> Nodo6
+Nodo6 [label="<r0>|David Tortola|<r1>|Penultimo usuario|"];
+Nodo0 -> Nodo7
+Nodo7 [label="<r0>|Digo Molina|<r1>|Erick Valenzuela|"];
+Nodo7 -> Nodo8
+Nodo8 [label="<r0>|Raul Mendizabas|<r1>|Alexandra Lopez|<r2>|Andy Salas|"];
+Nodo7 -> Nodo9
+Nodo9 [label="<r0>|Luis Vejo|<r1>|Madelyn Gomez|<r2>|Erick Valenzuela|<r3>|Lidia Poroj|<r4>|Josue Caal|"];
+Nodo7 -> Nodo10
+Nodo10 [label="<r0>|Harv Iannetti|<r1>|Luis Vejo|<r2>|Madelyn Gomez|"];
+Nodo7 -> Nodo11
+Nodo11 [label="<r0>|Lidia Poroj|<r1>|Alysa Doding|<r2>|Josue Caal|<r3>|Jillana Wormstone|"];
+Nodo0 [label="<r0>|Aaron Juarez|"];
+Nodo0 -> Nodo1
+Nodo1 [label="<r0>|Admin|<r1>|Jerome Kiddye|<r2>|Fernando Ambrosio|<r3>|Paula Monterrosa|"];
+Nodo1 -> Nodo2
+Nodo2 [label="<r0>|Clara Galle|<r1>|123|"];
+Nodo1 -> Nodo3
+Nodo3 [label="<r0>|Ultimo usuario|<r1>|Prentiss Mayhew|"];
+Nodo1 -> Nodo4
+Nodo4 [label="<r0>|Benjamin Beltran|<r1>|Danell Bineham|"];
+Nodo1 -> Nodo5
+Nodo5 [label="<r0>|Celeste Quiroa|<r1>|Tabbi Rintoul|<r2>|Paula Monterrosa|<r3>|David Tortola|<r4>|Penultimo usuario|"];
+Nodo1 -> Nodo6
+Nodo6 [label="<r0>|Celeste Quiroa|<r1>|Tabbi Rintoul|"];
+Nodo1 -> Nodo7
+Nodo7 [label="<r0>|David Tortola|<r1>|Penultimo usuario|"];
+Nodo0 -> Nodo8
+Nodo8 [label="<r0>|Digo Molina|<r1>|Erick Valenzuela|"];
+Nodo8 -> Nodo9
+Nodo9 [label="<r0>|Raul Mendizabas|<r1>|Alexandra Lopez|<r2>|Andy Salas|"];
+Nodo8 -> Nodo10
+Nodo10 [label="<r0>|Luis Vejo|<r1>|Madelyn Gomez|<r2>|Erick Valenzuela|<r3>|Lidia Poroj|<r4>|Josue Caal|"];
+Nodo8 -> Nodo11
+Nodo11 [label="<r0>|Harv Iannetti|<r1>|Luis Vejo|<r2>|Madelyn Gomez|"];
+Nodo8 -> Nodo12
+Nodo12 [label="<r0>|Lidia Poroj|<r1>|Alysa Doding|<r2>|Josue Caal|<r3>|Jillana Wormstone|"];
 }
