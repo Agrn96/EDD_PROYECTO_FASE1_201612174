@@ -1,0 +1,13 @@
+digraph structs
+{
+rankdir="TB"
+label="Carnet: 201612174"
+node [shape=nona];
+
+nodo8 [label = "ID: 8 | Nombre: null"]
+nodo8 -> nodo13
+nodo13 [label = "ID: 13 | Nombre: null"]
+nodo13 -> nodo14
+nodo14 [label = "ID: 14 | Nombre: null"]
+nodo14 -> nodo16
+nodo16 [label = "ID: 16 | Nombre: null"]}

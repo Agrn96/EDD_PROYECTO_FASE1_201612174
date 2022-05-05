@@ -5,6 +5,7 @@
  */
 package Interfaz;
 
+import Estructuras.Lista;
 import Estructuras.Lista.Node_Clientes;
 import javax.swing.JTextField;
 
@@ -13,14 +14,15 @@ import javax.swing.JTextField;
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
 public class Modificar extends javax.swing.JFrame {
-
+    Lista usuarios;
     Node_Clientes usuario;
     
     /**
      * Creates new form Modificar
      */
 
-    public Modificar(Node_Clientes usuario) {
+    public Modificar(Node_Clientes usuario, Lista usuarios) {
+        this.usuarios = usuarios;
         this.usuario = usuario;
         jTextField1 = new JTextField();
         jTextField2 = new JTextField();
@@ -65,7 +67,7 @@ public class Modificar extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("DPI");
 
@@ -215,7 +217,7 @@ public class Modificar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         usuario.mod(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(), jTextField4.getText(), jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), Integer.parseInt(jTextField8.getText()));
-        
+        usuarios.graficar(1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

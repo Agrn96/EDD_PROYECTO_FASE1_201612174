@@ -134,15 +134,15 @@ public class Lista { //Lista para guardar rutas
         }
     }
 
-    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
-        Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
-        Node_Clientes temp = this.start;
-
-        while (temp.dpi != dpi || temp != null) {
-            temp = temp.next;
-        }
-        temp.mod(newNode);
-    }
+//    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
+//        Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
+//        Node_Clientes temp = this.start;
+//
+//        while (temp.dpi != dpi || temp != null) {
+//            temp = temp.next;
+//        }
+//        //temp.mod(newNode);
+//    }
 
     public void insert(int id, String departamento, String nombre, Boolean sn_sucursal) {
         Node newNode = new Node(id, departamento, nombre, sn_sucursal);
@@ -290,7 +290,7 @@ public class Lista { //Lista para guardar rutas
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 GraphViz.imprimir("Lugares");
-            } else {
+            } else if(x==1){
                 FileWriter myWriter = new FileWriter("src\\Salidas\\Clientes.txt");
                 myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
                 myWriter.write(graficadora(start));
@@ -298,6 +298,14 @@ public class Lista { //Lista para guardar rutas
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 GraphViz.imprimir("Clientes");
+            } else {
+                FileWriter myWriter = new FileWriter("src\\Salidas\\Best.txt");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+                myWriter.write(graficadora(inicio));
+                myWriter.write("}");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                GraphViz.imprimir("Best");
             }
 
         } catch (IOException e) {

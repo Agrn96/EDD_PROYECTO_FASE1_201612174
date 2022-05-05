@@ -10,13 +10,9 @@ import Estructuras.Lista_Adyacencia;
 import Estructuras.Tabla_Hash;
 import java.awt.Image;
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -73,6 +69,11 @@ public class Usuarios extends javax.swing.JFrame {
         jLabel3.setText("Destino");
 
         jButton1.setText("Generar Entrega");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,6 +137,19 @@ public class Usuarios extends javax.swing.JFrame {
 
         dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String primero = jTextField1.getText();
+        String fin = jTextField2.getText();
+        rutas.ruta(Integer.parseInt(primero), Integer.parseInt(fin));
+        rutas.best.graficar(2);
+        
+        ImageIcon imgIcon = new ImageIcon("src\\salidas\\Best.png");
+        Image img = imgIcon.getImage().getScaledInstance(jLabel1.getWidth(),jLabel1.getHeight(), Image.SCALE_SMOOTH);
+        Icon icon = new ImageIcon(img);
+        jLabel1.setIcon(icon);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static File cargar() {
         JFileChooser fileChooser = new JFileChooser();

@@ -128,14 +128,14 @@ public class Tabla_Hash {
     }
 
     public void graficar() {
-        try {
-            FileWriter myWriter = new FileWriter("src\\Salidas\\Tabla_Hash.txt");
+        try {//System.getProperty("user.dir") + "\\mensajeros.png"   /// "src\\salidas\\Tabla_Hash.txt"
+            FileWriter myWriter = new FileWriter("src\\salidas\\Tabla_Hash.txt");//
             myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
             myWriter.write(graficadora(hash));
             myWriter.write("}");
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
-            GraphViz.imprimir("Tabla_Hash");
+            GraphViz.imprimir("Tabla_Hash");//"Tabla_Hash"
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

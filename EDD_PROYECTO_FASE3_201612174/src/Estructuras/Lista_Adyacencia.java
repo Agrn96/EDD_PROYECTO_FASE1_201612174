@@ -17,7 +17,7 @@ public class Lista_Adyacencia {
 
     Node inicio, fin;
     int size;
-    Lista best;
+    public Lista best;
 
     public class Node {
 

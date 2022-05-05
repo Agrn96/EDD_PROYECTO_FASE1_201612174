@@ -13,7 +13,6 @@ import edd_proyecto_fase3_201612174.Carga_Masiva;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -35,6 +34,7 @@ public class Admin extends javax.swing.JFrame {
         this.rutas = rutas;
         this.lugares = lugares;
         this.usuarios = usuarios;
+        this.hash = hash;
         initComponents();
     }
 
@@ -292,7 +292,7 @@ public class Admin extends javax.swing.JFrame {
                 if(usuario == null){
                     JOptionPane.showMessageDialog(null,"Usuario no encontrado","Error",JOptionPane.ERROR_MESSAGE);
                 } else {
-                    Modificar mod = new Modificar(usuario);
+                    Modificar mod = new Modificar(usuario, usuarios);
                 }
                 //Add modification form
                 
@@ -304,7 +304,8 @@ public class Admin extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        ImageIcon imgIcon = new ImageIcon("src\\Salidas\\Tabla_Hash.png");
+        //ImageIcon imgIcon = new ImageIcon("src/Salidas/Tabla_Hash.png");
+        ImageIcon imgIcon = new ImageIcon("src\\salidas\\Tabla_Hash.png");
         Image img = imgIcon.getImage().getScaledInstance(jLabel2.getWidth(),jLabel2.getHeight(), Image.SCALE_SMOOTH);
         Icon icon = new ImageIcon(img);
         jLabel2.setIcon(icon);
