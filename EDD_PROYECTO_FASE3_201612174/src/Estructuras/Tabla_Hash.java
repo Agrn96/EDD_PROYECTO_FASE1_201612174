@@ -18,7 +18,6 @@ public class Tabla_Hash {
 
     public class Hash { //Agrega todo los arrays aqui o crear otro clase global para guardar el informacion
 
-        
         public String[] dpi;
         public String[] nombres;
         public String[] apellidos;
@@ -28,18 +27,31 @@ public class Tabla_Hash {
         public String[] direccion;
 
         public Hash() {
+            this.dpi = new String[1];
+            this.nombres = new String[1];
+            this.apellidos = new String[1];
+            this.tipo_Licencia = new char[1];
+            this.genero = new char[1];
+            this.telefono = new String[1];
+            this.direccion = new String[1];
+        }
+
+        public Hash(int amount) {
+            this.dpi = new String[amount];
+            this.nombres = new String[amount];
+            this.apellidos = new String[amount];
+            this.tipo_Licencia = new char[amount];
+            this.genero = new char[amount];
+            this.telefono = new String[amount];
+            this.direccion = new String[amount];
         }
     }
 
     public Tabla_Hash(int size) {
         this.size = size;
-        hash.dpi = new String[this.primos[this.size]];
-        hash.nombres = new String[this.primos[this.size]];
-        hash.apellidos = new String[this.primos[this.size]];
-        hash.tipo_Licencia = new char[this.primos[this.size]];
-        hash.genero = new char[this.primos[this.size]];
-        hash.telefono = new String[this.primos[this.size]];
-        hash.direccion = new String[this.primos[this.size]];
+        int amount = this.primos[this.size];
+        System.out.println("Amount: " + amount);
+        hash = new Hash(amount);
         this.agregados = 0;
 
         System.out.println(hash.dpi.length);
@@ -68,7 +80,8 @@ public class Tabla_Hash {
             }
         }
         agregados++;
-        carga = agregados / this.primos[this.size];
+        carga = (double) agregados / (this.primos[this.size]);
+        System.out.println("xxx: " + carga + " : " + this.primos[this.size] + " : " + agregados);
     }
 
     private int getHash(long llave) {
@@ -105,7 +118,7 @@ public class Tabla_Hash {
 
     public void display() {
         for (int i = 0; i < hash.dpi.length; i++) {
-            System.out.println("Posicion " + i + ": " + hash.dpi[i]);
+            System.out.println("Posicion " + (i + 1) + ": " + hash.dpi[i]);
         }
     }
 }
