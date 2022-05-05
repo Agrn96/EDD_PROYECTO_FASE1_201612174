@@ -26,16 +26,29 @@ public class Main {
         Lista lugares = new Lista();
         Lista_Adyacencia rutas = new Lista_Adyacencia();
         Tabla_Hash hash_ = new Tabla_Hash(0);
+        Lista clientes = new Lista();
         // TODO code application logic here
         //Lista de lugares
         //Lista lugares = new Lista();
-        Lista clientes = new Lista();
-        clientes.insert("3001554250101", "Alberto Reyes", "Codeprentice", "agrn96p@gmail.com", "1234", "123456", "random", "123");
-        clientes.insert("123", "123", "123", "123", "123", "123", "123", "123");
-        clientes.display_Clientes();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.showOpenDialog(fileChooser);
+        try {
+            String ruta = fileChooser.getSelectedFile().getAbsolutePath();
+            File f = new File(ruta);
+            Carga_Masiva.loadFromFile(f, clientes, 1);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("No folder selected");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } 
+//        clientes.insert("3001554250101", "Alberto Reyes", "Codeprentice", "agrn96p@gmail.com", "1234", "123456", "random", 124);
+//        clientes.insert("123", "123", "123", "123", "123", "123", "123", 123);
+//        clientes.display_Clientes();
 
         //Lugares
-        JFileChooser fileChooser = new JFileChooser();
+        fileChooser = new JFileChooser();
         fileChooser.showOpenDialog(fileChooser);
         try {
             String ruta = fileChooser.getSelectedFile().getAbsolutePath();

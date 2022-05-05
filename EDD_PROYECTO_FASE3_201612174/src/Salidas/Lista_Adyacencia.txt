@@ -1,0 +1,49 @@
+digraph structs
+{
+rankdir="TB"
+label="Carnet: 201612174"
+node [shape=nona];
+edge [arrowhead= none]
+
+nodo1 [label = "ID: 1"]
+nodo2 [label = "ID: 2"]
+nodo3 [label = "ID: 3"]
+nodo4 [label = "ID: 4"]
+nodo5 [label = "ID: 5"]
+nodo6 [label = "ID: 6"]
+nodo7 [label = "ID: 7"]
+nodo8 [label = "ID: 8"]
+nodo8 -> nodo8_13
+nodo8_13[label = "ID: 13"]
+nodo9 [label = "ID: 9"]
+nodo10 [label = "ID: 10"]
+nodo11 [label = "ID: 11"]
+nodo12 [label = "ID: 12"]
+nodo13 [label = "ID: 13"]
+nodo13 -> nodo13_17
+nodo13_17[label = "ID: 17"]
+nodo13_17[label = "ID: 17"]
+nodo13_14[label = "ID: 14"]
+nodo13_17 -> nodo13_14
+nodo13_14[label = "ID: 14"]
+nodo13_8[label = "ID: 8"]
+nodo13_14 -> nodo13_8
+nodo14 [label = "ID: 14"]
+nodo14 -> nodo14_13
+nodo14_13[label = "ID: 13"]
+nodo14_13[label = "ID: 13"]
+nodo14_16[label = "ID: 16"]
+nodo14_13 -> nodo14_16
+nodo15 [label = "ID: 15"]
+nodo16 [label = "ID: 16"]
+nodo16 -> nodo16_17
+nodo16_17[label = "ID: 17"]
+nodo16_17[label = "ID: 17"]
+nodo16_14[label = "ID: 14"]
+nodo16_17 -> nodo16_14
+nodo17 [label = "ID: 17"]
+nodo17 -> nodo17_13
+nodo17_13[label = "ID: 13"]
+nodo17_13[label = "ID: 13"]
+nodo17_16[label = "ID: 16"]
+nodo17_13 -> nodo17_16}

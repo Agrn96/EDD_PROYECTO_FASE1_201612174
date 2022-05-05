@@ -72,6 +72,7 @@ public class Carga_Masiva {
             Long peso = (Long) m.get("peso");
             rutas.insertar(Math.toIntExact(inicio), Math.toIntExact(fin), Math.toIntExact(peso));
         }
+        rutas.graficar();
         rutas.graficar(lugares);
         //rutas.ruta(8, 16);
     }
@@ -91,5 +92,27 @@ public class Carga_Masiva {
             lugares.insert(Math.toIntExact(id), dept, nombre, sn_suc.equals("si") ? true : false);
         }
         lugares.graficar(0);
+    }
+    
+    public static void loadFromFile(File f, Lista usuarios, int x) throws FileNotFoundException, IOException, ParseException {
+        JSONParser jsonParser = new JSONParser();
+        JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
+        Iterator<JSONObject> iterator = jsonArray.iterator();
+
+        while (iterator.hasNext()) {
+            JSONObject m = iterator.next();
+            System.out.println(m);
+            String dpi = (String) m.get("dpi");
+            String nombre_Completo = (String) m.get("nombre_completo");
+            String nombre_Usuario = (String) m.get("nombre_usuario");
+            String correo = (String) m.get("correo");
+            String pass = (String) m.get("contrasenia");
+            String tel = (String) m.get("telefono");
+            String direccion = (String) m.get("direccion");
+            Long id = (Long) m.get("id_municipio");
+            usuarios.insert(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, Math.toIntExact(id));
+        }
+        usuarios.display_Clientes();
+        usuarios.graficar(1);
     }
 }

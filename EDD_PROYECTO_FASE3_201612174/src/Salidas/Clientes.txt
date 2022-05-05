@@ -1,0 +1,15 @@
+digraph structs
+{
+rankdir="TB"
+label="Carnet: 201612174"
+node [shape=nona];
+
+nodo9789611590172 [label = "William Hodge | 9789611590172"]
+nodo9789611590172 -> nodo7196958094069
+nodo7196958094069 [label = "Genevieve Wallace | 7196958094069"]
+nodo7196958094069 -> nodo7920879245361
+nodo7920879245361 [label = "Francesca Hyde | 7920879245361"]
+nodo7920879245361 -> nodo4635574897635
+nodo4635574897635 [label = "Nieves Cabrera | 4635574897635"]
+nodo4635574897635 -> nodo9092207681372
+nodo9092207681372 [label = "Amparo Christian | 9092207681372"]}

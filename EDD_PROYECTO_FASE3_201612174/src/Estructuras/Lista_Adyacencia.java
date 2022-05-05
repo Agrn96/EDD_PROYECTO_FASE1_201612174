@@ -258,4 +258,53 @@ public class Lista_Adyacencia {
         }
         return cadena;
     }
+
+    public void graficar() {
+        try {
+            FileWriter myWriter = new FileWriter("src\\Salidas\\Lista_Adyacencia.txt");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\nedge [arrowhead= none]\n");
+            myWriter.write(graficadora(inicio));
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("Lista_Adyacencia");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(Node inicio) {
+        String cadena = "";
+
+        if (this.size == 0) {
+            System.out.println("Error: Rutas Vacio");
+            return cadena;
+        }
+        Node temp = this.inicio;
+        while (temp != null) {
+            //cadena += "\nnodo" + temp.id;
+            cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + "\"]";
+            if (temp.dest.inicio == null) {
+                temp = temp.next;
+                continue;
+            } else {
+                Node temp_ = temp.dest.inicio;
+                cadena += "\nnodo" + temp.id + " -> nodo" + temp.id + "_" + temp_.id;
+                cadena += "\nnodo" + temp.id + "_" + temp_.id + "[label = \"ID: " + temp_.id + "\"]";
+                while (temp_.next != null) {
+
+                    cadena += "\nnodo" + temp.id + "_" + temp_.id + "[label = \"ID: " + temp_.id + "\"]";
+                    cadena += "\nnodo" + temp.id + "_" + temp_.next.id + "[label = \"ID: " + temp_.next.id + "\"]";
+                    cadena += "\nnodo" + temp.id + "_" + temp_.id + " -> nodo" + temp.id + "_" + temp_.next.id;
+
+                    temp_ = temp_.next;
+                }
+                //cadena += "\nnodo" + temp.id + "_" + temp_.id + "[label = \"ID: " + temp_.id + "\"]";
+            }
+            temp = temp.next;
+        }
+
+        return cadena;
+    }
 }

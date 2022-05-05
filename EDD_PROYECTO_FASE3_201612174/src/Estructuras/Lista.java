@@ -46,7 +46,8 @@ public class Lista { //Lista para guardar rutas
 
     public class Node_Clientes {
 
-        String dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio;
+        String dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion;
+        int id_Municipio;
         Node_Clientes next;
 
         public Node_Clientes() {
@@ -57,11 +58,11 @@ public class Lista { //Lista para guardar rutas
             pass = null;
             tel = null;
             direccion = null;
-            id_Municipio = null;
+            id_Municipio = 0;
             next = null;
         }
 
-        public Node_Clientes(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
+        public Node_Clientes(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
             this.dpi = dpi;
             this.nombre_Completo = nombre_Completo;
             this.nombre_Usuario = nombre_Usuario;
@@ -120,11 +121,11 @@ public class Lista { //Lista para guardar rutas
     }
 
     //Insert function for Client list
-    public void insert(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
+    public void insert(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
         Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
         if (start == null) {
             start = newNode;
-        } else if (fin == null) {
+        } else if (end == null) {
             end = newNode;
             start.next = end;
         } else {
@@ -133,7 +134,7 @@ public class Lista { //Lista para guardar rutas
         }
     }
 
-    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
+    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
         Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
         Node_Clientes temp = this.start;
 
@@ -213,7 +214,7 @@ public class Lista { //Lista para guardar rutas
         }
         return false;
     }
-    
+
     public String buscar_Nombre(int id) {
         if (inicio == null) {
             System.out.println("Error: Lista Vacio");
@@ -264,17 +265,25 @@ public class Lista { //Lista para guardar rutas
 
     public void graficar(int x) { //Graficar lista de lugares
         try {
-            FileWriter myWriter = new FileWriter("src\\Salidas\\Lugares.txt");
-            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+
             if (x == 0) {
+                FileWriter myWriter = new FileWriter("src\\Salidas\\Lugares.txt");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
                 myWriter.write(graficadora(inicio));
+                myWriter.write("}");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                GraphViz.imprimir("Lugares");
             } else {
+                FileWriter myWriter = new FileWriter("src\\Salidas\\Clientes.txt");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
                 myWriter.write(graficadora(start));
+                myWriter.write("}");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                GraphViz.imprimir("Clientes");
             }
-            myWriter.write("}");
-            myWriter.close();
-            System.out.println("Successfully wrote to the file.");
-            GraphViz.imprimir("Lugares");
+
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
@@ -294,23 +303,26 @@ public class Lista { //Lista para guardar rutas
             cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + " | Nombre: " + temp.nombre + "\"]";
             cadena += "\nnodo" + temp.id + " -> " + "nodo" + temp.next.id;
             temp = temp.next;
-        } cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + " | Nombre: " + temp.nombre + "\"]";
+        }
+        cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + " | Nombre: " + temp.nombre + "\"]";
         return cadena;
     }
 
     public String graficadora(Node_Clientes inicio) {
         String cadena = "";
 
-        if (this.inicio == null) {
+        if (this.start == null) {
             System.out.println("Error: Rutas Vacio");
             return cadena;
         }
         Node_Clientes temp = this.start;
         while (temp.next != null) {
             //cadena += "\nnodo" + temp.id;
+            cadena += "\nnodo" + temp.dpi + " [label = \"" + temp.nombre_Completo + " | " + temp.dpi + "\"]";
             cadena += "\nnodo" + temp.dpi + " -> " + "nodo" + temp.next.dpi;
             temp = temp.next;
         }
+        cadena += "\nnodo" + temp.dpi + " [label = \"" + temp.nombre_Completo + " | " + temp.dpi + "\"]";
         return cadena;
     }
 }
