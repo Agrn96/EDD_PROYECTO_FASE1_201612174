@@ -4,6 +4,12 @@ rankdir="TB"
 label="Carnet: 201612174"
 node [shape=nona];
 
-nodo9789611590172 [label = "William Hodge | 9789611590172"]
-nodo9789611590172 -> nodo9092207681372
-nodo9092207681372 [label = "Amparo Christian | 9092207681372"]}
+nodo17 [label = "ID: 17 | Nombre: Amatitlán"]
+nodo17 -> nodo16
+nodo16 [label = "ID: 16 | Nombre: Amatitlán"]
+nodo16 -> nodo14
+nodo14 [label = "ID: 14 | Nombre: Amatitlán"]
+nodo14 -> nodo8
+nodo8 [label = "ID: 8 | Nombre: Amatitlán"]
+nodo8 -> nodo13
+nodo13 [label = "ID: 13 | Nombre: Villa Nueva"]}

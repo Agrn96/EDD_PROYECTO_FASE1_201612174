@@ -121,7 +121,10 @@ public class Login extends javax.swing.JFrame {
         } else {
             System.out.println(user);
             usuarioID = user;
+            System.out.println("USUARIO: " + usuarioID);
+            usuarios.display_Clientes();
             Node_Clientes usuario = usuarios.buscar_Cliente(usuarioID);
+            System.out.println("USUARIO: " + usuario.dpi + " : " + usuario.nombre_Completo);
             if (usuario == null) {
                 JOptionPane.showMessageDialog(null, "User not found", "Log In", JOptionPane.ERROR_MESSAGE);
             } else {

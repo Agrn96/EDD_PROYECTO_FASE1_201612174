@@ -74,14 +74,14 @@ public class Lista { //Lista para guardar rutas
             next = null;
         }
 
-        public void mod(Node_Clientes nuevo) {
-            this.nombre_Completo = nuevo.nombre_Completo;
-            this.nombre_Usuario = nuevo.nombre_Usuario;
-            this.correo = nuevo.correo;
-            this.pass = nuevo.pass;
-            this.tel = nuevo.tel;
-            this.direccion = nuevo.direccion;
-            this.id_Municipio = nuevo.id_Municipio;
+        public void mod(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
+            this.nombre_Completo = nombre_Completo;
+            this.nombre_Usuario = nombre_Usuario;
+            this.correo = correo;
+            this.pass = pass;
+            this.tel = tel;
+            this.direccion = direccion;
+            this.id_Municipio = id_Municipio;
         }
     }
 
@@ -231,12 +231,13 @@ public class Lista { //Lista para guardar rutas
     }
     
     public Node_Clientes buscar_Cliente(String dpi){
-        if (inicio == null) {
+        if (start == null) {
             System.out.println("Error: Lista Vacio");
             return null;
         }
         Node_Clientes temp = start;
         while (temp != null) {
+            System.out.println("Searching: " + temp.dpi);
             if (temp.dpi.equals(dpi)) {
                 return temp;
             }
