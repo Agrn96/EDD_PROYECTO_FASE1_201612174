@@ -12,15 +12,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Iterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -77,7 +71,7 @@ public class Carga_Masiva {
         //rutas.ruta(8, 16);
     }
 
-    public static void loadFromFile(File f, Lista lugares) throws FileNotFoundException, IOException, ParseException { //Carga Masiva Mensajeros
+    public static void loadFromFile(File f, Lista lugares) throws FileNotFoundException, IOException, ParseException { //Carga Masiva Lugares
         JSONParser jsonParser = new JSONParser();
         Object obj = jsonParser.parse(new FileReader(f));
         JSONObject jsonObject = (JSONObject) obj;
@@ -94,14 +88,13 @@ public class Carga_Masiva {
         lugares.graficar(0);
     }
     
-    public static void loadFromFile(File f, Lista usuarios, int x) throws FileNotFoundException, IOException, ParseException {
+    public static void loadFromFile(File f, Lista usuarios, int x) throws FileNotFoundException, IOException, ParseException {//Carga masiva para clientes
         JSONParser jsonParser = new JSONParser();
         JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(f));
         Iterator<JSONObject> iterator = jsonArray.iterator();
 
         while (iterator.hasNext()) {
             JSONObject m = iterator.next();
-            System.out.println(m);
             String dpi = (String) m.get("dpi");
             String nombre_Completo = (String) m.get("nombre_completo");
             String nombre_Usuario = (String) m.get("nombre_usuario");
@@ -112,7 +105,6 @@ public class Carga_Masiva {
             Long id = (Long) m.get("id_municipio");
             usuarios.insert(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, Math.toIntExact(id));
         }
-        usuarios.display_Clientes();
         usuarios.graficar(1);
     }
 }

@@ -46,9 +46,9 @@ public class Lista { //Lista para guardar rutas
 
     public class Node_Clientes {
 
-        String dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion;
-        int id_Municipio;
-        Node_Clientes next;
+        public String dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion;
+        public int id_Municipio;
+        public Node_Clientes next;
 
         public Node_Clientes() {
             dpi = null;
@@ -171,7 +171,7 @@ public class Lista { //Lista para guardar rutas
         }
     }
 
-    //Test
+    
     public void insertar_Dest(int end) { //Insert function just to add to the end of the list
         Node newNode = new Node(end);
         if (this.inicio == null) {
@@ -215,7 +215,7 @@ public class Lista { //Lista para guardar rutas
         return false;
     }
 
-    public String buscar_Nombre(int id) {
+    public String buscar_Nombre(int id) { //Store Name
         if (inicio == null) {
             System.out.println("Error: Lista Vacio");
             return "";
@@ -228,6 +228,21 @@ public class Lista { //Lista para guardar rutas
             temp = temp.next;
         }
         return "";
+    }
+    
+    public Node_Clientes buscar_Cliente(String dpi){
+        if (inicio == null) {
+            System.out.println("Error: Lista Vacio");
+            return null;
+        }
+        Node_Clientes temp = start;
+        while (temp != null) {
+            if (temp.dpi.equals(dpi)) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+        return null;
     }
 
     public void display() {
