@@ -5,6 +5,10 @@
  */
 package Estructuras;
 
+import edd_proyecto_fase3_201612174.GraphViz;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author 201612174 --Alberto Gabriel Reyes Ning
@@ -21,8 +25,8 @@ public class Tabla_Hash {
         public String[] dpi;
         public String[] nombres;
         public String[] apellidos;
-        public char[] tipo_Licencia;
-        public char[] genero;
+        public String[] tipo_Licencia;
+        public String[] genero;
         public String[] telefono;
         public String[] direccion;
 
@@ -30,8 +34,8 @@ public class Tabla_Hash {
             this.dpi = new String[1];
             this.nombres = new String[1];
             this.apellidos = new String[1];
-            this.tipo_Licencia = new char[1];
-            this.genero = new char[1];
+            this.tipo_Licencia = new String[1];
+            this.genero = new String[1];
             this.telefono = new String[1];
             this.direccion = new String[1];
         }
@@ -40,8 +44,8 @@ public class Tabla_Hash {
             this.dpi = new String[amount];
             this.nombres = new String[amount];
             this.apellidos = new String[amount];
-            this.tipo_Licencia = new char[amount];
-            this.genero = new char[amount];
+            this.tipo_Licencia = new String[amount];
+            this.genero = new String[amount];
             this.telefono = new String[amount];
             this.direccion = new String[amount];
         }
@@ -50,23 +54,22 @@ public class Tabla_Hash {
     public Tabla_Hash(int size) {
         this.size = size;
         int amount = this.primos[this.size];
-        System.out.println("Amount: " + amount);
         hash = new Hash(amount);
-        this.agregados = 0;
-
-        System.out.println(hash.dpi.length);
         this.agregados = 0;
     }
 
-    public void insertar(String dpi) {
+    public void insertar(String dpi, String nombre, String apellidos, String tipo_Licencia, String genero, String direccion, String telefono) {
         long llave = Long.parseLong(dpi);
         int llave_ = getHash(llave);
-//        System.out.println(llave_);
-//        System.out.println(this.size);
-//        System.out.println(this.dpi.length);
 
         if (hash.dpi[llave_] == null) {
             hash.dpi[llave_] = dpi;
+            hash.nombres[llave_] = nombre;
+            hash.apellidos[llave_] = apellidos;
+            hash.tipo_Licencia[llave_] = tipo_Licencia;
+            hash.genero[llave_] = genero;
+            hash.direccion[llave_] = direccion;
+            hash.telefono[llave_] = telefono;
         } else {
             for (int i = 1; i < 100; i++) {
                 llave_ = getHash(llave, i);
@@ -75,13 +78,18 @@ public class Tabla_Hash {
                 }
                 if (hash.dpi[llave_] == null) {
                     hash.dpi[llave_] = dpi;
+                    hash.nombres[llave_] = nombre;
+                    hash.apellidos[llave_] = apellidos;
+                    hash.tipo_Licencia[llave_] = tipo_Licencia;
+                    hash.genero[llave_] = genero;
+                    hash.direccion[llave_] = direccion;
+                    hash.telefono[llave_] = telefono;
                     break;
                 }
             }
         }
         agregados++;
         carga = (double) agregados / (this.primos[this.size]);
-        System.out.println("xxx: " + carga + " : " + this.primos[this.size] + " : " + agregados);
     }
 
     private int getHash(long llave) {
@@ -97,9 +105,6 @@ public class Tabla_Hash {
     public void buscar(String dpi) {
         long llave = Long.parseLong(dpi);
         int llave_ = getHash(llave);
-//        System.out.println(llave_);
-//        System.out.println(this.size);
-//        System.out.println(this.dpi.length);
         if (hash.dpi[llave_].equals(dpi)) {
             System.out.println("Encontrado: " + hash.dpi[llave_] + " en posicion: " + llave_);
         } else {
@@ -120,5 +125,30 @@ public class Tabla_Hash {
         for (int i = 0; i < hash.dpi.length; i++) {
             System.out.println("Posicion " + (i + 1) + ": " + hash.dpi[i]);
         }
+    }
+
+    public void graficar() {
+        try {
+            FileWriter myWriter = new FileWriter("src\\Salidas\\Tabla_Hash.txt");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
+            myWriter.write(graficadora(hash));
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("Tabla_Hash");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(Hash hash) {
+        String cadena = "";
+        cadena += "n1 [label = < \n<table>\n<tr><td colspan = \"2\" >Mensajeros</td></tr>";
+        for (int i = 0; i < hash.dpi.length; i++) {
+            cadena += "\n<tr><td> Nombre:" + hash.nombres[i] + " " + hash.apellidos[i] + "</td><td>" + hash.dpi[i] + "</td></tr>";
+        }
+        cadena += "\n</table>\n> ]";
+        return cadena;
     }
 }

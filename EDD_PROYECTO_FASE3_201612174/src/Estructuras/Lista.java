@@ -5,6 +5,10 @@
  */
 package Estructuras;
 
+import edd_proyecto_fase3_201612174.GraphViz;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author 201612174 --Alberto Gabriel Reyes Ning
@@ -30,7 +34,6 @@ public class Lista { //Lista para guardar rutas
             this.id = id;
             this.next = null;
         }
-        
 
         public Node(int id, String departamento, String nombre, Boolean sn_sucursal) {
             this.id = id;
@@ -45,6 +48,7 @@ public class Lista { //Lista para guardar rutas
 
         String dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio;
         Node_Clientes next;
+
         public Node_Clientes() {
             dpi = null;
             nombre_Completo = null;
@@ -56,8 +60,8 @@ public class Lista { //Lista para guardar rutas
             id_Municipio = null;
             next = null;
         }
-        
-        public Node_Clientes(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio){
+
+        public Node_Clientes(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
             this.dpi = dpi;
             this.nombre_Completo = nombre_Completo;
             this.nombre_Usuario = nombre_Usuario;
@@ -67,6 +71,16 @@ public class Lista { //Lista para guardar rutas
             this.direccion = direccion;
             this.id_Municipio = id_Municipio;
             next = null;
+        }
+
+        public void mod(Node_Clientes nuevo) {
+            this.nombre_Completo = nuevo.nombre_Completo;
+            this.nombre_Usuario = nuevo.nombre_Usuario;
+            this.correo = nuevo.correo;
+            this.pass = nuevo.pass;
+            this.tel = nuevo.tel;
+            this.direccion = nuevo.direccion;
+            this.id_Municipio = nuevo.id_Municipio;
         }
     }
 
@@ -104,7 +118,7 @@ public class Lista { //Lista para guardar rutas
             fin = newNode;
         }
     }
-    
+
     //Insert function for Client list
     public void insert(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
         Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
@@ -117,7 +131,17 @@ public class Lista { //Lista para guardar rutas
             end.next = newNode;
             end = newNode;
         }
-    } 
+    }
+
+    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, String id_Municipio) {
+        Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
+        Node_Clientes temp = this.start;
+
+        while (temp.dpi != dpi || temp != null) {
+            temp = temp.next;
+        }
+        temp.mod(newNode);
+    }
 
     public void insert(int id, String departamento, String nombre, Boolean sn_sucursal) {
         Node newNode = new Node(id, departamento, nombre, sn_sucursal);
@@ -131,7 +155,7 @@ public class Lista { //Lista para guardar rutas
             fin = newNode;
         }
     }
-    
+
     public void insert(int id, int peso) {
         Node newNode = new Node(id);
         peso_Total += peso;
@@ -145,6 +169,7 @@ public class Lista { //Lista para guardar rutas
             fin = newNode;
         }
     }
+
     //Test
     public void insertar_Dest(int end) { //Insert function just to add to the end of the list
         Node newNode = new Node(end);
@@ -158,6 +183,7 @@ public class Lista { //Lista para guardar rutas
             temp.next = newNode;
         }
     }
+
     public void pop(int peso) {
         if (this.inicio == null) {
             System.out.println("Error: Ruta Vacio");
@@ -187,22 +213,37 @@ public class Lista { //Lista para guardar rutas
         }
         return false;
     }
+    
+    public String buscar_Nombre(int id) {
+        if (inicio == null) {
+            System.out.println("Error: Lista Vacio");
+            return "";
+        }
+        Node temp = inicio;
+        while (temp != null) {
+            if (temp.id == id) {
+                return temp.nombre;
+            }
+            temp = temp.next;
+        }
+        return "";
+    }
 
     public void display() {
         Node temp = this.inicio;
         System.out.println("Peso Total: " + this.peso_Total);
-        if(inicio == null){
+        if (inicio == null) {
             System.out.println("Error: Lista Vacio");
             return;
         }
-        
+
         while (temp.next != null) {
             System.out.print(temp.id + " -> ");
             temp = temp.next;
         }
         System.out.print(temp.id);
     }
-    
+
     public void display_Lugares() {
         Node temp = this.inicio;
         System.out.println("\nLugares: ");
@@ -211,7 +252,7 @@ public class Lista { //Lista para guardar rutas
             temp = temp.next;
         }
     }
-    
+
     public void display_Clientes() {
         Node_Clientes temp = this.start;
         System.out.println("\nClientes: ");
@@ -219,5 +260,57 @@ public class Lista { //Lista para guardar rutas
             System.out.println(temp.dpi + " : " + temp.nombre_Completo);
             temp = temp.next;
         }
+    }
+
+    public void graficar(int x) { //Graficar lista de lugares
+        try {
+            FileWriter myWriter = new FileWriter("src\\Salidas\\Lugares.txt");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+            if (x == 0) {
+                myWriter.write(graficadora(inicio));
+            } else {
+                myWriter.write(graficadora(start));
+            }
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("Lugares");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(Node inicio) {
+        String cadena = "";
+
+        if (this.inicio == null) {
+            System.out.println("Error: Rutas Vacio");
+            return cadena;
+        }
+        Node temp = this.inicio;
+        while (temp.next != null) {
+            //cadena += "\nnodo" + temp.id;
+            cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + " | Nombre: " + temp.nombre + "\"]";
+            cadena += "\nnodo" + temp.id + " -> " + "nodo" + temp.next.id;
+            temp = temp.next;
+        } cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + " | Nombre: " + temp.nombre + "\"]";
+        return cadena;
+    }
+
+    public String graficadora(Node_Clientes inicio) {
+        String cadena = "";
+
+        if (this.inicio == null) {
+            System.out.println("Error: Rutas Vacio");
+            return cadena;
+        }
+        Node_Clientes temp = this.start;
+        while (temp.next != null) {
+            //cadena += "\nnodo" + temp.id;
+            cadena += "\nnodo" + temp.dpi + " -> " + "nodo" + temp.next.dpi;
+            temp = temp.next;
+        }
+        return cadena;
     }
 }

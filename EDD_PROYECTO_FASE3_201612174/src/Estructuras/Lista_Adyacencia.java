@@ -5,12 +5,16 @@
  */
 package Estructuras;
 
+import edd_proyecto_fase3_201612174.GraphViz;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author 201612174 --Alberto Gabriel Reyes Ning
  */
 public class Lista_Adyacencia {
-    
+
     Node inicio, fin;
     int size;
     Lista best;
@@ -130,28 +134,23 @@ public class Lista_Adyacencia {
 
         route.insert(temp.id);
         //Recursion
-        
-//        best = route_Rec(temp.id, end, best, route, temp.peso.inicio);
-//        System.out.println("Path Found");
-//        best.display();
-        
-        try{
-        route_Rec(temp.id, end, route, temp.peso.inicio);
-        System.out.println("Path Found");
-        best.display();
-        } catch (Exception ignored){
+        try {
+            route_Rec(temp.id, end, route, temp.peso.inicio);
+            System.out.println("Path Found");
+            best.display();
+        } catch (Exception ignored) {
             System.out.println("");
         }
-        
+
         System.out.println("\nBest route discovered");
         best.display();
     }
 
     public void route_Rec(int curr, int end, Lista route, Node peso) {
-        if(curr == 0){
+        if (curr == 0) {
             return;
         }
-        
+
         if (curr == end) {
             if (best.peso_Total == 0) {
                 best = new Lista();
@@ -188,7 +187,7 @@ public class Lista_Adyacencia {
         Node rand = temp.dest.inicio;
         Node rand_ = temp.peso.inicio;
         while (rand != null && rand_ != null) {
-                System.out.println("RAND: " + rand.id);
+            System.out.println("RAND: " + rand.id);
             //Check if dest is already in the route
             if (route.buscar(rand.id)) {
                 rand = rand.next;
@@ -206,10 +205,57 @@ public class Lista_Adyacencia {
         if (route.inicio != null) {
             route.pop(peso.id);
         }
-        System.out.println("WHAT");
-        best.display();
         return;
     }
 
-    //Graphviz Grafo no dirigido (Iterate through the list and only add arrows for numbers that are bigger than the index)
+    public void graficar(Lista lugares) {
+        try {
+            FileWriter myWriter = new FileWriter("src\\Salidas\\Rutas.txt");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\nedge [arrowhead= none]\n");
+            myWriter.write(graficadora(inicio, lugares));
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("Rutas");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(Node inicio, Lista lugares) {
+        String cadena = "";
+
+        if (this.size == 0) {
+            System.out.println("Error: Rutas Vacio");
+            return cadena;
+        }
+        Node temp = this.inicio;
+        String nombre;
+        while (temp != null) {
+            //cadena += "\nnodo" + temp.id;
+            nombre = lugares.buscar_Nombre(temp.id);
+            cadena += "\nnodo" + temp.id + " [label = \"" + (nombre.equals("") ? temp.id : nombre) + " | ID: " + temp.id + "\"]";
+            if (temp.dest.inicio == null) {
+//                nombre = lugares.buscar_Nombre(temp.id);
+//                cadena += "\nnodo" + temp.id + " [label = \"" + (nombre.equals("")?temp.id:nombre) + "\"]";
+                temp = temp.next;
+                continue;
+            } else {
+                Node temp_ = temp.dest.inicio;
+                Node rand = temp.peso.inicio;
+                while (temp_ != null) {
+                    if (temp_.id > temp.id) {
+//                        nombre = lugares.buscar_Nombre(temp_.id);
+//                        cadena += "\nnodo" + temp_.id + " [label = \"" + (nombre.equals("") ? temp_.id : nombre) + " | ID: " + temp_.id + "\"]";
+                        cadena += "\nnodo" + temp.id + " -> nodo" + temp_.id + "[label = \"" + rand.id + "\"]";
+                    }
+                    temp_ = temp_.next;
+                    rand = rand.next;
+                }
+            }
+            temp = temp.next;
+        }
+        return cadena;
+    }
 }
