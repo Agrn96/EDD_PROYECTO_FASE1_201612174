@@ -258,8 +258,6 @@ public class Lista_Adyacencia {
             nombre = lugares.buscar_Nombre(temp.id);
             cadena += "\nnodo" + temp.id + " [label = \"" + (nombre.equals("") ? temp.id : nombre) + " | ID: " + temp.id + "\"]";
             if (temp.dest.inicio == null) {
-//                nombre = lugares.buscar_Nombre(temp.id);
-//                cadena += "\nnodo" + temp.id + " [label = \"" + (nombre.equals("")?temp.id:nombre) + "\"]";
                 temp = temp.next;
                 continue;
             } else {
@@ -267,8 +265,6 @@ public class Lista_Adyacencia {
                 Node rand = temp.peso.inicio;
                 while (temp_ != null) {
                     if (temp_.id > temp.id) {
-//                        nombre = lugares.buscar_Nombre(temp_.id);
-//                        cadena += "\nnodo" + temp_.id + " [label = \"" + (nombre.equals("") ? temp_.id : nombre) + " | ID: " + temp_.id + "\"]";
                         cadena += "\nnodo" + temp.id + " -> nodo" + temp_.id + "[label = \"" + rand.id + "\"]";
                     }
                     temp_ = temp_.next;
@@ -304,7 +300,6 @@ public class Lista_Adyacencia {
         }
         Node temp = this.inicio;
         while (temp != null) {
-            //cadena += "\nnodo" + temp.id;
             cadena += "\nnodo" + temp.id + " [label = \"ID: " + temp.id + "\"]";
             if (temp.dest.inicio == null) {
                 temp = temp.next;
@@ -321,7 +316,6 @@ public class Lista_Adyacencia {
 
                     temp_ = temp_.next;
                 }
-                //cadena += "\nnodo" + temp.id + "_" + temp_.id + "[label = \"ID: " + temp_.id + "\"]";
             }
             temp = temp.next;
         }

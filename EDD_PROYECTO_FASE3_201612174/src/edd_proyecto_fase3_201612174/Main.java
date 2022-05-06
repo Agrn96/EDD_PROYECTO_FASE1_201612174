@@ -5,9 +5,7 @@
  */
 package edd_proyecto_fase3_201612174;
 
-import Estructuras.Lista;
-import Estructuras.Lista_Adyacencia;
-import Estructuras.Tabla_Hash;
+import Estructuras.*;
 import Interfaz.Login;
 
 /**

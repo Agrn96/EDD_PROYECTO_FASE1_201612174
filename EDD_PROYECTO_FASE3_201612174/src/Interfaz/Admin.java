@@ -5,10 +5,8 @@
  */
 package Interfaz;
 
-import Estructuras.Lista;
+import Estructuras.*;
 import Estructuras.Lista.Node_Clientes;
-import Estructuras.Lista_Adyacencia;
-import Estructuras.Tabla_Hash;
 import edd_proyecto_fase3_201612174.Carga_Masiva;
 import java.awt.Image;
 import java.io.File;

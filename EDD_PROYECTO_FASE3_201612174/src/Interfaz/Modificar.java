@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import Estructuras.Lista;
+import Estructuras.*;
 import Estructuras.Lista.Node_Clientes;
 import javax.swing.JTextField;
 

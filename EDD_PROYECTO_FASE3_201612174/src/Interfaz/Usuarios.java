@@ -5,9 +5,7 @@
  */
 package Interfaz;
 
-import Estructuras.Lista;
-import Estructuras.Lista_Adyacencia;
-import Estructuras.Tabla_Hash;
+import Estructuras.*;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.Icon;

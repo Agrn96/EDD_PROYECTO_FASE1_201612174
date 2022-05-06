@@ -134,16 +134,6 @@ public class Lista { //Lista para guardar rutas
         }
     }
 
-//    public void modificar(String dpi, String nombre_Completo, String nombre_Usuario, String correo, String pass, String tel, String direccion, int id_Municipio) {
-//        Node_Clientes newNode = new Node_Clientes(dpi, nombre_Completo, nombre_Usuario, correo, pass, tel, direccion, id_Municipio);
-//        Node_Clientes temp = this.start;
-//
-//        while (temp.dpi != dpi || temp != null) {
-//            temp = temp.next;
-//        }
-//        //temp.mod(newNode);
-//    }
-
     public void insert(int id, String departamento, String nombre, Boolean sn_sucursal) {
         Node newNode = new Node(id, departamento, nombre, sn_sucursal);
         if (inicio == null) {

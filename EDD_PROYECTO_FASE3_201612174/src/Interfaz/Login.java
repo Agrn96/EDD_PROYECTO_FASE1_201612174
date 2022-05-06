@@ -6,10 +6,8 @@
 package Interfaz;
 
 
-import Estructuras.Lista;
+import Estructuras.*;
 import Estructuras.Lista.Node_Clientes;
-import Estructuras.Lista_Adyacencia;
-import Estructuras.Tabla_Hash;
 import javax.swing.JOptionPane;
 
 /**
