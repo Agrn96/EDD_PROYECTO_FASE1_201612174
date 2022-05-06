@@ -2,7 +2,7 @@ digraph structs
 {
 rankdir="TB"
 label="Carnet: 201612174"
-node [shape=nona];
+node [shape=none];
 
 nodo17 [label = "ID: 17 | Nombre: Amatitlán"]
 nodo17 -> nodo16

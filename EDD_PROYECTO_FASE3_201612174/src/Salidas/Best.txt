@@ -2,7 +2,7 @@ digraph structs
 {
 rankdir="TB"
 label="Carnet: 201612174"
-node [shape=nona];
+node [shape=none];
 
 nodo8 [label = "ID: 8 | Nombre: null"]
 nodo8 -> nodo13

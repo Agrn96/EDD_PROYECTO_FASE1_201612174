@@ -2,7 +2,7 @@ digraph structs
 {
 rankdir="TB"
 label="Carnet: 201612174"
-node [shape=nona];
+node [shape=none];
 edge [arrowhead= none]
 
 nodo1 [label = "ID: 1"]

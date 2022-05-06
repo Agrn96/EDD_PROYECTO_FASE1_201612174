@@ -128,7 +128,7 @@ public class Tabla_Hash {
     }
 
     public void graficar() {
-        try {//System.getProperty("user.dir") + "\\mensajeros.png"   /// "src\\salidas\\Tabla_Hash.txt"
+        try {
             FileWriter myWriter = new FileWriter("src\\salidas\\Tabla_Hash.txt");//
             myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
             myWriter.write(graficadora(hash));

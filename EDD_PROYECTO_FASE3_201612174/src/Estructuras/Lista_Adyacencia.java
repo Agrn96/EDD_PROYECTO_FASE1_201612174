@@ -8,6 +8,7 @@ package Estructuras;
 import edd_proyecto_fase3_201612174.GraphViz;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Lista_Adyacencia {
     Node inicio, fin;
     int size;
     public Lista best;
+    public int routes[];
 
     public class Node {
 
@@ -43,6 +45,7 @@ public class Lista_Adyacencia {
     public Lista_Adyacencia() {
         inicio = null;
         fin = null;
+        routes = new int[10];
         size = 0;
     }
 
@@ -142,8 +145,26 @@ public class Lista_Adyacencia {
             System.out.println("");
         }
 
-        System.out.println("\nBest route discovered");
-        best.display();
+        if(routes[0] == 0){
+            routes[0] = best.peso_Total;
+            this.graficar(routes);
+        } else {
+            if(routes[9] == 0){
+                for(int i = 0; i < 10; i++){
+                    if(routes[i] == 0){
+                        routes[i] = best.peso_Total;
+                        this.graficar(routes);
+                    }
+                }
+            } else {
+                Arrays.sort(routes);
+                if(routes[0] < best.peso_Total){
+                    routes[0] = best.peso_Total;
+                    Arrays.sort(routes);
+                    this.graficar(routes);
+                }
+            }
+        }
     }
 
     public void route_Rec(int curr, int end, Lista route, Node peso) {
@@ -211,7 +232,7 @@ public class Lista_Adyacencia {
     public void graficar(Lista lugares) {
         try {
             FileWriter myWriter = new FileWriter("src\\Salidas\\Rutas.txt");
-            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\nedge [arrowhead= none]\n");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\nedge [arrowhead= none]\n");
             myWriter.write(graficadora(inicio, lugares));
             myWriter.write("}");
             myWriter.close();
@@ -262,7 +283,7 @@ public class Lista_Adyacencia {
     public void graficar() {
         try {
             FileWriter myWriter = new FileWriter("src\\Salidas\\Lista_Adyacencia.txt");
-            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\nedge [arrowhead= none]\n");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\nedge [arrowhead= none]\n");
             myWriter.write(graficadora(inicio));
             myWriter.write("}");
             myWriter.close();
@@ -305,6 +326,35 @@ public class Lista_Adyacencia {
             temp = temp.next;
         }
 
+        return cadena;
+    }
+    
+    public void graficar(int[] routes_) {
+        try {
+            FileWriter myWriter = new FileWriter("src\\Salidas\\RRR.txt");
+            myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\nedge [arrowhead= none]\n");
+            myWriter.write(graficadora(routes_));
+            myWriter.write("}");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+            GraphViz.imprimir("RRR");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public String graficadora(int[] routes_) {
+        String cadena = "";
+
+        for(int i = 0; i < routes_.length; i++){
+            cadena += "\nnodo" + i + " [label = \"" + routes_[i] + "\"]";
+        }
+        
+        for(int i = 0; i < routes_.length - 1; i++){
+            cadena += "\nnodo" + i + " -> ";
+        } cadena += "\nnodo" + 9;
+        
         return cadena;
     }
 }

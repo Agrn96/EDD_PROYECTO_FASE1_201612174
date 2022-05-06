@@ -284,7 +284,7 @@ public class Lista { //Lista para guardar rutas
 
             if (x == 0) {
                 FileWriter myWriter = new FileWriter("src\\Salidas\\Lugares.txt");
-                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
                 myWriter.write(graficadora(inicio));
                 myWriter.write("}");
                 myWriter.close();
@@ -292,20 +292,28 @@ public class Lista { //Lista para guardar rutas
                 GraphViz.imprimir("Lugares");
             } else if(x==1){
                 FileWriter myWriter = new FileWriter("src\\Salidas\\Clientes.txt");
-                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
                 myWriter.write(graficadora(start));
                 myWriter.write("}");
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 GraphViz.imprimir("Clientes");
-            } else {
+            } else if(x==2){
                 FileWriter myWriter = new FileWriter("src\\Salidas\\Best.txt");
-                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=nona];\n");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
                 myWriter.write(graficadora(inicio));
                 myWriter.write("}");
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 GraphViz.imprimir("Best");
+            } else if(x==3){
+                FileWriter myWriter = new FileWriter("src\\Salidas\\RRR.txt");
+                myWriter.write("digraph structs\n{\nrankdir=\"TB\"\nlabel=\"Carnet: 201612174\"\nnode [shape=none];\n");
+                myWriter.write(graficadora(inicio));
+                myWriter.write("}");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                GraphViz.imprimir("RRR");
             }
 
         } catch (IOException e) {

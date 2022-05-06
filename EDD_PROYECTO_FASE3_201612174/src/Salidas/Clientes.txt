@@ -2,7 +2,7 @@ digraph structs
 {
 rankdir="TB"
 label="Carnet: 201612174"
-node [shape=nona];
+node [shape=none];
 
 nodo9789611590172 [label = "William Hodge | 9789611590172"]
 nodo9789611590172 -> nodo7196958094069
